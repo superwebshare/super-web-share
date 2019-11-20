@@ -428,9 +428,9 @@ function superwebshare_validater_and_sanitizer_floating( $settings_floating ) {
  */
 function superwebshare_get_settings() {
 	$defaults = array(
-				'display_page'					=>	'1', 		// 1 as active
-				'display_archive'				=>	'1', 		// 1 as active
-				'display_home'					=>  '1',    	// 1 as active
+				'normal_display_page'					=>	'0', 		// 1 as active
+				'normal_display_archive'				=>	'0', 		// 1 as active
+				'normal_display_home'					=>  '0',    	// 1 as active
 				'position'						=>	'both',     // both = Top and Bottom of the content
 				'normal_share_button_text'		=>	'Share',	// content for share button
 				'normal_share_color'			=>	'#0DC152',	// default color for normal share button
@@ -457,7 +457,7 @@ function superwebshare_get_settings_floating() {
 				'floating_position'				=>	'right', 	// left or right
 				'floating_position_leftright'	=>	'30', 		// in pixel
 				'floating_position_bottom'		=>	'30', 		// in pixel
-				'superwebshare_floating_enable'	=>	'disable'	// disable by default
+				'superwebshare_floating_enable'	=>	'enable'	// enable by default
 		
 			);
 	$settings_floating = get_option( 'superwebshare_floatingsettings', $defaults );

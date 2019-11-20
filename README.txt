@@ -67,6 +67,22 @@ Yes, SuperWebShare is GDPR Compliant. Unlike other social sharing tools, this sh
 
 == Changelog ==
 
+= 1.4 =
+Release Date: Novemebr 19th, 2019
+
+Enhancements:
+
+* WordPress 5.3 support
+* Settings link corrected
+
+
+= 1.3.1 =
+Release Date: April 19th, 2019
+
+Enhancements:
+
+* Normal Share Button default value set to disabled, once plugin is activated
+
 = 1.3 =
 Release Date: April 19th, 2019
 
