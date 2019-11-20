@@ -19,3 +19,4 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
  * @since 1.0.0
  */ 
 delete_option( 'superwebshare_settings' );
+delete_option( 'superwebshare_floatingsettings');

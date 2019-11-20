@@ -3,6 +3,7 @@ jQuery(document).ready(function($){
    		 $('.superwebshare_prompt').hide();
 		console.log('SuperWebShare: Your browser does not seems to support SuperWebShare, as the browser is incompatible');
 }});
+
 async function SuperWebSharefn(Title,URL,Description){
     if(typeof navigator.share==='undefined' || !navigator.share){
 //const SUPERWEBSHARE_BTN = document.querySelector('#superwebshare_tada');

@@ -56,9 +56,19 @@ class Super_Web_Share_Public {
 	 * @since    1.0.0
 	 */
 	public function enqueue_styles() {
-
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/super-web-share-public.css', array(), $this->version, 'all' );
-
+		$settings_floating = superwebshare_get_settings_floating();
+		$settings = superwebshare_get_settings();
+		if (( $settings_floating['superwebshare_floating_enable'] == 'enable') || ( $settings['superwebshare_normal_enable'] == 'enable')) {
+			if ( is_single()
+					|| ( $settings_floating['floating_display_page'] == '1' && is_page() )
+					|| ( $settings_floating['floating_display_archive'] == '1' && is_archive() )
+					|| ( $settings_floating['floating_display_home'] == '1' && is_home() ) 
+					|| ( $settings['normal_display_page'] == '1' && is_page() )
+					|| ( $settings['normal_display_archive'] == '1' && is_archive() )
+					|| ( $settings['normal_display_home'] == '1' && is_home() ) ) {
+						wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/super-web-share-public.css', array(), $this->version, 'all' );
+					}
+		}
 	}
 
 	/**
@@ -67,10 +77,20 @@ class Super_Web_Share_Public {
 	 * @since    1.0.0
 	 */
 	public function enqueue_scripts() {
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/super-web-share-public.js', array( 'jquery' ), $this->version, false );
-
+		$settings_floating = superwebshare_get_settings_floating();
+		$settings = superwebshare_get_settings();
+		if (( $settings_floating['superwebshare_floating_enable'] == 'enable') || ( $settings['superwebshare_normal_enable'] == 'enable')) {
+			if ( is_single()
+					|| ( $settings_floating['floating_display_page'] == '1' && is_page() )
+					|| ( $settings_floating['floating_display_archive'] == '1' && is_archive() )
+					|| ( $settings_floating['floating_display_home'] == '1' && is_home() ) 
+					|| ( $settings['normal_display_page'] == '1' && is_page() )
+					|| ( $settings['normal_display_archive'] == '1' && is_archive() )
+					|| ( $settings['normal_display_home'] == '1' && is_home() ) ) {
+						wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/super-web-share-public.js', array( 'jquery' ), $this->version, false );
+					}
+		}
 	}
-
 }
 
 /**
@@ -79,16 +99,16 @@ class Super_Web_Share_Public {
 	 * @since 1.0
 */
 function superwebshare_floating_button_code() {
-	$settings = superwebshare_get_settings();
-	if ( $settings['superwebshare_floating_enable'] == 'enable') {
+	$settings_floating = superwebshare_get_settings_floating();
+	if ( $settings_floating['superwebshare_floating_enable'] == 'enable') {
 	if ( is_single()
-				|| ( $settings['floating_display_page'] == '1' && is_page() )
-				|| ( $settings['floating_display_archive'] == '1' && is_archive() )
-				|| ( $settings['floating_display_home'] == '1' && is_home() ) ) {
+				|| ( $settings_floating['floating_display_page'] == '1' && is_page() )
+				|| ( $settings_floating['floating_display_archive'] == '1' && is_archive() )
+				|| ( $settings_floating['floating_display_home'] == '1' && is_home() ) ) {
 		
-					echo "<!-- SuperWebShare Floating Button -->";
-	
-    				echo '<a class="superwebshare_prompt superwebshare_tada superwebshare_button" id="superwebshare" style="background-color: '. $settings['floating_share_color'] .'; '.$settings['floating_position'].':'.$settings['floating_position_leftright'].'px; bottom:'.$settings['floating_position_bottom'].'px;"; title="Share Now!">Share<i class="fa fa-share-alt superwebshare_tada"></i></a>';
+					$tags  = '<!-- Floating Button by SuperWebShare - Native Share Plugin for WordPress -->' . PHP_EOL;
+    				echo '<a class="superwebshare_prompt superwebshare_tada superwebshare_button" id="superwebshare" style="background-color: '. $settings_floating['floating_share_color'] .'; '.$settings_floating['floating_position'].':'.$settings_floating['floating_position_leftright'].'px; bottom:'.$settings_floating['floating_position_bottom'].'px;"; title="Share Now!">Share<i class="fa fa-share-alt superwebshare_tada"></i></a>' . PHP_EOL;
+					echo $tags;
 			}
 		}
 	}
