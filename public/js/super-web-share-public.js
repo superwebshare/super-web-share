@@ -1,7 +1,7 @@
 jQuery(document).ready(function($){
 	   if(typeof navigator.share==='undefined' || !navigator.share){
-    $('.superwebshare_tada').hide();
-	console.log('SuperWebShare: Your browser does not seems to support SuperWebShare, as the browser it is incompatible!');
+   		 $('.superwebshare_tada').hide();
+		console.log('SuperWebShare: Your browser does not seems to support SuperWebShare, as the browser is incompatible');
 }});
 async function SuperWebSharefn(Title,URL,Description){
     if(typeof navigator.share==='undefined' || !navigator.share){

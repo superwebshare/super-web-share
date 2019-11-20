@@ -13,9 +13,6 @@
 /**
  * The public-facing functionality of the plugin.
  *
- * Defines the plugin name, version, and two examples hooks for how to
- * enqueue the public-facing stylesheet and JavaScript.
- *
  * @package    Super_Web_Share
  * @subpackage Super_Web_Share/public
  * @author     SuperWebShare <info@superwebshare.com>
@@ -61,18 +58,6 @@ class Super_Web_Share_Public {
 	 */
 	public function enqueue_styles() {
 
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Super_Web_Share_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Super_Web_Share_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
-
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/super-web-share-public.css', array(), $this->version, 'all' );
 
 	}
@@ -84,18 +69,6 @@ class Super_Web_Share_Public {
 	 */
 	public function enqueue_scripts() {
 
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Super_Web_Share_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Super_Web_Share_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
-
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/super-web-share-public.js', array( 'jquery' ), $this->version, false );
 
 	}
@@ -104,8 +77,16 @@ class Super_Web_Share_Public {
 
 //Floating Share
 function superwebshare_floating_button_code() {
-	echo "<!-- SuperWebShare Floating Button -->";
 	$settings = superwebshare_get_settings();
-    echo '<a class="superwebshare_tada superwebshare_button" id="superwebshare" style="background-color: '. $settings['floating_share_color'] .'"; title="Share Now!">Share<i class="fa fa-share-alt superwebshare_tada"></i></a>';
+	if ( is_single()
+				|| ( $settings['floating_display_page'] == '1' && is_page() )
+				|| ( $settings['floating_display_archive'] == '1' && is_archive() )
+				|| ( $settings['floating_display_home'] == '1' && is_home() ) ) {
+		
+					echo "<!-- SuperWebShare Floating Button -->";
+	
+    echo '<a class="superwebshare_tada superwebshare_button" id="superwebshare" style="background-color: '. $settings['floating_share_color'] .'; '.$settings['floating_position'].':'.$settings['floating_position_leftright'].'px; bottom:'.$settings['floating_position_bottom'].'px;"; title="Share Now!">Share<i class="fa fa-share-alt superwebshare_tada"></i></a>';
 }
+			}
+
 add_action('wp_footer', 'superwebshare_floating_button_code');

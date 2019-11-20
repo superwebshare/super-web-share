@@ -39,7 +39,7 @@ class Super_Web_Share_Admin extends Super_Web_Share
 
 	
 	public function enqueue_styles() {
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/super-web-share-admin.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . '/css/super-web-share-admin.css', array(), $this->version, 'all' );
 	}
 
 	public function enqueue_scripts($hook) {
@@ -50,11 +50,11 @@ class Super_Web_Share_Admin extends Super_Web_Share
 	}
 	
 	// Color picker CSS
-	// @refer https://make.wordpress.org/core/2012/11/30/new-color-picker-in-wp-3-5/
+
     wp_enqueue_style( 'wp-color-picker' );
 	
 	// Main JS
-    wp_enqueue_script(  $this->plugin_name, plugin_dir_url( __FILE__ ) . 'admin/js/super-web-share-admin.js', array( 'wp-color-picker' ), $this->version, true );
+    wp_enqueue_script(  'superwebshare-main-js', plugin_dir_url( __FILE__ ) . 'js/super-web-share-admin.js', array( 'wp-color-picker' ), $this->version, true );
 
 	}
 }
@@ -114,6 +114,7 @@ function superwebshare_plugin_row_meta( $links, $file ) {
 	return $links;
 }
 add_filter( 'plugin_row_meta', 'superwebshare_plugin_row_meta', 10, 2 );
+
 /**
  * Admin footer text
  *
@@ -125,12 +126,13 @@ function superwebshare_footer_text( $default ) {
 	if ( strpos( $screen->id, 'superwebshare' ) === false ) {
 		return $default;
 	}
-    $superwebshare_footer_text = sprintf( __( 'If you like Super Web Share, please <a href="%s" target="_blank">make a donation</a> or leave a rating to support us. Thanks a bunch!', 'super-web-share' ), 
+    $superwebshare_footer_text = sprintf( __( 'If you like Super Web Share, please <a href="https://www.paypal.me/PayJoseVarghese" target="_blank">make a donation</a> via PayPal or leave <a href="https://wordpress.org/support/plugin/super-web-share/reviews/?rate=5#new-post" target="_blank">a ★★★★★ rating to support us</a>.Thanks a bunch!', 'super-web-share' ), 
 	'https://superwebshare.com'
 	);
 	return $superwebshare_footer_text;
 }
 add_filter( 'admin_footer_text', 'superwebshare_footer_text' );
+
 /**
  * Admin footer version
  *
@@ -163,6 +165,7 @@ function superwebshare_https_status() {
 	}
 }
 
+
 function superwebshare_register_settings() {
 	// Register Setting
 	register_setting( 
@@ -188,6 +191,7 @@ function superwebshare_register_settings() {
 		);
 }
 add_action( 'admin_init', 'superwebshare_register_settings' );
+
 /**
  * Validate and sanitize user input before its saved to database
  *
@@ -196,6 +200,7 @@ add_action( 'admin_init', 'superwebshare_register_settings' );
 function superwebshare_validater_and_sanitizer( $settings ) {
 	// Sanitize hex color input for theme_color
 	$settings['floating_share_color'] = preg_match( '/#([a-f0-9]{3}){1,2}\b/i', $settings['floating_share_color'] ) ? sanitize_text_field( $settings['floating_share_color'] ) : '#0DC152';
+//	$settings['floating_position_button'] = preg_match( '/^[0-9]$/i', $settings['floating_position_button'] ) ? sanitize_text_field( $settings['floating_position_button'] ) : '30';
 	return $settings;
 }
 			
@@ -203,11 +208,18 @@ function superwebshare_validater_and_sanitizer( $settings ) {
  * Get settings from database
  *
  * @since 	1.0.0
- * @return	Array	A merged array of default and settings saved in database. 
+ * @return	Array	A merged array of default and settings saved in database.
  */
 function superwebshare_get_settings() {
 	$defaults = array(
-				'floating_share_color' 		=> '#0DC152',
+				'floating_share_color' 			=> '#0DC152', 	// defautlt color
+				'floating_display_page'    	 	=>  '1', 		// 1 as active
+				'floating_display_archive'  	=>  '1',
+				'floating_display_home'     	=>  '1',
+				'floating_position'				=>	'right', 	// left or right
+				'floating_position_leftright'	=>	'30', 		//in pixel
+				'floating_position_bottom'		=>	'30', 		//in pixel
+		
 			);
 	$settings = get_option( 'superwebshare_settings', $defaults );
 	
