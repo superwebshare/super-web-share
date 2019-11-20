@@ -134,3 +134,22 @@
   border:none!important;
   box-shadow: none!important;
 }
+/* Button for Above and Below post */
+.superwebshare_normal_button1 {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: #ffffff;
+  padding: 15px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  border-top-right-radius: 2px;
+  border-top-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+
+.superwebshare_normal_button1:hover {
+  opacity: .8!important;
+}

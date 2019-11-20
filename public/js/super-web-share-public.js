@@ -1,6 +1,6 @@
 jQuery(document).ready(function($){
 	   if(typeof navigator.share==='undefined' || !navigator.share){
-   		 $('.superwebshare_tada').hide();
+   		 $('.superwebshare_prompt').hide();
 		console.log('SuperWebShare: Your browser does not seems to support SuperWebShare, as the browser is incompatible');
 }});
 async function SuperWebSharefn(Title,URL,Description){
@@ -25,7 +25,7 @@ async function SuperWebSharefn(Title,URL,Description){
       document.addEventListener('click', function(SuperWebShare) {
 		  			    var target = SuperWebShare.target;
 
-    if (target.classList.contains('superwebshare_tada')){
+    if (target.classList.contains('superwebshare_prompt')){
   var meta_desc,meta_title,meta_url
   if(document.querySelector('meta[property="og:description"]')!=null) {
     meta_desc = document.querySelector('meta[property="og:description"]').content;

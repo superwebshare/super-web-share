@@ -67,10 +67,10 @@ class Super_Web_Share {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		if ( defined( 'PLUGIN_NAME_VERSION' ) ) {
-			$this->version = PLUGIN_NAME_VERSION;
+		if ( defined( 'SUPERWEBSHARE_VERSION' ) ) {
+			$this->version = SUPERWEBSHARE_VERSION;
 		} else {
-			$this->version = '1.0.0';
+			$this->version = '1.0';
 		}
 		$this->plugin_name = 'super-web-share';
 
