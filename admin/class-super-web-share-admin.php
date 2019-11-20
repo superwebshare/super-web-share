@@ -92,7 +92,7 @@ function superwebshare_plugin_row_settings_link( $links ) {
 	
 	return array_merge(
 		array(
-			'settings' => '<a href="' . admin_url( 'admin.php?page=superwebshare' ) . '">' . __( 'Settings', 'super-web-share' ) . '</a>'
+			'settings' => '<a href="' . admin_url( 'admin.php?page=superwebshare&tab=general' ) . '">' . __( 'Settings', 'super-web-share' ) . '</a>'
 		),
 		$links
 	);
@@ -130,7 +130,7 @@ function superwebshare_footer_text( $default ) {
 		return $default;
 	}
     $superwebshare_footer_text = sprintf( __( 'If you like Super Web Share, please <a href="https://www.paypal.me/PayJoseVarghese" target="_blank">make a donation</a> via PayPal or leave <a href="https://wordpress.org/support/plugin/super-web-share/reviews/?rate=5#new-post" target="_blank">a ★★★★★ rating to support us</a>.Thanks a bunch!  
-	<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://wordpress.org/plugins/super-web-share/" data-text="Just tried Super Web Share #WordPress plugin for social sharing on my website and it looks awesome! Try it now!" data-count="none" data-via="IamJoseVarghese">Tweet</a><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script> about <b>SuperWebShare</b></li>', 'super-web-share'), 
+	<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://wordpress.org/plugins/super-web-share/" data-text="Just tried Super Web Share #WordPress plugin for social sharing on my website and it looks awesome! Try it now!" data-count="none" data-via="SuperWebShare">Tweet</a><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script> about <b>SuperWebShare</b></li>', 'super-web-share'), 
 'https://superwebshare.com'
  );
 	return $superwebshare_footer_text;
@@ -179,7 +179,7 @@ function superwebshare_activation_redirect( $plugin, $network_wide ) {
 		return false;
 	}
 	// Redirect to Super Web Share settings page. 
-	exit( wp_redirect( admin_url( 'admin.php?page=superwebshare' ) ) );
+	exit( wp_redirect( admin_url( 'admin.php?page=superwebshare&tab=general' ) ) );
 }
 add_action( 'activated_plugin', 'superwebshare_activation_redirect', PHP_INT_MAX, 2 );
 
