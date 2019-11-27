@@ -191,7 +191,7 @@ function superwebshare_admin_interface_render() {
 	$active_tab = $_GET[ 'tab' ];
 	if ( isset( $_GET['settings-updated'] ) ) {
 		
-		if( $active_tab == 'general' ) {
+		if( $active_tab == 'general' || isset($active_tab) == '0' ) {
 		// Add settings
 		add_settings_error( 'superwebshare_settings_group', 'superwebshare_settings_saved_message', __( 'Settings saved.', 'super-web-share' ), 'updated' );
 		
@@ -227,7 +227,7 @@ function superwebshare_admin_interface_render() {
 
 		<form action="options.php" method="post" enctype="multipart/form-data">		
 			<?php
-			if( $active_tab == 'general' ) {
+			if( $active_tab == 'general' || isset($active_tab) == '0' ) {
 				// Above & Below Settings
 
 				// Output nonce, action, and option_page fields for a settings page.
@@ -235,7 +235,7 @@ function superwebshare_admin_interface_render() {
 				do_settings_sections( 'superwebshare_basic_settings_section' ); 	// Normal Above and Below Button slug
 							// Output save settings button
 			submit_button( __('Save Settings', 'super-web-share') );
-			} else {
+			} else  if($active_tab == 'floating'){
 				// Floating Button Settings
 
 				// Output nonce, action, and option_page fields for a settings page.

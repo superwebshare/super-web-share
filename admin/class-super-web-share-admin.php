@@ -204,7 +204,7 @@ function superwebshare_admin_notices() {
 		$screen_link = get_current_screen();
 		$superwebshare_ui_link_text = ( strpos( $screen_link->id, 'superwebshare' ) === false ) ? sprintf( __( '<a href="%s">Customize your app &rarr;</a>', 'super-web-share' ), admin_url( 'admin.php?page=superwebshare' ) ) : '';
 		
-		echo '<div class="updated notice is-dismissible"><p>' . __( 'Thank you for installing <strong>Super Progressive Web Apps!</strong> ', 'super-web-share' ) . $superwebshare_is_ready . $superwebshare_ui_link_text . '</p></div>';
+		echo '<div class="updated notice is-dismissible"><p>' . __( 'Thank you for installing <strong>Super Web Share!</strong> ', 'super-web-share' ) . $superwebshare_is_ready . $superwebshare_ui_link_text . '</p></div>';
 		
 		// Delete transient
 		delete_transient( 'superwebshare_admin_notice_activation' );
@@ -403,8 +403,8 @@ add_action( 'admin_init', 'superwebshare_register_settings_floating' );
 function superwebshare_validater_and_sanitizer( $settings ) {
 	// Sanitize hex color input for theme_color
 
-	$settings['normal_share_color'] = preg_match( '/#([a-f0-9]{3}){1,2}\b/i', $settings['normal_share_color'] ) ? sanitize_text_field( $settings['normal_share_color'] ) : '#0DC152';
-	$settings['normal_share_button_text'] = sanitize_text_field( $settings['normal_share_button_text'] ) ? sanitize_text_field( $settings['normal_share_button_text'] ) : 'Share';
+	$settings['normal_share_color'] = preg_match( '/#([a-f0-9]{3}){1,2}\b/i', isset($settings['normal_share_color']) ) ? sanitize_text_field( $settings['normal_share_color'] ) : '#0DC152';
+	$settings['normal_share_button_text'] = sanitize_text_field( isset($settings['normal_share_button_text']) ) ? sanitize_text_field( $settings['normal_share_button_text'] ) : 'Share';
 	return $settings;
 }
 
@@ -416,7 +416,7 @@ function superwebshare_validater_and_sanitizer( $settings ) {
  */
 function superwebshare_validater_and_sanitizer_floating( $settings_floating ) {
 	// Sanitize hex color input for floating theme_color
-	$settings_floating['floating_position_button'] = preg_match( '/^[0-9]$/i', $settings_floating['floating_position_button'] ) ? sanitize_text_field( $settings_floating['floating_position_button'] ) : '30';
+	$settings_floating['floating_position_button'] = preg_match( '/^[0-9]$/i', isset($settings_floating['floating_position_button']) ) ? sanitize_text_field( $settings_floating['floating_position_button'] ) : '30';
 	return $settings_floating;
 }
 			
