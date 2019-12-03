@@ -403,7 +403,7 @@ add_action( 'admin_init', 'superwebshare_register_settings_floating' );
 function superwebshare_validater_and_sanitizer( $settings ) {
 	// Sanitize hex color input for theme_color
 
-	$settings['normal_share_color'] = preg_match( '/#([a-f0-9]{3}){1,2}\b/i', isset($settings['normal_share_color']) ) ? sanitize_text_field( $settings['normal_share_color'] ) : '#0DC152';
+	$settings['normal_share_color'] = preg_match( '/#([a-f0-9]{3}){1,2}\b/i', $settings['normal_share_color'] ) ? sanitize_text_field( $settings['normal_share_color'] ) : '#0DC152';
 	$settings['normal_share_button_text'] = sanitize_text_field( isset($settings['normal_share_button_text']) ) ? sanitize_text_field( $settings['normal_share_button_text'] ) : 'Share';
 	return $settings;
 }
@@ -428,13 +428,13 @@ function superwebshare_validater_and_sanitizer_floating( $settings_floating ) {
  */
 function superwebshare_get_settings() {
 	$defaults = array(
-				'normal_display_page'					=>	'0', 		// 1 as active
-				'normal_display_archive'				=>	'0', 		// 1 as active
-				'normal_display_home'					=>  '0',    	// 1 as active
-				'position'						=>	'both',     // both = Top and Bottom of the content
+				'normal_display_page'					=>	'1', 		// 1 as active
+				'normal_display_archive'				=>	'1', 		// 1 as active
+				'normal_display_home'					=>  '1',    	// 1 as active
+				'position'						=>	'before',     // both = Top and Bottom of the content
 				'normal_share_button_text'		=>	'Share',	// content for share button
-				'normal_share_color'			=>	'#0DC152',	// default color for normal share button
-				'superwebshare_normal_enable'	=>	'enable',	// enable by default
+				'normal_share_color'			=>	'#BD3854',	// default color for normal share button
+				'superwebshare_normal_enable'	=>	'disable',	// enable by default
 		
 			);
 	$settings = get_option( 'superwebshare_settings', $defaults );
@@ -450,13 +450,13 @@ function superwebshare_get_settings() {
  */
 function superwebshare_get_settings_floating() {
 	$defaults = array(
-				'floating_share_color' 			=> '#0DC152', 	// defautlt color
+				'floating_share_color' 			=> '#BD3854', 	// defautlt color
 				'floating_display_page'    	 	=>  '1', 		// 1 as active
 				'floating_display_archive'  	=>  '1',
 				'floating_display_home'     	=>  '1',
 				'floating_position'				=>	'right', 	// left or right
-				'floating_position_leftright'	=>	'30', 		// in pixel
-				'floating_position_bottom'		=>	'30', 		// in pixel
+				'floating_position_leftright'	=>	'5', 		// in pixel
+				'floating_position_bottom'		=>	'5', 		// in pixel
 				'superwebshare_floating_enable'	=>	'enable'	// enable by default
 		
 			);

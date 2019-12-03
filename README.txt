@@ -67,8 +67,20 @@ Yes, SuperWebShare is GDPR Compliant. Unlike other social sharing tools, this sh
 
 == Changelog ==
 
+= 1.4.1 =
+Release Date: December 1st, 2019
+
+Enhancements:
+
+* Settings page improved
+* SVG icon for share both share buttons 
+(Thanks to [Ajith R.N](https://profiles.wordpress.org/ajithrn))
+* Floating share button style changed
+* General share button style changed for good user experience
+
+
 = 1.4 =
-Release Date: Novemebr 19th, 2019
+Release Date: November 19th, 2019
 
 Enhancements:
 
@@ -106,7 +118,7 @@ Enhancements:
 * Option to select the color, text on the share button added
 * Adds option's to select the pages to display the normal share button
 * Minor performance improvements to render SuperWebShare faster.
-Sincere thanks to [Jyothis Joy](https://profiles.wordpress.org/joe007/) for reporting the bug.
+Thanks to [Jyothis Joy](https://profiles.wordpress.org/joe007/) for reporting the bug.
 
 = 1.1 =
 Release Date: December 15th, 2018
