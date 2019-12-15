@@ -77,8 +77,10 @@ function superwebshare_add_menu_links() {
 	
 	// Main menu page --  superwebshare_options_page earlier
 	add_menu_page( __( 'Super Web Share', 'super-web-share' ), __( 'Super Web Share', 'super-web-share' ), 'manage_options', 'superwebshare','superwebshare_admin_interface_render', 'dashicons-share', 100 );
-	// Settings page - Same as main menu page
+	// General Settings page - Same as main menu page
 	add_submenu_page( 'superwebshare', __( 'Super Web Share', 'super-web-share' ), __( 'Settings', 'super-web-share' ), 'manage_options', 'superwebshare', 'superwebshare_admin_interface_render' );
+	// Floating Button Settings page
+	add_submenu_page( 'superwebshare', __( 'Super Web Share', 'super-web-share' ), __( 'Settings', 'super-web-share' ), 'manage_options', 'superwebshare&tab=floating', 'superwebshare_admin_interface_render' );
 	add_submenu_page( 'superwebshare', __( 'Super Web Share', 'super-web-share' ), __( 'Status', 'super-web-share' ), 'manage_options', 'superwebshare-status', 'superwebshare_status_interface_render' );
 	}
 add_action( 'admin_menu', 'superwebshare_add_menu_links' );
