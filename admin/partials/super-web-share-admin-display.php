@@ -188,10 +188,10 @@ function superwebshare_admin_interface_render() {
 	if ( ! current_user_can( 'manage_options' ) ) {
 		return;
 	}
-	$active_tab = $_GET[ 'tab' ];
+	$active_tab = $_GET['tab'] ?? 'general'';
 	if ( isset( $_GET['settings-updated'] ) ) {
 		
-		if( $active_tab == 'general' || isset($active_tab) == '0' ) {
+		if( $active_tab == 'general') {
 		// Add settings
 		add_settings_error( 'superwebshare_settings_group', 'superwebshare_settings_saved_message', __( 'Settings saved.', 'super-web-share' ), 'updated' );
 		
