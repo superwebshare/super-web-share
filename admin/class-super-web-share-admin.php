@@ -132,7 +132,7 @@ function superwebshare_footer_text( $default ) {
 		return $default;
 	}
     $superwebshare_footer_text = sprintf( __( 'If you like Super Web Share, please <a href="https://www.paypal.me/PayJoseVarghese" target="_blank">make a donation</a> via PayPal or leave <a href="https://wordpress.org/support/plugin/super-web-share/reviews/?rate=5#new-post" target="_blank">a ★★★★★ rating to support us</a>.Thanks a bunch!  
-	<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://wordpress.org/plugins/super-web-share/" data-text="Just tried Super Web Share #WordPress plugin for social sharing on my website and it looks awesome! Try it now!" data-count="none" data-via="SuperWebShare">Tweet</a><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script> about <b>SuperWebShare</b></li>', 'super-web-share'), 
+	</li>', 'super-web-share'), 
 'https://superwebshare.com'
  );
 	return $superwebshare_footer_text;
