@@ -145,7 +145,7 @@ function superwebshare_footer_text( $default ) {
 	if ( strpos( $screen->id, 'superwebshare' ) === false ) {
 		return $default;
 	}
-    $superwebshare_footer_text = sprintf( __( 'If you like Super Web Share, please <a href="https://www.paypal.me/PayJoseVarghese" target="_blank">make a donation</a> via PayPal or leave <a href="https://wordpress.org/support/plugin/super-web-share/reviews/?rate=5#new-post" target="_blank">a ★★★★★ rating to support us</a>.Thanks a bunch!  
+    $superwebshare_footer_text = sprintf( __( 'If you like Super Web Share, please <a href="https://www.paypal.me/PayJoseVarghese" target="_blank">make a donation</a> via PayPal or leave <a href="https://wordpress.org/support/plugin/super-web-share/reviews/?rate=5#new-post" target="_blank">a ★★★★★ rating to support us</a>. Thanks a bunch!  
 	</li>', 'super-web-share'), 
 'https://superwebshare.com'
  );
