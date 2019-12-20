@@ -48,17 +48,25 @@ You can easily customize the color, position and pages which you would like to s
 
 == Frequently Asked Questions ==
 
-= Which all browsers does the Super Web Share plugin works =
+= Which all browsers does the Super Web Share plugin works? =
 
 The Web Share plugin works on browsers like Chrome for Android, iOS Safari (from version 12.2), Samsung Internet for Android (version 9.2+), Edge for Android, Brave for Android and also on Opera for Android
 
-= Will the floating share button and normal button on page and post will shows upon non-supported browsers=
+= Will the floating share button and normal button on page and post will shows upon non-supported browsers? =
 
 No, the floating share button and normal share button on page's and post's will be hided automatically, if browser won't support Web Share API
 
-= Is this Plugin GDPR Compliant? =
+= How do I report bugs and new feature suggestions? =
 
-Yes, SuperWebShare is GDPR Compliant. Unlike other social sharing tools, this share plugin does not use any cookies, tracking scripts, or store any user data.
+You can report the bugs and features you need at our [GitHub repository](https://github.com/superwebshare/SuperWebShare-WordPress-Plugin) 
+
+= How can I contribute to this awesome plugin? =
+
+You can contribute to this Web Share plugin via our [GitHub repository](https://github.com/superwebshare/SuperWebShare-WordPress-Plugin) 
+
+= Is SuperWebShare plugin GDPR Compliant? =
+
+Yes, SuperWebShare is fully GDPR Compliant. Unlike other social sharing tools, this share plugin does not use any cookies, tracking scripts, or store any user data.
 
 == Screenshots ==
 
