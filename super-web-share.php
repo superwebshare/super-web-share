@@ -1,5 +1,4 @@
 <?php
-
 /**
  *
  * @link              https://www.josevarghese.com
@@ -58,7 +57,6 @@ function deactivate_super_web_share() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-super-web-share-deactivator.php';
 	Super_Web_Share_Deactivator::deactivate();
 }
-
 register_activation_hook( __FILE__, 'activate_super_web_share' );
 register_deactivation_hook( __FILE__, 'deactivate_super_web_share' );
 
@@ -67,6 +65,18 @@ register_deactivation_hook( __FILE__, 'deactivate_super_web_share' );
  * admin-specific hooks, and public-facing site hooks.
  */
 require plugin_dir_path( __FILE__ ) . 'includes/class-super-web-share.php';
+
+/**
+ * Plugin activation function
+ * @since 1.4.2
+ */
+function superwebshare_activate_plugin( $network_wide ) {
+	if ( ! current_user_can( 'activate_plugins' ) ) {
+        return;
+    }
+	set_transient( 'superwebshare_admin_notice_activation', true, 5 );
+}
+register_activation_hook( __FILE__, 'superwebshare_activate_plugin' );
 
 /**
  * Begins execution of the plugin.
@@ -78,9 +88,7 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-super-web-share.php';
  * @since    1.0.0
  */
 function run_super_web_share() {
-
 	$plugin = new Super_Web_Share();
 	$plugin->run();
-
 }
 run_super_web_share();
