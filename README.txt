@@ -75,6 +75,16 @@ Yes, SuperWebShare is fully GDPR Compliant. Unlike other social sharing tools, t
 
 == Changelog ==
 
+= 1.4.3 =
+Release Date: December 28th, 2019
+
+
+Bugfixes:
+
+* Fixed a compatibility issue over PHP versions - 5.3, 5.4, 5.5 and 5.6
+(Thanks to [Gijo Varghese](https://profiles.wordpress.org/gijo/))
+
+
 = 1.4.2 =
 Release Date: December 21st, 2019
 
