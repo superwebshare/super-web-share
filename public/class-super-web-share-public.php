@@ -46,6 +46,7 @@ class Super_Web_Share_Public {
 		add_action('the_content', 'superwebshare_normal_button_code');
 		if ( function_exists( 'is_amp_endpoint' ) || function_exists( 'ampforwp_is_amp_endpoint')) {
 			add_action( 'wp_head', 'superwebshare_amp_add_social_share_head', 0 );
+			add_action('the_content', 'superwebshare_amp_normal_button_code');
     	}
 	}
 	
@@ -209,4 +210,44 @@ function superwebshare_amp_add_social_share_head(){
 			echo $tags;
 		}	
 	}
+}
+
+/**
+	 * AMP social share normal button code
+	 *
+	 * @return code normal amp
+	 * @since 1.4.4
+*/
+function superwebshare_amp_normal_button_code($content) {
+	if ( ( function_exists( 'is_amp_endpoint' ) && is_amp_endpoint() ) || ( function_exists( 'ampforwp_is_amp_endpoint' ) && ampforwp_is_amp_endpoint() ) ) {
+		$settings = superwebshare_get_settings();
+		if ( $settings['superwebshare_normal_enable'] == 'enable') {
+			if ( is_single()
+				|| ( isset($settings['normal_display_page']) == '1' && is_page() )
+				|| ( isset($settings['normal_display_archive']) == '1' && is_archive() )
+				|| ( isset($settings['normal_display_home']) == '1' && is_home() ) ) {
+			$pos = $settings['position'];
+				if ($settings['superwebshare_normal_amp_enable'] == 'enable'){
+			$button = '<div id="swsamp"><amp-social-share type="system" style="background-color: '. $settings['normal_share_color'] .';border-radius:28px;padding:0 24px 0 52px;text-indent:0;width:auto;align-items:center;box-shadow:0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12);position:relative" class="rounded superwebshare_normal_button1 superwebshare_prompt"></amp-social-share></span></div>';
+			switch ( $pos ) {
+				case 'before':
+					$content = $button . $content;
+					break;
+				case 'after':
+					$content = $content . $button;
+					break;
+				case 'both':
+					$content = $button . $content . $button;
+					break;
+				case 'manual':
+					break;
+				default:
+					$content = $content . $button;
+					break;
+				}
+			}
+			}
+		}
+	}
+	return $content;
 }
