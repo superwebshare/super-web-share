@@ -9,7 +9,7 @@
  * Plugin Name:       Super Web Share
  * Plugin URI:        https://www.josevarghese.com
  * Description:       Super Web Share helps to quickly add the Native Share option to your WordPress website
- * Version:           1.4.3
+ * Version:           2.20.1
  * Author:            Super Web Share
  * Author URI:        https://www.josevarghese.com
  * License:           GPL-2.0+
@@ -28,7 +28,7 @@ if ( ! defined( 'WPINC' ) ) {
  *
  * @since 1.0
  */
-define( 'SUPERWEBSHARE_VERSION', '1.4.3' );
+define( 'SUPERWEBSHARE_VERSION', '2.20.1' );
 
 /**
  * Full path to the plugin file. 

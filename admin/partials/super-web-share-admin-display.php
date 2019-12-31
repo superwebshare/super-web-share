@@ -92,7 +92,7 @@ function superwebshare_normal_color_cb() {
 /**
  * Enable/Disable share button (normal) : Above and Below Post/Page Content
  *
- * @since 1.4.4
+ * @since 2.20.1
  */ 
 function superwebshare_normal_amp_enable_cb() {
 	$settings = superwebshare_get_settings();
@@ -195,7 +195,7 @@ function superwebshare_floating_position_bottom_cb() {
 /**
  * Enable/Disable share button : Floating Button
  *
- * @since 1.4.4
+ * @since 2.20.1
  */ 
 function superwebshare_floating_amp_enable_cb() {
 	$settings_floating = superwebshare_get_settings_floating();

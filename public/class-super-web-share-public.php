@@ -201,7 +201,7 @@ public function init() {
 	 * AMP social share script
 	 *
 	 * @return string Icon for Share Button
-	 * @since 1.4.4
+	 * @since 2.20.1
 */
 function superwebshare_amp_add_social_share_head(){
 	if ( ( function_exists( 'is_amp_endpoint' ) && is_amp_endpoint() ) || ( function_exists( 'ampforwp_is_amp_endpoint' ) && ampforwp_is_amp_endpoint() ) ) {
@@ -217,7 +217,7 @@ function superwebshare_amp_add_social_share_head(){
 	 * AMP social share normal button code
 	 *
 	 * @return code normal amp
-	 * @since 1.4.4
+	 * @since 2.20.1
 */
 function superwebshare_amp_normal_button_code($content) {
 	if ( ( function_exists( 'is_amp_endpoint' ) && is_amp_endpoint() ) || ( function_exists( 'ampforwp_is_amp_endpoint' ) && ampforwp_is_amp_endpoint() ) ) {
@@ -257,7 +257,7 @@ function superwebshare_amp_normal_button_code($content) {
 	 * AMP social floating button code
 	 *
 	 * @return string Icon for Share Button
-	 * @since 1.4.4
+	 * @since 2.20.1
 */
 function superwebshare_amp_floating_button_code() {
 	if ( ( function_exists( 'is_amp_endpoint' ) && is_amp_endpoint() ) || ( function_exists( 'ampforwp_is_amp_endpoint' ) && ampforwp_is_amp_endpoint() ) ) {

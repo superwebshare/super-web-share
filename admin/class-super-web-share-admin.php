@@ -328,7 +328,7 @@ function superwebshare_register_settings_normal() {
 				'superwebshare_basic_settings_section',							// Page slug
 				'superwebshare_basic_settings_section'							// Settings Section ID
 			);
-			// Enable/Disable Share Button - AMP
+			// Enable/Disable Share Button - AMP (2.20.1)
 			add_settings_field(
 				'superwebshare_enable_amp_share',									// ID
 				__('Enable/Disable the share button over AMP Pages', 'super-web-share'),		// Title
@@ -401,7 +401,7 @@ function superwebshare_register_settings_floating() {
 				'superwebshare_floating_settings_section',						// Page slug
 				'superwebshare_floating_settings_section'						// Settings Section ID
 			);
-			// Enable/Disable Share Button - AMP
+			// Enable/Disable Share Button - AMP (2.20.1)
 			add_settings_field(
 				'superwebshare_floating_enable_amp_share',									// ID
 				__('Enable/Disable the floating share button over AMP Pages', 'super-web-share'),		// Title
@@ -450,7 +450,7 @@ function superwebshare_get_settings() {
 				'normal_share_button_text'		=>	'Share',	// content for share button
 				'normal_share_color'			=>	'#BD3854',	// default color for normal share button
 				'superwebshare_normal_enable'	=>	'disable',	// enable by default
-				'superwebshare_normal_amp_enable' => 'enable' //1.4.3 amp settings
+				'superwebshare_normal_amp_enable' => 'enable' //2.20.1 amp settings
 		
 			);
 	$settings = get_option( 'superwebshare_settings', $defaults );
@@ -474,7 +474,7 @@ function superwebshare_get_settings_floating() {
 				'floating_position_leftright'	=>	'5', 		// in pixel
 				'floating_position_bottom'		=>	'5', 		// in pixel
 				'superwebshare_floating_enable'	=>	'enable',	// enable by default
-				'superwebshare_floating_amp_enable'	=>	'enable'	// enable by default
+				'superwebshare_floating_amp_enable'	=>	'enable'	// enable by default - 2.20.1
 		
 			);
 	$settings_floating = get_option( 'superwebshare_floatingsettings', $defaults );
