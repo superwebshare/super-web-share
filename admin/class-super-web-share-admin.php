@@ -401,6 +401,14 @@ function superwebshare_register_settings_floating() {
 				'superwebshare_floating_settings_section',						// Page slug
 				'superwebshare_floating_settings_section'						// Settings Section ID
 			);
+			// Enable/Disable Share Button - AMP
+			add_settings_field(
+				'superwebshare_floating_enable_amp_share',									// ID
+				__('Enable/Disable the floating share button over AMP Pages', 'super-web-share'),		// Title
+				'superwebshare_floating_amp_enable_cb',								// CB
+				'superwebshare_floating_settings_section',							// Page slug
+				'superwebshare_floating_settings_section'							// Settings Section ID
+			);
 }
 add_action( 'admin_init', 'superwebshare_register_settings_floating' );
 
@@ -465,7 +473,8 @@ function superwebshare_get_settings_floating() {
 				'floating_position'				=>	'right', 	// left or right
 				'floating_position_leftright'	=>	'5', 		// in pixel
 				'floating_position_bottom'		=>	'5', 		// in pixel
-				'superwebshare_floating_enable'	=>	'enable'	// enable by default
+				'superwebshare_floating_enable'	=>	'enable',	// enable by default
+				'superwebshare_floating_amp_enable'	=>	'enable'	// enable by default
 		
 			);
 	$settings_floating = get_option( 'superwebshare_floatingsettings', $defaults );

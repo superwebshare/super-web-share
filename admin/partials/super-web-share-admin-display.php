@@ -192,6 +192,22 @@ function superwebshare_floating_position_bottom_cb() {
 	<?php
 }
 
+/**
+ * Enable/Disable share button : Floating Button
+ *
+ * @since 1.4.4
+ */ 
+function superwebshare_floating_amp_enable_cb() {
+	$settings_floating = superwebshare_get_settings_floating();
+	if(isset($settings_floating['superwebshare_floating_amp_enable']) == '') {
+		$settings_floating['superwebshare_floating_amp_enable'] =  isset( $settings_floating['superwebshare_floating_amp_enable'] ) ? esc_attr( $settings_floating['superwebshare_floating_amp_enable']) : 'enable';
+	}
+	
+	?>
+		<p><label><input type="radio" name="superwebshare_floatingsettings[superwebshare_floating_amp_enable]" value="enable" <?php checked( "enable", $settings_floating['superwebshare_floating_amp_enable'] ); ?> /> <?php _e( "Enable", 'super-web-share' );?></label></p>
+    	<p><label><input type="radio" name="superwebshare_floatingsettings[superwebshare_floating_amp_enable]" value="disable" <?php checked( "disable", $settings_floating['superwebshare_floating_amp_enable'] ); ?> /> <?php _e( "Disable", 'super-web-share' );?></label></p>
+	<?php
+}
 
 /**
  * Admin interface renderer
