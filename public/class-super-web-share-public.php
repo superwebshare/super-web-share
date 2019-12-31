@@ -252,6 +252,8 @@ function superwebshare_amp_normal_button_code($content) {
 	return $content;
 }
 
+}
+
 /**
 	 * AMP social floating button code
 	 *
