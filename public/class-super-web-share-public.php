@@ -44,6 +44,9 @@ class Super_Web_Share_Public {
 		add_action('wp_footer', 'superwebshare_floating_button_code');
 		add_action('wp_footer', 'superwebshare_frontent_inline_styles');
 		add_action('the_content', 'superwebshare_normal_button_code');
+		if ( function_exists( 'is_amp_endpoint' ) || function_exists( 'ampforwp_is_amp_endpoint')) {
+			add_action( 'wp_head', 'superwebshare_amp_add_social_share_head', 0 );
+    	}
 	}
 	
 	
@@ -190,3 +193,20 @@ public function init() {
 			}
 		}
 	}
+
+
+/**
+	 * AMP social share script
+	 *
+	 * @return string Icon for Share Button
+	 * @since 1.4.4
+*/
+function superwebshare_amp_add_social_share_head(){
+	if ( ( function_exists( 'is_amp_endpoint' ) && is_amp_endpoint() ) || ( function_exists( 'ampforwp_is_amp_endpoint' ) && ampforwp_is_amp_endpoint() ) ) {
+		$settings = superwebshare_get_settings();
+		if ($settings['superwebshare_normal_amp_enable'] == 'enable'){
+			$tags = '<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>' . PHP_EOL;
+			echo $tags;
+		}	
+	}
+}
