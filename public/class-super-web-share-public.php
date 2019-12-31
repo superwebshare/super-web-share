@@ -102,8 +102,9 @@ public function init() {
 					|| ( isset($settings['normal_display_home']) == '1' && is_home() ) ) {
 						wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/super-web-share-public.js', array( 'jquery' ), $this->version, false );
 					}
-				}
 			}
+	}
+}
 
 /**
 	 * Floating Share Button
@@ -250,8 +251,6 @@ function superwebshare_amp_normal_button_code($content) {
 		}
 	}
 	return $content;
-}
-
 }
 
 /**
