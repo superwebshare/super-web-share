@@ -90,6 +90,22 @@ function superwebshare_normal_color_cb() {
 }
 
 /**
+ * Enable/Disable share button (normal) : Above and Below Post/Page Content
+ *
+ * @since 1.4.4
+ */ 
+function superwebshare_normal_amp_enable_cb() {
+	$settings = superwebshare_get_settings();
+	if(isset($settings['superwebshare_normal_amp_enable']) == '') {
+		$settings['superwebshare_normal_amp_enable'] =  isset( $settings['superwebshare_normal_amp_enable'] ) ? esc_attr( $settings['superwebshare_normal_amp_enable']) : 'enable';
+	}
+	?>
+		<p><label><input type="radio" name="superwebshare_settings[superwebshare_normal_amp_enable]" value="enable" <?php checked( "enable", $settings['superwebshare_normal_amp_enable'] ); ?> /> <?php _e( "Enable", 'super-web-share' );?></label></p>
+    	<p><label><input type="radio" name="superwebshare_settings[superwebshare_normal_amp_enable]" value="disable" <?php checked( "disable", $settings['superwebshare_normal_amp_enable'] ); ?> /> <?php _e( "Disable", 'super-web-share' );?></label></p>
+	<?php
+}
+
+/**
  * Description for Floating Share buttton
  *
  * @since 1.3

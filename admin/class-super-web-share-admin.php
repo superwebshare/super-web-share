@@ -57,6 +57,7 @@ function superwebshare_admin_interface() {
 			require_once plugin_dir_path( __FILE__ ) . 'partials/super-web-share-admin-display.php';
 	}
 add_action( 'admin_menu', 'superwebshare_admin_interface' );
+
 /**
  * Add Menu and links of Plugin on Dashboard menu
  *
@@ -73,6 +74,7 @@ function superwebshare_add_menu_links() {
     add_submenu_page( 'superwebshare', __( 'Super Web Share', 'super-web-share' ), __( 'Status', 'super-web-share' ), 'manage_options', 'superwebshare-status', 'superwebshare_status_interface_render' );
 	}
 add_action( 'admin_menu', 'superwebshare_add_menu_links' );
+
 /**
  * Add Settings link to Plugin Page's Row
  *
@@ -88,6 +90,7 @@ function superwebshare_plugin_row_settings_link( $links ) {
 	);
 }
 add_filter( 'plugin_action_links_super-web-share/super-web-share.php', 'superwebshare_plugin_row_settings_link' );
+
 /**
  * Add Demo link on to WordPress Plugin page row
  *
@@ -105,6 +108,7 @@ function superwebshare_plugin_row_meta( $links, $file ) {
 	return $links;
 }
 add_filter( 'plugin_row_meta', 'superwebshare_plugin_row_meta', 10, 2 );
+
 /**
 * Show notices in admin area
 *
@@ -134,6 +138,7 @@ function superwebshare_admin_notice_activation() {
 	}
 }
 add_action( 'admin_notices', 'superwebshare_admin_notice_activation' );
+
 /**
  * Admin footer text
  *
@@ -152,6 +157,7 @@ function superwebshare_footer_text( $default ) {
 	return $superwebshare_footer_text;
 }
 add_filter( 'admin_footer_text', 'superwebshare_footer_text' );
+
 /**
  * Admin footer version
  *
@@ -166,6 +172,7 @@ function superwebshare_footer_version( $default ) {
 	return 'SuperWebShare ' . SUPERWEBSHARE_VERSION;
 }
 add_filter( 'update_footer', 'superwebshare_footer_version', 11 );
+
 /**
  * Redirect to SuperWebShare UI on plugin activation.
  *
@@ -196,6 +203,7 @@ function superwebshare_activation_redirect( $plugin, $network_wide ) {
 	exit( wp_redirect( admin_url( 'admin.php?page=superwebshare&tab=general' ) ) );
 }
 add_action( 'activated_plugin', 'superwebshare_activation_redirect', PHP_INT_MAX, 2 );
+
 /**
  * Admin Notices
  *
@@ -224,6 +232,7 @@ function superwebshare_admin_notices() {
 	}
 }
 add_action( 'admin_notices', 'superwebshare_admin_notices' );
+
 /**
  * HTTPS Status Checker
  *
@@ -251,6 +260,7 @@ function superwebshare_status_interface_render() {
 	</div>
 	<?php
 }
+
 /**
  * Normal Settings Register
  *
@@ -318,8 +328,17 @@ function superwebshare_register_settings_normal() {
 				'superwebshare_basic_settings_section',							// Page slug
 				'superwebshare_basic_settings_section'							// Settings Section ID
 			);
+			// Enable/Disable Share Button - AMP
+			add_settings_field(
+				'superwebshare_enable_amp_share',									// ID
+				__('Enable/Disable the share button over AMP Pages', 'super-web-share'),		// Title
+				'superwebshare_normal_amp_enable_cb',								// CB
+				'superwebshare_basic_settings_section',							// Page slug
+				'superwebshare_basic_settings_section'							// Settings Section ID
+			);
 }
 add_action( 'admin_init', 'superwebshare_register_settings_normal' );
+
 function superwebshare_register_settings_floating() {
 	// Register Setting
 	register_setting( 
@@ -384,6 +403,7 @@ function superwebshare_register_settings_floating() {
 			);
 }
 add_action( 'admin_init', 'superwebshare_register_settings_floating' );
+
 /**
  * Validate and sanitize user input before its saved to database
  *
@@ -395,6 +415,7 @@ function superwebshare_validater_and_sanitizer( $settings ) {
 	$settings['normal_share_button_text'] = sanitize_text_field( isset($settings['normal_share_button_text']) ) ? sanitize_text_field( $settings['normal_share_button_text'] ) : 'Share';
 	return $settings;
 }
+
 /**
  * Floating - Validate and sanitize user input before its saved to database
  *
@@ -421,12 +442,14 @@ function superwebshare_get_settings() {
 				'normal_share_button_text'		=>	'Share',	// content for share button
 				'normal_share_color'			=>	'#BD3854',	// default color for normal share button
 				'superwebshare_normal_enable'	=>	'disable',	// enable by default
+				'superwebshare_normal_amp_enable' => 'enable' //1.4.3 amp settings
 		
 			);
 	$settings = get_option( 'superwebshare_settings', $defaults );
 	
 	return $settings;
 }
+
 /**
  * Get floating settings from database
  *
