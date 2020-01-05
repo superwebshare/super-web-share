@@ -193,7 +193,7 @@ function superwebshare_floating_position_bottom_cb() {
 }
 
 /**
- * Enable/Disable share button : Floating Button
+ * Enable/Disable share button for Floating Button
  *
  * @since 1.4.4
  */ 
