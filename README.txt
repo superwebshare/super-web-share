@@ -8,11 +8,11 @@ Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Super Web Share helps to easily add native share prompt to your website for easy page/post sharing.
+Super Web Share helps to easily add native share prompt to your website for easy page/post sharing in less than a minute.
 
 == Description ==
 
-Super Web Share is a WordPress based native share plugin that helps users to easily share the page/post with others by prompting the native share action. As SuperWebShare only shows the apps installed within the device upon the share prompt, the rate of sharing of post/page will be higher. Due to that reason website developers can skip the usage of other social media icons upon their website and keep the share more prominent. Super Web Share plugin for WordPress helps to increase your traffic and engagement by a single quick click to share the website with your friends and social medias. Super Web Share works on all supported browsers like Chrome for Android, Edge for Android, Brave for Android and also on Opera for Android. It will show the native apps which are installed upon the device once you share the article with others, due to that users can easily share the page/post with other's easily in just a click. Upon the native share which prompts up, if the users needs they can also copy the link of the website easily.
+Super Web Share is a WordPress based native share plugin that helps users to easily share the page/post with others by prompting the native share action. As SuperWebShare only shows the apps installed within the device upon the share prompt, the rate of sharing of post/page will be higher. Due to that reason website developers can skip the usage of other social media icons upon their website and keep the share more prominent. Super Web Share plugin for WordPress helps to increase your traffic and engagement by a single quick click to share the website with your friends and social medias. Super Web Share works on all supported browsers like Chrome for Android, Edge for Android, Brave for Android and also on Opera for Android. It will show the native apps which are installed upon the device once you share the article with others, due to that users can easily share the page/post with other's super easily in just a click. Upon the native share which prompts up, if the users needs they can also copy the link of the website easily.
 
 It takes less than a minute to setup Super Web Share, and we provide a clean uninstall by removing the entire data entry it creates. We also won't save any settings to your database until you manually save the settings.
 
@@ -64,6 +64,10 @@ You can report the bugs and features you need at our [GitHub repository](https:/
 
 You can contribute to this Web Share plugin via our [GitHub repository](https://github.com/superwebshare/SuperWebShare-WordPress-Plugin) 
 
+= Did I need to register or signup anywhere to use Super Web Share plugin? =
+
+No, super web share is a super easy to setup for anyone to create native share on there websites without any registration needed. If the browser supports the API it will do the magic prompt over those browsers. 
+
 = Is SuperWebShare plugin GDPR Compliant? =
 
 Yes, SuperWebShare is fully GDPR Compliant. Unlike other social sharing tools, this share plugin does not use any cookies, tracking scripts, or store any user data.
@@ -74,6 +78,16 @@ Yes, SuperWebShare is fully GDPR Compliant. Unlike other social sharing tools, t
 2. Native Share prompt on Google Chrome for Android browser, when Share button is tapped
 
 == Changelog ==
+
+= 1.4.4 =
+Release Date: January 17th, 2020
+
+
+Enhancements:
+
+* Now we're supporting AMP pages.
+* AMP settings options added to dashboard for enabling native web share button over AMP pages for before and after post content
+* AMP settings options added to floating button settings
 
 = 1.4.3 =
 Release Date: December 28th, 2019

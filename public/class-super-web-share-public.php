@@ -254,34 +254,6 @@ function superwebshare_amp_normal_button_code($content) {
 }
 
 /**
-	 * Inline Styles for Share Button (Icon)
-	 *
-	 * @param string $content The post content
-	 * @return string Icon for Share Button
-	 * @since 1.4.1
-*/
-	function superwebshare_frontent_inline_styles($content) {
-		if ( ! ( function_exists( 'is_amp_endpoint' ) && is_amp_endpoint() ) && ! ( function_exists( 'ampforwp_is_amp_endpoint' ) && ampforwp_is_amp_endpoint() ) ) {
-		 $settings_floating = superwebshare_get_settings_floating();
-		$settings = superwebshare_get_settings();
-			if (($settings_floating['superwebshare_floating_enable'] == 'enable') || ($settings['superwebshare_normal_enable'] == 'enable')) {
-				if (is_single()
-					|| (isset($settings_floating['floating_display_page']) == '1' && is_page())
-					|| (isset($settings_floating['floating_display_archive']) == '1' && is_archive())
-					|| (isset($settings_floating['floating_display_home']) == '1' && is_home())
-					|| (isset($settings['normal_display_page']) == '1' && is_page())
-					|| (isset($settings['normal_display_archive']) == '1' && is_archive())
-					|| (isset($settings['normal_display_home']) == '1' && is_home())
-				) {
-					echo '<style type="text/css"> .superwebshare_prompt::before { background-image: url(' . plugin_dir_url (__FILE__) . 'assets/android_share.svg);
-				} 
-					</style>' . PHP_EOL;
-				}
-			}
-		}
-	}
-
-/**
 	 * AMP social floating button code
 	 *
 	 * @return string Icon for Share Button
