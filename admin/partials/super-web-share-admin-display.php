@@ -18,7 +18,7 @@ function superwebshare_normal_description_cb() {
 	$settings = superwebshare_get_settings();
 	?>
 		<tr valign="top">
-		<p>Settings to share button above and below of the page/post content</p>
+.		<p><b>Please Note: </b>Super Web Share button can be seen on browsers like <code>Chrome for Android</code>, <code>Edge for Android</code>, <code>Opera for Android</code>, <code>Samsung Internet for Android</code>, <code>Safari for iOS</code> and <code>Brave for Android</code> as those are browsers which currently supports native web share. Please test out over these browsers + devices once after activation.</p>
 		</tr>
 	<?php
 }
@@ -114,7 +114,8 @@ function superwebshare_floating_description_cb() {
 	$settings_floating = superwebshare_get_settings_floating();
 	?>
 		<tr valign="top">
-		<p>Settings to show floating share button on pages/posts</p>
+			<p>Settings to show floating share button on pages/posts.</p>
+			<p><b>Please Note: </b>Super Web Share button can be seen on browsers like <code>Chrome for Android</code>, <code>Edge for Android</code>, <code>Opera for Android</code>, <code>Samsung Internet for Android</code>, <code>Safari for iOS</code> and <code>Brave for Android</code> as those are browsers which currently supports native web share. Please test out over these browsers + devices once after activation.</p>
 		</tr>
 	<?php
 }
@@ -142,7 +143,7 @@ function superwebshare_floating_color_cb() {
 	?>
 		<input type="text" name="superwebshare_floatingsettings[floating_share_color]" id="superwebshare_floatingsettings[floating_share_color]" class="superwebshare-colorpicker" value="<?php echo isset( $settings_floating['floating_share_color'] ) ? esc_attr( $settings_floating['floating_share_color']) : '#D5E0EB'; ?>" data-default-color="#000000">
 			<p class="description">
-				<?php _e('Select the color that you would like to add to the floating share button. The floating share button can be seen on browsers like <code>Chrome for Android</code>, <code>Edge for Android</code>, <code>Opera for Android</code>, <code>Samsung Internet for Android</code>, <code>Safari for iOS</code> and <code>Brave Browser for Android</code>.', 'super-web-share'); ?>
+				<?php _e('Select the color that you would like to add to the floating share button.', 'super-web-share'); ?>
 			</p>
     <?php
 }
