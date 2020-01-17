@@ -77,7 +77,7 @@ Yes, SuperWebShare is fully GDPR Compliant. Unlike other social sharing tools, t
 1. Settings page in WordPress Admin > Super Web Share
 2. Native Share prompt on Google Chrome for Android browser, when Share button is tapped
 
-== Changelog ==
+== Changelog == 
 
 = 1.4.4 =
 Release Date: January 18th, 2020
