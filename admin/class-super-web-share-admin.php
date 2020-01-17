@@ -115,15 +115,9 @@ add_filter( 'plugin_row_meta', 'superwebshare_plugin_row_meta', 10, 2 );
 * @since    1.4.2
 */
 function superwebshare_admin_notice_activation() {
-
-	// Notices only for admins
-	if ( ! current_user_can( 'manage_options' ) ) {
-		return;
-	}
  
-	// Return if transient is not set
-	if ( ! get_transient( 'superwebshare_admin_notice_activation' ) ) {
-		return;
+	// Admin notice for plugin activation
+	if ( get_transient( 'superwebshare_admin_notice_activation' ) ) {
 
 	// Admin notice on plugin activation
 	// Do not display link to the settings page, if already within the Settings Page
