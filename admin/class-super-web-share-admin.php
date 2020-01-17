@@ -115,11 +115,17 @@ add_filter( 'plugin_row_meta', 'superwebshare_plugin_row_meta', 10, 2 );
 * @since    1.4.2
 */
 function superwebshare_admin_notice_activation() {
+
+	// Notices only for admins
+	if ( ! current_user_can( 'manage_options' ) ) {
+		return;
+	}
  
 	// Return if transient is not set
 	if ( ! get_transient( 'superwebshare_admin_notice_activation' ) ) {
 		return;
-	
+
+	// Admin notice on plugin activation
 	// Do not display link to the settings page, if already within the Settings Page
 	$screen = get_current_screen();
 	$superwebshare_link_text = ( strpos( $screen->id, 'superwebshare' ) === false ) ? sprintf( __( '<a href="%s">Customize your share button settings &rarr;</a>', 'super-web-share' ), admin_url( 'admin.php?page=superwebshare&tab=general' ) ) : '';
@@ -203,35 +209,6 @@ function superwebshare_activation_redirect( $plugin, $network_wide ) {
 	exit( wp_redirect( admin_url( 'admin.php?page=superwebshare&tab=general' ) ) );
 }
 add_action( 'activated_plugin', 'superwebshare_activation_redirect', PHP_INT_MAX, 2 );
-
-/**
- * Admin Notices
- *
- * @since 1.2 Admin notice on plugin activation
- */
-function superwebshare_admin_notices() {
-	
-	// Notices only for admins
-	if ( ! current_user_can( 'manage_options' ) ) {
-		return;
-	}
- 
-    // Admin notice on plugin activation
-	if ( get_transient( 'superwebshare_admin_notice_activation' ) ) {
-	
-		$superwebshare_is_ready = ' ' . __( 'Your floating share button is ready with the default settings. ', 'super-web-share' );
-		
-		// Do not display link to settings UI if we are already in the UI.
-		$screen_link = get_current_screen();
-		$superwebshare_ui_link_text = ( strpos( $screen_link->id, 'superwebshare' ) === false ) ? sprintf( __( '<a href="%s">Customize your web share button &rarr;</a>', 'super-web-share' ), admin_url( 'admin.php?page=superwebshare' ) ) : '';
-		
-		echo '<div class="updated notice is-dismissible"><p>' . __( 'Thank you for installing <strong>Super Web Share!</strong> ', 'super-web-share' ) . $superwebshare_is_ready . $superwebshare_ui_link_text . '</p></div>';
-		
-		// Delete transient
-		delete_transient( 'superwebshare_admin_notice_activation' );
-	}
-}
-add_action( 'admin_notices', 'superwebshare_admin_notices' );
 
 /**
  * HTTPS Status Checker
