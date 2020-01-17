@@ -276,4 +276,5 @@ function superwebshare_amp_floating_button_code() {
 			}
 		}
 	}
+}
 add_action('wp_footer', 'superwebshare_amp_floating_button_code');
