@@ -242,7 +242,7 @@ function superwebshare_admin_interface_render() {
 	?>
 	
 	<div class="wrap">	
-		<h1>Super Web Share</h1>
+		<h1>Super Web Share <sup><?php echo SUPERWEBSHARE_VERSION; ?></sup></h1>
 
 
 		<?php
