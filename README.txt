@@ -80,7 +80,7 @@ Yes, SuperWebShare is fully GDPR Compliant. Unlike other social sharing tools, t
 == Changelog ==
 
 = 1.4.4 =
-Release Date: January 17th, 2020
+Release Date: January 18th, 2020
 
 
 Enhancements:
