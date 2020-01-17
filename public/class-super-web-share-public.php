@@ -267,6 +267,7 @@ function superwebshare_amp_floating_button_code() {
 				|| ( isset($settings_floating['floating_display_page']) == '1' && is_page() )
 				|| ( isset($settings_floating['floating_display_archive']) == '1' && is_archive() )
 				|| ( isset($settings_floating['floating_display_home']) == '1' && is_home() ) ) {
+					if ($settings_floating['superwebshare_floating_amp_enable'] == 'enable'){
 		
 					$tags  = '<!-- Floating Button by SuperWebShare - Native Share Plugin for WordPress -->' . PHP_EOL;
     				echo '<div class="sws_superaction"><amp-social-share type="system" style="background-color: '. $settings_floating['floating_share_color'] .';width: 48px; height: 48px; border-radius:28px;padding:0 24px 0 52px;text-indent:0;width:auto;align-items:center;box-shadow:0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12);position:relative" class="round superwebshare_prompt superwebshare_button amp-wp-ce4be5a"></amp-social-share></span></div>' . PHP_EOL;
