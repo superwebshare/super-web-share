@@ -77,7 +77,7 @@ Yes, SuperWebShare is fully GDPR Compliant. Unlike other social sharing tools, t
 1. Settings page in WordPress Admin > Super Web Share
 2. Native Share prompt on Google Chrome for Android browser, when Share button is tapped
 
-== Changelog == 
+== Changelog ==
 
 = 1.4.4 =
 Release Date: January 19th, 2020
@@ -85,7 +85,7 @@ Release Date: January 19th, 2020
 
 Enhancements:
 
-* Now we're supporting AMP pages.
+* Now we're supporting AMP pages
 * AMP settings options added to dashboard for enabling native web share button over AMP pages for before and after post content
 * AMP settings options added to floating button settings
 
