@@ -24,7 +24,7 @@ Currently, Super Web Share plugin provides a share button before and after the p
 
 #### Want to test to know how SuperWebShare works on a website? 
 
-* Open [JoseVarghese.com](https://www.josevarghese.com) in a supported device. See [FAQ to know the supported browsers](https://wordpress.org/plugins/super-web-share/#upon%20which%20all%20browsers%20does%20the%20super%20web%20share%20plugin%20works)
+* Open [SuperWebShare.com](https://www.superwebshare.com) in a supported device. See [FAQ to know the supported browsers](https://wordpress.org/plugins/super-web-share/#upon%20which%20all%20browsers%20does%20the%20super%20web%20share%20plugin%20works)
 * You can see a floating button at the right bottom corner
 * Tap on it, instantly you can see the native Web Share prompt with the applications which you can share the page.
 * Tap on the icon of application from the prompt, and send. 
