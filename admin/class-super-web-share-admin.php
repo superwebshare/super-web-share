@@ -222,7 +222,7 @@ function superwebshare_status_interface_render() {
 			printf( '<h5>Status</h5>' );
 			if ( is_ssl() ) {
 				
-				printf( '<p><span class="dashicons dashicons-yes" style="color: #46b460;"></span> ' . __( 'Wow!!! Your website is served over HTTPS. SuperWebShare will work perfectly upon your website.', 'super-web-share' ) . '</p>' );
+				printf( '<p><span class="dashicons dashicons-yes" style="color: #46b460;"></span> ' . __( 'Awesome!!! Your website is served over HTTPS. SuperWebShare will work perfectly upon your website, if you test it over <code>Chrome for Android</code>, <code>Edge for Android</code>, <code>Samsung Internet for Android</code>, <code>Safari for iOS</code> and <code>Brave for Android</code> as those are browsers which currently supports native web share. Please test out over these browsers + devices once after activating the button you would like to feature.', 'super-web-share' ) . '</p>' );
 			} else {
 				
 				printf( '<p><span class="dashicons dashicons-no-alt" style="color: #dc3235;"></span> ' . __( 'Looks like the website is not served fully via HTTPS. As for supporting SuperWebShare, your website should be served fully over HTTPS and green padlock should be there upon the address bar. ', 'super-web-share' ) . '</p>' );
