@@ -1,0 +1,220 @@
+﻿# Copyright (C) 2020 Super Web Share
+# This file is distributed under the same license as the Super Web Share package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Super Web Share 1.4.4\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/qs_tool_wp_pot_gen_1583311971_6233_772510\n"
+"POT-Creation-Date: 2020-03-04 08:52:51+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2020-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Jose Varghese <jose@superwebshare.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: admin/class-super-web-share-admin.php:69
+#: admin/class-super-web-share-admin.php:71
+#: admin/class-super-web-share-admin.php:73
+#: admin/class-super-web-share-admin.php:74
+msgid "Super Web Share"
+msgstr ""
+
+#: admin/class-super-web-share-admin.php:71
+msgid " General Settings"
+msgstr ""
+
+#: admin/class-super-web-share-admin.php:73
+msgid "Floating Button"
+msgstr ""
+
+#: admin/class-super-web-share-admin.php:74
+msgid "Status"
+msgstr ""
+
+#: admin/class-super-web-share-admin.php:87
+msgid "Settings"
+msgstr ""
+
+#: admin/class-super-web-share-admin.php:103
+msgid "Demo"
+msgstr ""
+
+#: admin/class-super-web-share-admin.php:125
+msgid "<a href=\"%s\">Customize your share button settings &rarr;</a>"
+msgstr ""
+
+#: admin/class-super-web-share-admin.php:127
+msgid "Thank you for installing <strong>Super Web Share</strong> "
+msgstr ""
+
+#: admin/class-super-web-share-admin.php:134
+msgid "<strong>Super Web Share</strong>: Successfully updated to the latest version."
+msgstr ""
+
+#: admin/class-super-web-share-admin.php:153
+msgid ""
+"Thank you for using Super Web Share :) If you like it, please leave <a href=\"https://wordpress.org/support/plugin/super-web-share/reviews/?rate=5#new-post\" target=\"_blank\">a ★★★★★ rating </a> to support us on WordPress.org to help us spread the word to the community. Thanks a lot!  \n"
+"\t\t</li>"
+msgstr ""
+
+#: admin/class-super-web-share-admin.php:225
+msgid "Awesome!!! Your website is served over HTTPS. SuperWebShare will work perfectly upon your website, if you test it over <code>Chrome for Android</code>, <code>Edge for Android</code>, <code>Samsung Internet for Android</code>, <code>Safari for iOS</code> and <code>Brave for Android</code> as those are browsers which currently supports native web share. Please test out over these browsers + devices once after activating the button you would like to feature."
+msgstr ""
+
+#: admin/class-super-web-share-admin.php:228
+msgid "Looks like the website is not served fully via HTTPS. As for supporting SuperWebShare, your website should be served fully over HTTPS and green padlock should be there upon the address bar. "
+msgstr ""
+
+#: admin/class-super-web-share-admin.php:250
+msgid "<br>General Settings"
+msgstr ""
+
+#: admin/class-super-web-share-admin.php:265
+msgid "Enable/Disable the share button"
+msgstr ""
+
+#: admin/class-super-web-share-admin.php:273
+msgid "Display settings of Share Button"
+msgstr ""
+
+#: admin/class-super-web-share-admin.php:281
+msgid "Position of Share Button"
+msgstr ""
+
+#: admin/class-super-web-share-admin.php:289
+msgid "Text for share button"
+msgstr ""
+
+#: admin/class-super-web-share-admin.php:297
+msgid "Button Color"
+msgstr ""
+
+#: admin/class-super-web-share-admin.php:305
+msgid "Enable/Disable the share button over AMP Pages"
+msgstr ""
+
+#: admin/class-super-web-share-admin.php:323
+msgid "<br>Floating Button Settings"
+msgstr ""
+
+#: admin/class-super-web-share-admin.php:338
+msgid "Enable/Disable the floating share button"
+msgstr ""
+
+#: admin/class-super-web-share-admin.php:346
+msgid "Button color"
+msgstr ""
+
+#: admin/class-super-web-share-admin.php:354
+msgid " Display floating button"
+msgstr ""
+
+#: admin/class-super-web-share-admin.php:362
+msgid "Position of the floating button"
+msgstr ""
+
+#: admin/class-super-web-share-admin.php:370
+msgid "Position from Bottom"
+msgstr ""
+
+#: admin/class-super-web-share-admin.php:378
+msgid "Enable/Disable the floating share button over AMP Pages"
+msgstr ""
+
+#: admin/partials/super-web-share-admin-display.php:34
+#: admin/partials/super-web-share-admin-display.php:103
+#: admin/partials/super-web-share-admin-display.php:131
+#: admin/partials/super-web-share-admin-display.php:208
+msgid "Enable"
+msgstr ""
+
+#: admin/partials/super-web-share-admin-display.php:35
+#: admin/partials/super-web-share-admin-display.php:104
+#: admin/partials/super-web-share-admin-display.php:132
+#: admin/partials/super-web-share-admin-display.php:209
+msgid "Disable"
+msgstr ""
+
+#: admin/partials/super-web-share-admin-display.php:47
+msgid "Display the share button on pages"
+msgstr ""
+
+#: admin/partials/super-web-share-admin-display.php:48
+msgid "Display the share button on archive pages"
+msgstr ""
+
+#: admin/partials/super-web-share-admin-display.php:49
+msgid "Display the share button on posts listing page"
+msgstr ""
+
+#: admin/partials/super-web-share-admin-display.php:61
+msgid "Before the content of your post"
+msgstr ""
+
+#: admin/partials/super-web-share-admin-display.php:62
+msgid "After the content of your post"
+msgstr ""
+
+#: admin/partials/super-web-share-admin-display.php:63
+msgid "Before AND After the content of your post"
+msgstr ""
+
+#: admin/partials/super-web-share-admin-display.php:76
+msgid "This text will be displayed within the button"
+msgstr ""
+
+#: admin/partials/super-web-share-admin-display.php:146
+msgid "Select the color that you would like to add to the floating share button."
+msgstr ""
+
+#: admin/partials/super-web-share-admin-display.php:159
+msgid "Display the floating button on pages"
+msgstr ""
+
+#: admin/partials/super-web-share-admin-display.php:160
+msgid "Display the floating button on archive pages"
+msgstr ""
+
+#: admin/partials/super-web-share-admin-display.php:161
+msgid "Display the floating button on posts listing page"
+msgstr ""
+
+#: admin/partials/super-web-share-admin-display.php:175
+msgid "Bottom - Right"
+msgstr ""
+
+#: admin/partials/super-web-share-admin-display.php:176
+msgid "Bottom - Left"
+msgstr ""
+
+#: admin/partials/super-web-share-admin-display.php:229
+msgid "Settings saved."
+msgstr ""
+
+#: admin/partials/super-web-share-admin-display.php:235
+msgid "Floating Settings saved."
+msgstr ""
+
+#: admin/partials/super-web-share-admin-display.php:270
+#: admin/partials/super-web-share-admin-display.php:278
+msgid "Save Settings"
+msgstr ""
+#. Plugin Name of the plugin/theme
+msgid "Super Web Share"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://www.josevarghese.com"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Super Web Share helps to quickly add the Native Share option to your WordPress website"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Super Web Share"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://www.josevarghese.com"
+msgstr ""
