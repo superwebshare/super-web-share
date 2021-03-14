@@ -12,7 +12,6 @@
     -ms-flex-direction: column;
     flex-direction: column;
     position: fixed;
-    right: 24px;
     z-index: 100;
 }
 

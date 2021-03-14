@@ -121,7 +121,7 @@ public function init() {
 				|| ( isset($settings_floating['floating_display_home']) == '1' && is_home() ) ) {
 		
 					$tags  = '<!-- Floating Button by SuperWebShare - Native Share Plugin for WordPress -->' . PHP_EOL;
-    				echo '<div class="sws_superaction"><button class="superwebshare_prompt superwebshare_tada superwebshare_button" style="background-color: '. $settings_floating['floating_share_color'] .'; '.$settings_floating['floating_position'].':'.$settings_floating['floating_position_leftright'].'px; bottom:'.$settings_floating['floating_position_bottom'].'px;";><span> Share </span></button></div>' . PHP_EOL;
+    				echo '<div class="sws_superaction" style="'.$settings_floating['floating_position'].':24px"><button class="superwebshare_prompt superwebshare_tada superwebshare_button" style="background-color: '. $settings_floating['floating_share_color'] .'; '.$settings_floating['floating_position'].':'.$settings_floating['floating_position_leftright'].'px; bottom:'.$settings_floating['floating_position_bottom'].'px;";><span> Share </span></button></div>' . PHP_EOL;
 					echo $tags;
 				}
 			}
