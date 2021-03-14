@@ -100,7 +100,7 @@ public function init() {
 					|| ( isset($settings['normal_display_page']) == '1' && is_page() )
 					|| ( isset($settings['normal_display_archive']) == '1' && is_archive() )
 					|| ( isset($settings['normal_display_home']) == '1' && is_home() ) ) {
-						wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/super-web-share-public.js', array( 'jquery' ), $this->version, false );
+						wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/super-web-share-public.js', array(), $this->version, false );
 					}
 			}
 	}
