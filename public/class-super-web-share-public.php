@@ -90,6 +90,7 @@ public function init() {
 	 * @since    1.0.0
 	 */
 	public function enqueue_scripts() {
+		if ( ! ( function_exists( 'is_amp_endpoint' ) && is_amp_endpoint() ) && ! ( function_exists( 'ampforwp_is_amp_endpoint' ) && ampforwp_is_amp_endpoint() ) ) {
 			$settings_floating = superwebshare_get_settings_floating();
 			$settings = superwebshare_get_settings();
 			if (( $settings_floating['superwebshare_floating_enable'] == 'enable') || ( $settings['superwebshare_normal_enable'] == 'enable')) {
@@ -103,6 +104,7 @@ public function init() {
 						wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/super-web-share-public.js', array(), $this->version, false );
 					}
 			}
+		}
 	}
 }
 
@@ -121,7 +123,7 @@ public function init() {
 				|| ( isset($settings_floating['floating_display_home']) == '1' && is_home() ) ) {
 		
 					$tags  = '<!-- Floating Button by SuperWebShare - Native Share Plugin for WordPress -->' . PHP_EOL;
-    				echo '<div class="sws_superaction" style="'.$settings_floating['floating_position'].':24px"><button class="superwebshare_prompt superwebshare_tada superwebshare_button" style="background-color: '. $settings_floating['floating_share_color'] .'; '.$settings_floating['floating_position'].':'.$settings_floating['floating_position_leftright'].'px; bottom:'.$settings_floating['floating_position_bottom'].'px;";><span> Share </span></button></div>' . PHP_EOL;
+    				echo '<div class="sws_superaction" style="'.$settings_floating['floating_position'].':24px"><button class="hidden superwebshare_prompt superwebshare_tada superwebshare_button" style="background-color: '. $settings_floating['floating_share_color'] .'; '.$settings_floating['floating_position'].':'.$settings_floating['floating_position_leftright'].'px; bottom:'.$settings_floating['floating_position_bottom'].'px;";><span> Share </span></button></div>' . PHP_EOL;
 					echo $tags;
 				}
 			}
