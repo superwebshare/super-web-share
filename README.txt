@@ -50,7 +50,7 @@ You can easily customize the color, position, and pages you would like to show t
 
 = Which all browsers do the Super Web Share plugin works? =
 
-The Web Share plugin works on browsers like Chrome for Android, iOS Safari (from version 12.2), Samsung Internet for Android (version 9.2+), Edge for Android, Brave for Android, and opera for Android.
+The Web Share plugin works on browsers like Chrome for Android, iOS Safari (from version 12.2), Samsung Internet for Android (version 9.2+), Edge for Android, Brave for Android, Opera for Android, Google Chrome 89 or later on Chrome OS and Windows and Safari 12 or later on macOS and iOS.
 
 = Will the floating share button and normal button on page and post will show upon non-supported browsers? =
 
