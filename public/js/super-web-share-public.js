@@ -18,8 +18,11 @@ DOMReady(function() {
 
 function hasPermission() {
   if(typeof navigator.share==='undefined' || !navigator.share){
-    document.getElementsByClassName('superwebshare_prompt')[0].style.display = 'none';
-	  document.getElementsByClassName('superwebshare_prompt')[1].style.display = 'none';
+	  var x = document.getElementsByClassName("superwebshare_prompt") || document.getElementsByClassName(".superwebshare_prompt .span");
+		var i;
+		for (i = 0; i < x.length; i++) {
+	    x[i].style.display = 'none';
+		}
     console.log('SuperWebShare: Your browser does not seems to support SuperWebShare, as the browser is incompatible');
   }
 }
