@@ -3,8 +3,9 @@ Contributors: superwebshare
 Donate link: https://www.superwebshare.com
 Tags: share button, web share, native share, Share API, share
 Requires at least: 3.0.1
-Tested up to: 5.9
-Stable tag: trunk
+Tested up to: 5.9.2
+Stable tag: 2.1.1
+Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -84,16 +85,22 @@ Yes, SuperWebShare is fully GDPR Compliant. Unlike other social sharing tools, t
 
 == Changelog ==
 
+= 2.1.1 =
+Release Date: April 1st, 2022
+
+Bug Fix:
+* Removed the Copy Link URL encoding. Thanks to [kscl](https://wordpress.org/support/users/kscl/) for reporting this issue.
+
 = 2.1 =
 Release Date: March 31st, 2022
 
 New Features:
 
-* Now you can select all the post types on your website to show the Super Web Share buttons.
+* Now you can select all the post types on your website to decide to show the Super Web Share buttons.
 * Added option to enable and disable within all the pages/post types pages via our Metabox. You can now fully control on which page you need to show the Super Web Share button for Floating and Inline buttons.
 * Added option to change the color of the fallback popup
-* Now you can add the button text for the Floating button. Thanks to [aga2442](https://wordpress.org/support/users/aga2442/) for the feature request.
-* Option to select the layout you prefer (see the Fallback tab)
+* Added the option to change the button text for the Floating button. Thanks to [aga2442](https://wordpress.org/support/users/aga2442/) for the feature request.
+* Option to select the layout you prefer for the fallback (see the Fallback tab)
 * Option to select the fallback prompt for the Fallback.
 
 Bug Fix:

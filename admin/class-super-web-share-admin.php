@@ -141,7 +141,7 @@ function superwebshare_version_update(){
 	}
 
 	if ( $current_ver === false ) {
-		// Save SuperPWA version to database.
+		// Save SuperWebShare version to database.
 		add_option( 'superwebshare_version', SUPERWEBSHARE_VERSION );
 
 		if( get_option('superwebshare_settings' ) == false ){
@@ -240,15 +240,15 @@ function superwebshare_add_menu_links() {
 	// Main menu page --  superwebshare_options_page earlier
 	add_menu_page( __( 'Super Web Share', 'super-web-share' ), __( 'Super Web Share', 'super-web-share' ), 'manage_options', 'superwebshare','superwebshare_admin_interface_render', 'dashicons-share', 100 );
     // Floating button Settings page - since 1.4.2
-    add_submenu_page( 'superwebshare', __( 'Super Web Share', 'super-web-share' ), __( 'Floating Button', 'super-web-share' ), 'manage_options', 'superwebshare', 'superwebshare_admin_interface_render' );
+    add_submenu_page( 'superwebshare', __( 'Floating Button - Super Web Share', 'super-web-share' ), __( 'Floating Button', 'super-web-share' ), 'manage_options', 'superwebshare', 'superwebshare_admin_interface_render' );
     // Inline Settings page - Same as main menu page
-	add_submenu_page( 'superwebshare', __( 'Super Web Share', 'super-web-share' ), __( 'Inline Content', 'super-web-share' ), 'manage_options', 'superwebshare-inline', 'superwebshare_admin_interface_render' );
+	add_submenu_page( 'superwebshare', __( 'Inline Content - Super Web Share', 'super-web-share' ), __( 'Inline Content', 'super-web-share' ), 'manage_options', 'superwebshare-inline', 'superwebshare_admin_interface_render' );
 	// Fallback Settings page - since 2.0
-    add_submenu_page( 'superwebshare', __( 'Super Web Share', 'super-web-share' ), __( 'Fallback', 'super-web-share' ), 'manage_options', 'superwebshare-fallback', 'superwebshare_admin_interface_render' );
+    add_submenu_page( 'superwebshare', __( 'Fallback - Super Web Share', 'super-web-share' ), __( 'Fallback', 'super-web-share' ), 'manage_options', 'superwebshare-fallback', 'superwebshare_admin_interface_render' );
 	//Status - submenu
-    add_submenu_page( 'superwebshare', __( 'Super Web Share', 'super-web-share' ), __( 'Status', 'super-web-share' ), 'manage_options', 'superwebshare-status', 'superwebshare_status_interface_render' );
+    add_submenu_page( 'superwebshare', __( 'Status - Super Web Share', 'super-web-share' ), __( 'Status', 'super-web-share' ), 'manage_options', 'superwebshare-status', 'superwebshare_status_interface_render' );
 	//Support - submenu not needed to show
-	add_submenu_page( 'superwebshare',  __( 'Super Web Share', 'super-web-share' ), 'Support', 'manage_options', 'superwebshare-support', 'superwebshare_admin_interface_render',9999 );
+	add_submenu_page( 'superwebshare',  __( 'Support - Super Web Share', 'super-web-share' ), 'Support', 'manage_options', 'superwebshare-support', 'superwebshare_admin_interface_render',9999 );
 	}
 add_action( 'admin_menu', 'superwebshare_add_menu_links' );
 

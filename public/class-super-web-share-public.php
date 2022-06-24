@@ -225,6 +225,7 @@ function superwebshare_inline_button( $text = '', $color = '' , $echo = true ){
 			$layout =  empty( $settings_fallback[ 'fallback_layout' ] ) ? 1 : $settings_fallback[ 'fallback_layout' ] ;
     		if ( can_display_button( 'inline' ) ||  can_display_button( 'floating' ) ) {
 				$page_url = is_home() ? urlencode( home_url() ) : urlencode( get_the_permalink() );
+				$copy_url = is_home() ? home_url() : get_the_permalink();
 
 				$default_bg =  superwebshare_settings_default( 'fallback' )[ 'fallback_modal_background' ];
 
@@ -245,7 +246,7 @@ function superwebshare_inline_button( $text = '', $color = '' , $echo = true ){
 								<a  target="_blank" href="https://api.whatsapp.com/send/?text=' . $page_url . '"> <i  class="sws-icon sws-icon-whatsapp"></i> <p>WhatsApp</p></a>
 							</div>
 							<div class="sws-copy">
-								<a href="#" data-url="' . $page_url . '"> <i  class="sws-icon sws-icon-copy"></i><span>Copy Link</span></a>
+								<a href="#" data-url="' . $copy_url . '"> <i  class="sws-icon sws-icon-copy"></i><span>Copy Link</span></a>
 							</div>
 
 						</div>
