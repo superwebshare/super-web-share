@@ -42,12 +42,13 @@ class Super_Web_Share_Public {
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
 		add_action('wp_footer', 'superwebshare_floating_button_code');
-		add_action('wp_footer', 'superwebshare_frontent_inline_styles');
+		add_action('wp_footer', 'superwebshare_frontend_inline_styles');
 		add_action('the_content', 'superwebshare_normal_button_code');
-		if ( function_exists( 'is_amp_endpoint' ) || function_exists( 'ampforwp_is_amp_endpoint')) {
+		if ( function_exists( 'is_amp_endpoint' ) || function_exists( 'ampforwp_is_amp_endpoint' ) ) {
 			add_action( 'wp_head', 'superwebshare_amp_add_social_share_head', 0 );
 			add_action('the_content', 'superwebshare_amp_normal_button_code');
     	}
+		add_action( 'wp_head', 'superwebshare_add_js_settings', 0 ); // Added js configuration for frontend actions
 	}
 	
 	
@@ -86,10 +87,11 @@ public function init() {
 	}
 	/**
 	 * Register the JavaScript for the public-facing side of the site.
-	 *
+	 * The JavaScript file won't register on the AMP pages, as JS won't work within the AMP.
 	 * @since    1.0.0
 	 */
 	public function enqueue_scripts() {
+		if ( ! ( function_exists( 'is_amp_endpoint' ) && is_amp_endpoint() ) && ! ( function_exists( 'ampforwp_is_amp_endpoint' ) && ampforwp_is_amp_endpoint() ) ){
 			$settings_floating = superwebshare_get_settings_floating();
 			$settings = superwebshare_get_settings();
 			if (( $settings_floating['superwebshare_floating_enable'] == 'enable') || ( $settings['superwebshare_normal_enable'] == 'enable')) {
@@ -100,9 +102,10 @@ public function init() {
 					|| ( isset($settings['normal_display_page']) == '1' && is_page() )
 					|| ( isset($settings['normal_display_archive']) == '1' && is_archive() )
 					|| ( isset($settings['normal_display_home']) == '1' && is_home() ) ) {
-						wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/super-web-share-public.js', array(), $this->version, false );
+						wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/super-web-share-public.js', array(), $this->version, true );
 					}
 			}
+		}
 	}
 }
 
@@ -175,7 +178,7 @@ public function init() {
 	 * @return string Icon for Share Button
 	 * @since 1.4.1
 */
-	function superwebshare_frontent_inline_styles($content) {
+	function superwebshare_frontend_inline_styles( $content ) {
 		if ( ! ( function_exists( 'is_amp_endpoint' ) && is_amp_endpoint() ) && ! ( function_exists( 'ampforwp_is_amp_endpoint' ) && ampforwp_is_amp_endpoint() ) ) {
  		$settings_floating = superwebshare_get_settings_floating();
     	$settings = superwebshare_get_settings();
@@ -190,7 +193,30 @@ public function init() {
         		) {
             	echo '<style type="text/css"> .superwebshare_prompt::before { background-image: url(' . plugin_dir_url (__FILE__) . 'assets/android_share.svg);
                 	} 
-				</style>' . PHP_EOL;
+				</style>
+				<div class="modal-bg">
+					<div class="modal-container" style="background-color: ' . ( empty( $settings['normal_share_color'] )  ? 'inherit' : $settings['normal_share_color'] ) . '" >
+						<div class="modal-title">
+							Share
+						</div>
+						
+						<div class="modal-content">
+							<div class="sws-links">
+								<a  target="_blank" class="sws-open-in-tab" href="https://www.facebook.com/sharer/sharer.php?u=' . urlencode(get_the_permalink()) . '"  ><i class="sws-icon sws-icon-facebook"></i><p>Facebook</p></a>
+								<a  target="_blank" class="sws-open-in-tab" href="http://twitter.com/share?text=' . urlencode( get_the_title() ) . '&url=' . urlencode( get_the_permalink() ) . '" > <i  class="sws-icon sws-icon-twitter"></i><p> Twitter</p></a>
+								<a  target="_blank" class="sws-open-in-tab" href="https://www.linkedin.com/sharing/share-offsite/?url=' . urlencode( get_the_permalink() ) . '"> <i  class="sws-icon sws-icon-linked-in"></i> <p>LinkedIn</p></a>
+								<a  target="_blank" href="https://api.whatsapp.com/send/?text=' . urlencode( get_the_permalink() ) . '"> <i  class="sws-icon sws-icon-whatsapp"></i> <p>WhatsApp</p></a>
+							</div>
+							<div class="sws-copy">
+								<a href="#" data-url="' . get_the_permalink() . '">Copy Link</a>
+							</div>
+
+						</div>
+						<a href="#" class="sws-modal-close">×</a>
+					</div>
+				</div>
+				
+				';
 				}
 			}
 		}
@@ -198,7 +224,7 @@ public function init() {
 
 
 /**
-	 * AMP social share script
+	 * AMP social share JS script
 	 *
 	 * @return string Icon for Share Button
 	 * @since 1.4.4
@@ -210,6 +236,20 @@ function superwebshare_amp_add_social_share_head(){
 			$tags = '<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>' . PHP_EOL;
 			echo $tags;
 		}	
+	}
+	
+}
+
+/**
+	 * Fallback settings to register whether the settings is enabled or not on the browser
+	 *
+	 * @return code Fallback
+	 * @since 2.0
+*/
+function superwebshare_add_js_settings(){
+	if ( ! ( function_exists( 'is_amp_endpoint' ) && is_amp_endpoint() ) && ! ( function_exists( 'ampforwp_is_amp_endpoint' ) && ampforwp_is_amp_endpoint() ) ){
+	$settings = json_encode( superwebshare_get_settings_fallback() );
+	echo "<script type='text/javascript'>window.superWebShareFallback = $settings </script>";
 	}
 }
 
@@ -270,7 +310,7 @@ function superwebshare_amp_floating_button_code() {
 					if ($settings_floating['superwebshare_floating_amp_enable'] == 'enable'){
 		
 					$tags  = '<!-- Floating Button by SuperWebShare - Native Share Plugin for WordPress -->' . PHP_EOL;
-    				echo '<div class="sws_superaction"><amp-social-share type="system" style="background-color: '. $settings_floating['floating_share_color'] .';width: 48px; height: 48px; border-radius:28px;padding:0 24px 0 52px;text-indent:0;width:auto;align-items:center;box-shadow:0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12);position:relative" class="round superwebshare_prompt superwebshare_button amp-wp-ce4be5a"></amp-social-share></span></div>' . PHP_EOL;
+    				echo '<div class="sws_superaction" style="' . $settings_floating['floating_position'] . ':' . $settings_floating['floating_position_leftright'] . 'px; bottom: ' . $settings_floating['floating_position_bottom'] . 'px" ><amp-social-share type="system" width="52px" height="52px" style="background-color: '. $settings_floating['floating_share_color'] .';background-size:30px; border-radius:28px;padding:10px;text-indent:0;align-items:center;box-shadow:0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12);position:relative" class="round superwebshare_prompt superwebshare_button amp-wp-ce4be5a"></amp-social-share></span></div>' . PHP_EOL;
 					echo $tags;
 				}
 			}

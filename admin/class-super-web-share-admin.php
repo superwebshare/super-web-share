@@ -70,7 +70,9 @@ function superwebshare_add_menu_links() {
     // General Settings page - Same as main menu page
 	add_submenu_page( 'superwebshare', __( 'Super Web Share', 'super-web-share' ), __( ' General Settings', 'super-web-share' ), 'manage_options', 'superwebshare', 'superwebshare_admin_interface_render' );
     // Floating button Settings page - since 1.4.2
-    add_submenu_page( 'superwebshare', __( 'Super Web Share', 'super-web-share' ), __( 'Floating Button', 'super-web-share' ), 'manage_options', 'superwebshare&tab=floating', 'superwebshare_admin_interface_render' );
+    add_submenu_page( 'superwebshare', __( 'Super Web Share', 'super-web-share' ), __( 'Floating Button', 'super-web-share' ), 'manage_options', 'superwebshare-floating', 'superwebshare_admin_interface_render' );
+	// Fallback Settings page - since 2.0
+    add_submenu_page( 'superwebshare', __( 'Super Web Share', 'super-web-share' ), __( 'Fallback', 'super-web-share' ), 'manage_options', 'superwebshare-fallback', 'superwebshare_admin_interface_render' );
     add_submenu_page( 'superwebshare', __( 'Super Web Share', 'super-web-share' ), __( 'Status', 'super-web-share' ), 'manage_options', 'superwebshare-status', 'superwebshare_status_interface_render' );
 	}
 add_action( 'admin_menu', 'superwebshare_add_menu_links' );
@@ -100,7 +102,7 @@ function superwebshare_plugin_row_meta( $links, $file ) {
 	
 	if ( strpos( $file, 'super-web-share.php' ) !== false ) {
 		$new_links = array(
-				'demo' 	=> '<a href="https://www.superwebshare.com/?utm_source=WordPress-Demo" target="_blank">' . __( 'Demo', 'super-web-share' ) . '</a>',
+				'demo' 	=> '<a href="https://superwebshare.com/?utm_source=wordpress-plugin&utm_medium=wordpress-demo" target="_blank">' . __( 'Demo', 'super-web-share' ) . '</a>',
 				);
 		$links = array_merge( $links, $new_links );
 	}
@@ -222,10 +224,10 @@ function superwebshare_status_interface_render() {
 			printf( '<h5>Status</h5>' );
 			if ( is_ssl() ) {
 				
-				printf( '<p><span class="dashicons dashicons-yes" style="color: #46b460;"></span> ' . __( 'Awesome!!! Your website is served over HTTPS. SuperWebShare will work perfectly upon your website, if you test it over <code>Chrome for Android</code>, <code>Edge for Android</code>, <code>Samsung Internet for Android</code>, <code>Safari for iOS</code> and <code>Brave for Android</code> as those are browsers which currently supports native web share. Please test out over these browsers + devices once after activating the button you would like to feature.', 'super-web-share' ) . '</p>' );
+				printf( '<p><span class="dashicons dashicons-yes" style="color: #46b460;"></span> ' . __( 'Awesome! The website uses HTTPS. SuperWebShare will work perfectly upon your website if you test it over Chrome for Android, Edge for Android, Samsung Internet for Android, Safari for iOS, and Brave for Android, as those are browsers that currently support native web share. Please test out over these browsers and devices once after activating the button you would like to feature.', 'super-web-share' ) . '</p>' );
 			} else {
 				
-				printf( '<p><span class="dashicons dashicons-no-alt" style="color: #dc3235;"></span> ' . __( 'Looks like the website is not served fully via HTTPS. As for supporting SuperWebShare, your website should be served fully over HTTPS and green padlock should be there upon the address bar. ', 'super-web-share' ) . '</p>' );
+				printf( '<p><span class="dashicons dashicons-no-alt" style="color: #dc3235;"></span> ' . __( 'It looks like the website is not served fully via HTTPS. As for supporting the SuperWebShare native share button, your website should be served fully over HTTPS and needs a green padlock upon the address bar.  By default, our fallback share buttons will help to show share buttons on the browsers which are not yet supported', 'super-web-share' ) . '</p>' );
 			}
 		?>
 	</div>
@@ -302,7 +304,7 @@ function superwebshare_register_settings_normal() {
 			// Enable/Disable Share Button - AMP (1.4.4)
 			add_settings_field(
 				'superwebshare_enable_amp_share',									// ID
-				__('Enable/Disable the share button over AMP Pages', 'super-web-share'),		// Title
+				__('Show the inline share button over AMP Pages', 'super-web-share'),		// Title
 				'superwebshare_normal_amp_enable_cb',								// CB
 				'superwebshare_basic_settings_section',							// Page slug
 				'superwebshare_basic_settings_section'							// Settings Section ID
@@ -335,7 +337,7 @@ function superwebshare_register_settings_floating() {
 			// Enable/Disable the floating share button
 			add_settings_field(
 				'superwebshare_floating_enable_share',							// ID
-				__('Enable/Disable the floating share button', 'super-web-share'),	// Title
+				__('Show the floating share button on website', 'super-web-share'),	// Title
 				'superwebshare_floating_enable_cb',								// CB
 				'superwebshare_floating_settings_section',						// Page slug
 				'superwebshare_floating_settings_section'						// Settings Section ID
@@ -375,13 +377,55 @@ function superwebshare_register_settings_floating() {
 			// Enable/Disable Share Button - AMP (1.4.4)
 			add_settings_field(
 				'superwebshare_floating_enable_amp_share',									// ID
-				__('Enable/Disable the floating share button over AMP Pages', 'super-web-share'),		// Title
+				__('Show floating share button over AMP Pages', 'super-web-share'),		// Title
 				'superwebshare_floating_amp_enable_cb',								// CB
 				'superwebshare_floating_settings_section',							// Page slug
 				'superwebshare_floating_settings_section'							// Settings Section ID
 			);
 }
 add_action( 'admin_init', 'superwebshare_register_settings_floating' );
+
+/**
+ * Fallback Settings Register
+ *
+ * @since 2.0
+ */
+function superwebshare_register_settings_fallback(){
+	// Register Setting
+	register_setting( 
+		'superwebshare_settings_fallback_group', 		// Group name
+		'superwebshare_fallback_settings', 				// Setting name = html form <input> name on settings form
+		'superwebshare_validater_and_sanitizer_fallback'	// Input sanitizer
+	);
+
+	// Floating Button Settings
+	add_settings_section(
+        'superwebshare_fallback_settings_section',				// ID
+        __('<br>Fallback Settings', 'super-web-share'),	// Title
+        '__return_false',										// Callback Function
+        'superwebshare_fallback_settings_section'				// Page slug
+	);
+
+	// Description
+	add_settings_field(
+		'superwebshare_description_share',								// ID
+		__('', 'super-web-share'),										// Title
+		'superwebshare_fallback_description_cb',						// CB
+		'superwebshare_fallback_settings_section',							// Page slug
+		'superwebshare_fallback_settings_section'							// Settings Section ID
+	);
+
+	add_settings_field(
+		'superwebshare_fallback_enable',									// ID
+		__('Show the fallback share buttons for browsers that wont support native web share', 'super-web-share'),		// Title
+		'superwebshare_fallback_enable_cb',									// CB
+		'superwebshare_fallback_settings_section',							// Page slug
+		'superwebshare_fallback_settings_section'							// Settings Section ID
+	);
+
+
+}
+add_action( 'admin_init', 'superwebshare_register_settings_fallback' );
 
 /**
  * Validate and sanitize user input before its saved to database
@@ -405,7 +449,18 @@ function superwebshare_validater_and_sanitizer_floating( $settings_floating ) {
 	$settings_floating['floating_position_button'] = preg_match( '/^[0-9]$/i', isset($settings_floating['floating_position_button']) ) ? sanitize_text_field( $settings_floating['floating_position_button'] ) : '30';
 	return $settings_floating;
 }
-			
+
+/**
+ * Fallback - Validate and sanitize user input before its saved to database
+ *
+ * @since 2.0
+ */
+function superwebshare_validater_and_sanitizer_fallback( $settings_fallback ) {
+	// Sanitize hex color input for fallback theme_color
+	return $settings_fallback;
+}
+
+
 /**
  * Get settings from database
  *
@@ -451,4 +506,17 @@ function superwebshare_get_settings_floating() {
 	$settings_floating = get_option( 'superwebshare_floatingsettings', $defaults );
 	
 	return $settings_floating;
+}
+/**
+ * Get Fallback settings from database
+ *
+ * @since 	1.3
+ * @return	Array	A merged array of default and settings saved in database.
+ */
+function superwebshare_get_settings_fallback() {
+	$defaults = array(
+				'superwebshare_fallback_enable' 			=> 'enable', 	// default value		
+			);
+	return get_option( 'superwebshare_fallback_settings', $defaults );
+	
 }

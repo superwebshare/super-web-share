@@ -18,13 +18,14 @@ function superwebshare_normal_description_cb() {
 	$settings = superwebshare_get_settings();
 	?>
 		<tr valign="top">
-.		<p><b>Please Note: </b>Super Web Share button can be seen on browsers like <code>Chrome for Android</code>, <code>Edge for Android</code>, <code>Opera for Android</code>, <code>Samsung Internet for Android</code>, <code>Safari for iOS</code> and <code>Brave for Android</code> as those are browsers which currently supports native web share. Please test out over these browsers + devices once after activation.</p>
+			<p>Settings to show native share button on Inline posts/pages</p>
+			<p><b>Please Note:</b> Super Web Share button can be seen on browsers like <code>Chrome for Android</code>, <code>Edge for Android</code>, <code>Opera for Android</code>, <code>Samsung Internet for Android</code>, <code>Safari for iOS,</code> and <code>Brave for Android</code>. Those are the browsers that currently support native web share. Please test out the pages on these browsers and devices once after activation.</p>
 		</tr>
 	<?php
 }
 
 /**
- * Enable/Disable share button (normal) : Above and Below Post/Page Content
+ * Inline share button : Enable/Disable share button (normal) : Above and Below Post/Page Content
  *
  * @since 1.3
  */ 
@@ -37,7 +38,7 @@ function superwebshare_normal_enable_cb() {
 }
 
 /**
- * Display settings of Share Button (normal) Above and Below Post/Page Content
+ * Inline : Display settings of Share Button (normal) on page or archive pages or home
  *
  * @since 1.3
  */
@@ -210,6 +211,36 @@ function superwebshare_floating_amp_enable_cb() {
 	<?php
 }
 
+
+/**
+ * Enable/Disable the Fallback
+ *
+ * @since 2.0
+ */ 
+function superwebshare_fallback_enable_cb() {
+	$settings_floating = superwebshare_get_settings_fallback();
+	$settings_floating = empty( $settings_floating ) ? array() : $settings_floating;
+	$settings_floating['superwebshare_fallback_enable'] =  isset( $settings_floating['superwebshare_fallback_enable'] ) ? esc_attr( $settings_floating['superwebshare_fallback_enable']) : 'enable';
+	
+	?>
+		<p><label><input type="radio" name="superwebshare_fallback_settings[superwebshare_fallback_enable]" value="enable" <?php checked( "enable", $settings_floating['superwebshare_fallback_enable'] ); ?> /> <?php _e( "Enable", 'super-web-share' );?></label></p>
+    	<p><label><input type="radio" name="superwebshare_fallback_settings[superwebshare_fallback_enable]" value="disable" <?php checked( "disable", $settings_floating['superwebshare_fallback_enable'] ); ?> /> <?php _e( "Disable", 'super-web-share' );?></label></p>
+	<?php
+}
+
+/**
+ * Fallback description
+ *
+ * @since 2.0
+ */ 
+function superwebshare_fallback_description_cb() {
+	?>
+	<tr valign="top">
+		<p><b>Fallback option</b> will help to show the the social icons when the native share is not supported on the browser from which your users visit the website.</p>
+	</tr>
+	<?php
+}
+
 /**
  * Admin interface renderer
  *
@@ -221,64 +252,74 @@ function superwebshare_admin_interface_render() {
 	if ( ! current_user_can( 'manage_options' ) ) {
 		return;
 	}
-	$active_tab = isset($_GET['tab']) ? $_GET['tab']: 'general';
+	$active_tab = isset($_GET['page']) ? $_GET['page']: 'superwebshare';
+	$tabs = [ 'General' => 'superwebshare', 'Floating' => 'superwebshare-floating', 'Fallback' => 'superwebshare-fallback' ];
 	if ( isset( $_GET['settings-updated'] ) ) {
 		
-		if( $active_tab == 'general') {
+		if( $active_tab == 'superwebshare') {
 		// Add settings
 		add_settings_error( 'superwebshare_settings_group', 'superwebshare_settings_saved_message', __( 'Settings saved.', 'super-web-share' ), 'updated' );
 		
 		// Show Settings Saved Message
-		settings_errors( 'superwebshare_settings_group' );
-		} else if($active_tab == 'floating'){
+			settings_errors( 'superwebshare_settings_group' );
+		} else if( $active_tab == 'superwebshare-floating' ){
 		// Add settings floating
-		add_settings_error( 'superwebshare_settings_floating_group', 'superwebshare_settings_saved_message', __( 'Floating Settings saved.', 'super-web-share' ), 'updated' );
+			add_settings_error( 'superwebshare_settings_floating_group', 'superwebshare_settings_saved_message', __( 'Floating Settings saved.', 'super-web-share' ), 'updated' );
 		
 		// Show Settings Saved Message
 		settings_errors( 'superwebshare_settings_floating_group' );
-		}
+		}  else if( $active_tab == 'superwebshare-fallback' ){
+			// Add settings fallback
+				add_settings_error( 'superwebshare_settings_fallback_group', 'superwebshare_settings_saved_message', __( 'Fallback Settings saved.', 'super-web-share' ), 'updated' );
+			
+			// Show Settings Saved Message
+			settings_errors( 'superwebshare_settings_fallback_group' );
+			}
 	}
 	
 	?>
 	
 	<div class="wrap">	
 		<h1>Super Web Share <sup><?php echo SUPERWEBSHARE_VERSION; ?></sup></h1>
-
-
-		<?php
-            if( isset( $_GET[ 'tab' ] ) ) {
-                $active_tab = $_GET[ 'tab' ];
-			} // end if
-				
-		$active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'general'; //Set General Tab when SuperWebShare loads
-        ?>
          
         <h2 class="nav-tab-wrapper">
-            <a href="?page=superwebshare&tab=general" class="nav-tab <?php echo $active_tab == 'general' ? 'nav-tab-active' : ''; ?>">General</a>
-            <a href="?page=superwebshare&tab=floating" class="nav-tab <?php echo $active_tab == 'floating' ? 'nav-tab-active' : ''; ?>">Floating</a>
+			<?php foreach( $tabs as $name => $page ){
+				?>
+					 <a href="?page=<?php echo $page ?>" class="nav-tab <?php echo $active_tab == $page ? 'nav-tab-active' : ''; ?>"><?php echo $name ?></a>
+				<?php
+			}?>
         </h2>
 
 		<form action="options.php" method="post" enctype="multipart/form-data">		
 			<?php
-			if( $active_tab == 'general' || isset($active_tab) == '0' ) {
+			if( $active_tab == 'superwebshare' || isset($active_tab) == '0' ) {
 				// Above & Below Settings
 
 				// Output nonce, action, and option_page fields for a settings page.
 				settings_fields( 'superwebshare_settings_group' );
 				do_settings_sections( 'superwebshare_basic_settings_section' ); 	// Normal Above and Below Button slug
-							// Output save settings button
+				// Output save settings button
 			submit_button( __('Save Settings', 'super-web-share') );
-			} else  if($active_tab == 'floating'){
+			} else  if($active_tab == 'superwebshare-floating'){
 				// Floating Button Settings
 
 				// Output nonce, action, and option_page fields for a settings page.
 				settings_fields( 'superwebshare_settings_floating_group' );
 				do_settings_sections( 'superwebshare_floating_settings_section' );	// Floating Button slug
-							// Output save settings button
-			submit_button( __('Save Settings', 'super-web-share') );
-			} // end if/else
+				// Output save settings button
+				submit_button( __('Save Settings', 'super-web-share') );
+			} elseif( $active_tab == 'superwebshare-fallback' ){
+				// Fallback Settings
 
+				// Output nonce, action, and option_page fields for a settings page.
+				settings_fields( 'superwebshare_settings_fallback_group' );
+				do_settings_sections( 'superwebshare_fallback_settings_section' );	// Fallback Button slug
 
+				// Output save settings button
+				submit_button( __('Save Settings', 'super-web-share') );
+			}
+
+// 
 			?>
 		</form>
 	</div>
