@@ -28,7 +28,7 @@ if ( ! defined( 'WPINC' ) ) {
  *
  * @since 1.0
  */
-define( 'SUPERWEBSHARE_VERSION', '2.1' );
+define('SUPERWEBSHARE_VERSION', '2.1');
 
 /**
  * Full path to the plugin file. 
