@@ -9,7 +9,7 @@
  * Plugin Name:       Super Web Share
  * Plugin URI:        https://www.superwebshare.com
  * Description:       Super Web Share helps to quickly add the Native Share option to your WordPress website
- * Version:           2.2
+ * Version:           2.3
  * Author:            Super Web Share
  * Author URI:        https://www.superwebshare.com
  * License:           GPL-2.0+
@@ -28,7 +28,7 @@ if ( ! defined( 'WPINC' ) ) {
  *
  * @since 1.0
  */
-define( 'SUPERWEBSHARE_VERSION', '2.2' );
+define( 'SUPERWEBSHARE_VERSION', '2.3' );
 
 /**
  * Full path to the plugin file. 
@@ -38,6 +38,25 @@ define( 'SUPERWEBSHARE_VERSION', '2.2' );
  */
 if ( ! defined( 'SUPERWEBSHARE_PLUGIN_FILE' ) ) {
 	define( 'SUPERWEBSHARE_PLUGIN_FILE', __FILE__ ); 
+}
+
+/**
+ * Full URI to the plugin file. 
+ * eg - https://www.example.com/wp-content/plugins/super-web-share/
+ *
+ * @since 2.3
+ */
+if ( ! defined( 'SUPERWEBSHARE_PLUGIN_DIR_URI' ) ) {
+	define( 'SUPERWEBSHARE_PLUGIN_DIR_URI', plugin_dir_url( __FILE__ ) ); 
+}
+
+/**
+ * Full DIR PATH to the plugin file. 
+ * 
+ * @since 2.3
+ */
+if ( ! defined( 'SUPERWEBSHARE_PLUGIN_DIR_PATH' ) ) {
+	define( 'SUPERWEBSHARE_PLUGIN_DIR_PATH', plugin_dir_path( __FILE__ ) ); 
 }
 
 /**
@@ -66,6 +85,9 @@ register_deactivation_hook( __FILE__, 'deactivate_super_web_share' );
  */
 require plugin_dir_path( __FILE__ ) . 'includes/class-super-web-share.php';
 
+//icons loading
+require plugin_dir_path( __FILE__ ) . 'includes/class-super-web-share-icons.php';
+
 /**
  * Plugin activation function
  * @since 1.4.2
@@ -90,5 +112,7 @@ register_activation_hook( __FILE__, 'superwebshare_activate_plugin' );
 function run_super_web_share() {
 	$plugin = new Super_Web_Share();
 	$plugin->run();
+
 }
+
 run_super_web_share();

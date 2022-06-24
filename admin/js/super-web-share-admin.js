@@ -44,5 +44,12 @@ jQuery(document).ready(function($){
             }
         } )
     }
+
+    jQuery( '.sws-appearance-icons input' ).change(function(e){
+        let svg = jQuery(this).next().find('svg').html();
+        if( svg.length <= 0 ) return;
+        jQuery( '.sws-appearance-style .superwebshare_button svg' ).html(svg)
+    })
+    
 });
 
