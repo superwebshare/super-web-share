@@ -39,9 +39,13 @@
     text-overflow: initial;
     text-transform: uppercase;
     width: 56px;
+    line-height: 0;
 }
-
-.superwebshare_prompt::before {
+.superwebshare_button_svg.superwebshare_prompt > svg{
+  width: 29px;
+  padding-right: 5px;
+}
+.superwebshare_prompt:not(.superwebshare_button_svg)::before {
   content: '';
   display: inline-block;
   background-repeat: no-repeat;
@@ -69,6 +73,50 @@
     padding: 0 24px;
     text-indent: 0;
     width: auto;
+}
+.superwebshare_prompt.superwebshare-button-medium{
+  padding: 0 12px;
+  --width: 47px;
+  height: var( --width );
+  min-width: var( --width );
+  width: auto;
+  font-size: 15px;
+}
+.superwebshare_prompt.superwebshare-button-medium svg{
+  width: 20px !important;
+  padding-bottom: 1px;
+}
+.superwebshare_prompt.superwebshare-button-small{
+  padding: 0 10px;
+  --width: 38px;
+  height: var( --width );
+  min-width: var( --width );
+  width: auto;
+  font-size: 13px;
+}
+.superwebshare_prompt.superwebshare-button-small svg{
+  width: 17px !important;
+}
+.superwebshare-button-curved, .superwebshare-button-square, .superwebshare-button-circle{
+  border-radius: 15px;
+  padding: 0;
+  --width: 56px;
+  height: var( --width );
+  width:  var(--width) ;
+  justify-content: center;
+}
+.superwebshare-button-square{
+  border-radius: 0;
+}
+.superwebshare-button-circle{
+  border-radius: 50%;
+}
+.superwebshare-button-curved > span, .superwebshare-button-square > span, .superwebshare-button-circle > span{
+  display: none;
+}
+.superwebshare-button-curved.superwebshare_button_svg > svg, .superwebshare-button-square.superwebshare_button_svg > svg, .superwebshare-button-circle.superwebshare_button_svg > svg{
+  padding: 0;
+  width: 30px;
 }
 @media ( max-width: 1264px ){
   .superwebshare_tada{
@@ -409,3 +457,4 @@
 .sws-layout-3 .sws-icon.sws-icon-copy::after {
   background-position: -214px;
 }
+ 

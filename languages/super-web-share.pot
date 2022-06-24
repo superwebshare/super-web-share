@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: Super Web Share 1.4.5\n"
 "Report-Msgid-Bugs-To: https://wordpress."
 "org/support/plugin/qs_tool_wp_pot_gen_1583311971_6233_772510\n"
-"POT-Creation-Date: 2022-03-31 15:20+0000\n"
+"POT-Creation-Date: 2022-05-21 18:08+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "X-Generator: Loco https://localise.biz/"
 
-#: admin/class-super-web-share-admin.php:302
+#: admin/class-super-web-share-admin.php:310
 msgid "<a href=\"%s\">Customize your share button settings &rarr;</a>"
 msgstr ""
 
@@ -25,7 +25,20 @@ msgstr ""
 msgid "After the content of your post"
 msgstr ""
 
-#: admin/class-super-web-share-admin.php:401
+#: admin/class-super-web-share-admin.php:254
+msgid "Appearance"
+msgstr ""
+
+#. ID
+#: admin/class-super-web-share-admin.php:698
+msgid "Appearance Settings"
+msgstr ""
+
+#: admin/partials/super-web-share-admin-display.php:444
+msgid "Appearance Settings saved."
+msgstr ""
+
+#: admin/class-super-web-share-admin.php:409
 msgid ""
 "Awesome! The website uses HTTPS. SuperWebShare will work perfectly upon your "
 "website if you test it over Chrome for Android, Edge for Android, Samsung "
@@ -36,7 +49,7 @@ msgid ""
 msgstr ""
 
 #. ID
-#: admin/class-super-web-share-admin.php:643
+#: admin/class-super-web-share-admin.php:651
 msgid "Background color for fallback"
 msgstr ""
 
@@ -57,58 +70,88 @@ msgid "Bottom - Right"
 msgstr ""
 
 #. ID
-#: admin/class-super-web-share-admin.php:474 
-#: admin/class-super-web-share-admin.php:553
+#: admin/class-super-web-share-admin.php:482 
+#: admin/class-super-web-share-admin.php:561
 msgid "Button color"
 msgstr ""
 
 #. ID
-#: admin/class-super-web-share-admin.php:569
+#: admin/class-super-web-share-admin.php:707
+msgid "Button icon"
+msgstr ""
+
+#. ID
+#: admin/class-super-web-share-admin.php:577
 msgid "Button Position"
 msgstr ""
 
 #. ID
-#: admin/class-super-web-share-admin.php:466
+#: admin/class-super-web-share-admin.php:725
+msgid "Button Size"
+msgstr ""
+
+#. ID
+#: admin/class-super-web-share-admin.php:474
 msgid "Button text"
 msgstr ""
 
 #. ID
-#: admin/class-super-web-share-admin.php:585
+#: admin/class-super-web-share-admin.php:593
 msgid "Button text for Floating button"
 msgstr ""
 
-#: admin/class-super-web-share-admin.php:280
+#: public/class-super-web-share-public.php:326
+msgid "Copy Link"
+msgstr ""
+
+#: admin/class-super-web-share-admin.php:288
 msgid "Demo"
 msgstr ""
 
-#: admin/class-super-web-share-admin.php:247
+#: admin/partials/super-web-share-admin-display.php:291
+msgid "Enter Your twitter user name. Eg: john_wick"
+msgstr ""
+
+#: public/class-super-web-share-public.php:320
+msgid "Facebook"
+msgstr ""
+
+#: admin/class-super-web-share-admin.php:252
 msgid "Fallback"
 msgstr ""
 
+#: admin/class-super-web-share-admin.php:252
+msgid "Fallback - Super Web Share"
+msgstr ""
+
 #. ID
-#: admin/class-super-web-share-admin.php:652
+#: admin/class-super-web-share-admin.php:660
 msgid "Fallback layout"
 msgstr ""
 
 #. ID
-#: admin/class-super-web-share-admin.php:617
+#: admin/class-super-web-share-admin.php:625
 msgid "Fallback Settings"
 msgstr ""
 
-#: admin/partials/super-web-share-admin-display.php:324
+#: admin/partials/super-web-share-admin-display.php:437
 msgid "Fallback Settings saved."
 msgstr ""
 
-#: admin/class-super-web-share-admin.php:243
+#: admin/class-super-web-share-admin.php:248
 msgid "Floating Button"
 msgstr ""
 
+#: admin/class-super-web-share-admin.php:248
+msgid "Floating Button - Super Web Share"
+msgstr ""
+
 #. ID
-#: admin/class-super-web-share-admin.php:530
+#: admin/class-super-web-share-admin.php:538
 msgid "Floating Button Settings"
 msgstr ""
 
-#: admin/partials/super-web-share-admin-display.php:318
+#: admin/partials/super-web-share-admin-display.php:430
 msgid "Floating Settings saved."
 msgstr ""
 
@@ -117,27 +160,31 @@ msgstr ""
 msgid "https://www.superwebshare.com"
 msgstr ""
 
-#: admin/class-super-web-share-admin.php:119
+#: admin/class-super-web-share-admin.php:124
 msgid ""
 "If the share button is not showing on the page, kindly please make sure that "
 "the Floating amd Inline Content settings are enabled and the respective page "
 "type is selected"
 msgstr ""
 
-#: admin/class-super-web-share-admin.php:245
+#: admin/class-super-web-share-admin.php:250
 msgid "Inline Content"
 msgstr ""
 
+#: admin/class-super-web-share-admin.php:250
+msgid "Inline Content - Super Web Share"
+msgstr ""
+
 #. ID
-#: admin/class-super-web-share-admin.php:427
+#: admin/class-super-web-share-admin.php:435
 msgid "Inline Content Settings"
 msgstr ""
 
-#: admin/partials/super-web-share-admin-display.php:312
+#: admin/partials/super-web-share-admin-display.php:423
 msgid "Inline Content Settings saved."
 msgstr ""
 
-#: admin/class-super-web-share-admin.php:404
+#: admin/class-super-web-share-admin.php:412
 msgid ""
 "It looks like the website is not served fully via HTTPS. As for supporting "
 "the SuperWebShare native share button, your website should be served fully "
@@ -146,44 +193,49 @@ msgid ""
 "buttons on the browsers which are not yet supported by native"
 msgstr ""
 
-#: admin/partials/super-web-share-admin-display.php:424
+#: public/class-super-web-share-public.php:322
+msgid "LinkedIn"
+msgstr ""
+
+#: admin/partials/super-web-share-admin-display.php:550
 msgid "OFF"
 msgstr ""
 
-#: admin/partials/super-web-share-admin-display.php:424
+#: admin/partials/super-web-share-admin-display.php:550
 msgid "ON"
 msgstr ""
 
 #. ID
-#: admin/class-super-web-share-admin.php:577
+#: admin/class-super-web-share-admin.php:585
 msgid "Position from bottom"
 msgstr ""
 
 #. ID
-#: admin/class-super-web-share-admin.php:458
+#: admin/class-super-web-share-admin.php:466
 msgid "Position of the button"
 msgstr ""
 
 #. ID
-#: admin/class-super-web-share-admin.php:561
+#: admin/class-super-web-share-admin.php:569
 msgid "Post Types for Floating button"
 msgstr ""
 
 #. ID
-#: admin/class-super-web-share-admin.php:450
+#: admin/class-super-web-share-admin.php:458
 msgid "Post Types to show Inline share"
 msgstr ""
 
 #: admin/partials/super-web-share-admin-display.php:99 
 #: admin/partials/super-web-share-admin-display.php:216
 msgid ""
-"Right now, we are supporting the official AMP plugin and AMPforWP. We are extending "
+"Right now, we are only supporting the official AMP plugin. We are extending "
 "the AMP support to more AMP plugins on the coming version."
 msgstr ""
 
-#: admin/partials/super-web-share-admin-display.php:349 
-#: admin/partials/super-web-share-admin-display.php:357 
-#: admin/partials/super-web-share-admin-display.php:363
+#: admin/partials/super-web-share-admin-display.php:470 
+#: admin/partials/super-web-share-admin-display.php:478 
+#: admin/partials/super-web-share-admin-display.php:484 
+#: admin/partials/super-web-share-admin-display.php:504
 msgid "Save Settings"
 msgstr ""
 
@@ -203,57 +255,65 @@ msgstr ""
 msgid "Select the layout you prefer for fallback"
 msgstr ""
 
-#: admin/class-super-web-share-admin.php:264
+#: admin/class-super-web-share-admin.php:272
 msgid "Settings"
 msgstr ""
 
+#: public/class-super-web-share-public.php:315
+msgid "Share"
+msgstr ""
+
 #. ID
-#: admin/class-super-web-share-admin.php:634
+#: admin/class-super-web-share-admin.php:642
 msgid "Show fallback share buttons"
 msgstr ""
 
 #. ID
-#: admin/class-super-web-share-admin.php:593
+#: admin/class-super-web-share-admin.php:601
 msgid "Show floating on AMP Pages"
 msgstr ""
 
 #. ID
-#: admin/class-super-web-share-admin.php:545
+#: admin/class-super-web-share-admin.php:553
 msgid "Show Floating share button"
 msgstr ""
 
-#: admin/class-super-web-share-admin.php:113
+#: admin/class-super-web-share-admin.php:118
 msgid "Show Floating share button?"
 msgstr ""
 
 #. ID
-#: admin/class-super-web-share-admin.php:442
+#: admin/class-super-web-share-admin.php:450
 msgid "Show Inline Content share button"
 msgstr ""
 
 #. ID
-#: admin/class-super-web-share-admin.php:483
+#: admin/class-super-web-share-admin.php:491
 msgid "Show Inline on AMP Pages"
 msgstr ""
 
-#: admin/class-super-web-share-admin.php:107
+#: admin/class-super-web-share-admin.php:112
 msgid "Show Inline share button?"
 msgstr ""
 
-#: admin/class-super-web-share-admin.php:249
+#: admin/class-super-web-share-admin.php:256
 msgid "Status"
+msgstr ""
+
+#: admin/class-super-web-share-admin.php:256
+msgid "Status - Super Web Share"
+msgstr ""
+
+#. ID
+#: admin/class-super-web-share-admin.php:716
+msgid "Style for share button"
 msgstr ""
 
 #. Name of the plugin
 #. Author of the plugin
-#: admin/class-super-web-share-admin.php:61 
-#: admin/class-super-web-share-admin.php:241 
-#: admin/class-super-web-share-admin.php:241 
-#: admin/class-super-web-share-admin.php:243 
-#: admin/class-super-web-share-admin.php:245 
-#: admin/class-super-web-share-admin.php:247 
-#: admin/class-super-web-share-admin.php:249 
-#: admin/class-super-web-share-admin.php:251
+#: admin/class-super-web-share-admin.php:66 
+#: admin/class-super-web-share-admin.php:246 
+#: admin/class-super-web-share-admin.php:246
 msgid "Super Web Share"
 msgstr ""
 
@@ -263,11 +323,15 @@ msgid ""
 "WordPress website"
 msgstr ""
 
-#: admin/class-super-web-share-admin.php:304
+#: admin/class-super-web-share-admin.php:258
+msgid "Support - Super Web Share"
+msgstr ""
+
+#: admin/class-super-web-share-admin.php:312
 msgid "Thank you for installing <strong>Super Web Share</strong> "
 msgstr ""
 
-#: admin/class-super-web-share-admin.php:330
+#: admin/class-super-web-share-admin.php:338
 msgid ""
 "Thank you for using Super Web Share :) If you like it, please leave <a "
 "href=\"https://wordpress.org/support/plugin/super-web-share/reviews/?"
@@ -284,4 +348,17 @@ msgstr ""
 msgid ""
 "This text will be displayed within the floating button. Default value: "
 "\"Share\" "
+msgstr ""
+
+#: public/class-super-web-share-public.php:321
+msgid "Twitter"
+msgstr ""
+
+#. ID
+#: admin/class-super-web-share-admin.php:673
+msgid "Twitter username"
+msgstr ""
+
+#: public/class-super-web-share-public.php:323
+msgid "WhatsApp"
 msgstr ""

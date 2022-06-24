@@ -1,3 +1,4 @@
+'use strict';
 var DOMReady = function(callback) {
   if (document.readyState === "interactive" || document.readyState === "complete") {
       callback();
@@ -24,7 +25,12 @@ function hasPermission() {
       var x = document.getElementsByClassName("superwebshare_prompt") || document.getElementsByClassName(".superwebshare_prompt .span");
       var i;
       for (i = 0; i < x.length; i++) {
+          if( x[i].classList.contains( 'shortcode-button' ) ) continue;
           x[i].style.display = 'none';
+      }
+      let f = document.querySelectorAll( '.sws-fallback-off' );
+      if( f.length > 0  ){
+          f.forEach( m => m.style.display="none" );
       }
       console.log('SuperWebShare: Your browser does not seems to support SuperWebShare, as the browser is incompatible');
   }
@@ -42,39 +48,45 @@ async function SuperWebSharefn(Title, URL, Description) {
       try {
           await navigator.share({ title: TitleConst, text: DescriptionConst, url: URLConst });
       } catch (error) {
-          console.log('Error occured while sharing: ' + error);
+          console.log('Error occurred while sharing: ' + error);
           return;
       }
   }
 }
 
+const getPageMeta = () =>{
+    var mData={};
+    if (document.querySelector('meta[property="og:description"]') != null) {
+        mData.meta_desc = document.querySelector('meta[property="og:description"]').content;
+    } else if (document.querySelector('meta[property="description"]') != null) {
+        mData.meta_desc = document.querySelector('meta[property="description"]').content;
+    } else {
+        mData.meta_desc = document.title;
+    }
+
+    if (document.querySelector('meta[property="og:title"]') != null) {
+        mData.meta_title = document.querySelector('meta[property="og:title"]').content;
+    } else if (document.querySelector('meta[property="description"]') != null) {
+        mData.meta_title = document.querySelector('meta[property="description"]').content;
+    } else {
+        mData.meta_title = document.title;
+    }
+
+    if (document.querySelector('meta[property="og:url"]') != null) {
+        mData.meta_url = document.querySelector('meta[property="og:url"]').content;
+    } else {
+        mData.meta_url = window.location.href;
+    }
+
+    return mData;
+}
+
 document.addEventListener('click', function(SuperWebShare) {
   var target = SuperWebShare.target;
 
-  if (target.classList.contains('superwebshare_prompt') || target.parentNode.classList.contains('superwebshare_prompt')) {
-      var meta_desc, meta_title, meta_url
-      if (document.querySelector('meta[property="og:description"]') != null) {
-          meta_desc = document.querySelector('meta[property="og:description"]').content;
-      } else if (document.querySelector('meta[property="description"]') != null) {
-          meta_desc = document.querySelector('meta[property="description"]').content;
-      } else {
-          meta_desc = document.title;
-      }
-
-      if (document.querySelector('meta[property="og:title"]') != null) {
-          meta_title = document.querySelector('meta[property="og:title"]').content;
-      } else if (document.querySelector('meta[property="description"]') != null) {
-          meta_title = document.querySelector('meta[property="description"]').content;
-      } else {
-          meta_title = document.title;
-      }
-
-      if (document.querySelector('meta[property="og:url"]') != null) {
-          meta_url = document.querySelector('meta[property="og:url"]').content;
-      } else {
-          meta_url = window.location.href;
-      }
-
+  if (target.classList.contains('superwebshare_prompt') || target.parentNode.classList.contains('superwebshare_prompt')  || target.parentNode.parentNode.classList.contains('superwebshare_prompt')) {
+      let {meta_desc, meta_title, meta_url}=getPageMeta();
+      
       SuperWebSharefn(meta_title, meta_url, meta_desc);
   } else if (target.classList.contains('sws-modal-bg')) {
       modal('hide');
@@ -87,7 +99,8 @@ DOMReady(function() {
 
       copyButton.addEventListener('click', function(e) {
           e.preventDefault()
-          navigator.clipboard.writeText(this.dataset.url)
+          let {meta_url}=getPageMeta();
+          navigator.clipboard.writeText(meta_url)
             let self = this;
             let child = self.querySelector('span')
             child.innerText = "Link Copied ✔";
@@ -111,8 +124,21 @@ DOMReady(function() {
       function(item) {
           item.addEventListener('click', function(ev) {
               ev.preventDefault();
-              console.log(this.getAttribute('href'));
-              window.open(this.getAttribute('href'), null, 'height=500,width=500');
+              let {meta_title, meta_url}=getPageMeta();
+              let moreD = this.getAttribute('data-params') || "";
+              let type =  this.getAttribute('data-type') || "";
+            
+              let urlParams = {
+                  'facebook':`https://www.facebook.com/sharer/sharer.php?u=${encodeURI(meta_url)}${encodeURI(moreD)}`,
+                  'twitter':`http://twitter.com/share?text=${encodeURI(meta_title)}&url=${encodeURI(meta_url)}${encodeURI(moreD)}`,
+                  'linkedin':`https://www.linkedin.com/sharing/share-offsite?url=${encodeURI(meta_url)}${encodeURI(moreD)}`,
+                  'whatsapp':`https://api.whatsapp.com/send?text=${encodeURI(meta_url)}${encodeURI(moreD)}`,
+              }
+              if( 'whatsapp' == type ){
+                window.open(urlParams[type]);
+              }else{
+                  window.open(urlParams[type], null, 'height=500,width=500');
+              }
               return false;
 
           })
