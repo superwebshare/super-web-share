@@ -2,3 +2,51 @@
  * All of the CSS for your admin-specific functionality should be
  * included in this file.
  */
+ 
+.sws-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sws-max-500 {
+    max-width: 500px;
+    width: 100%;
+}
+
+.sws-input.sws-input-toggle {
+    display: none;
+}
+
+.sws-input-toggle+label {
+   width: 75px;
+   height: 28px;
+   background: rgb(143, 143, 143);
+   display: block;
+   border-radius: 50px;
+   position: relative;
+   -webkit-transition: .4s;
+   transition: .4s;
+}
+.sws-input-toggle:checked+label {
+   background-color: #1a4548;
+}
+.sws-input-toggle+label::after {
+   content: attr(data-text-is-off);
+   width: 30px;
+   height: 20px;
+   position: absolute;
+   top: calc(50% - 10px);
+   left: 5px;
+   -webkit-transition: .4s;
+   transition: .4s;
+   background-color: #fff;
+   border-radius: 10px;
+   box-shadow: 0 0 3px 2px #9d9d9d42;
+   text-align: center;
+   line-height: 20px;
+   font-size: 10px;
+}
+.sws-input-toggle:checked+label::after {
+   content: attr(data-text-is-on);
+   left: 40px
+} 

@@ -35,7 +35,7 @@ Currently, the Super Web Share plugin provides a share button before and after t
 * If the website is not supporting Native share option, you will notice the fallback popup which we created to make a all in one Share plugin for your website
 
 #### Requirments for working SuperWebShare?
-* The Website should be served fully via a secured origin, i.e., the green padlock should be there on the address for working Super Web Share. Else by default, our fallback popup will show on those browsers.
+* The Website should be served fully via a secured origin, i.e., the green padlock should be there on the address for working Super Web Share. Else by default, our fallback popup will show on those browsers where users can share via WhatsApp, Facebook, LinkedIn and Twitter with copy link option.
 
 == Installation ==
 
@@ -49,21 +49,21 @@ Install manually:
 2. Activate Super Web Share plugin from the Plugins list
 
 == Customize Super Web Share ==
-You can easily customize the color, position, and pages you would like to show the button before and after the page or post content and the floating share button. To customize goto Super Web Share from the admin dashboard.
+You can easily customize the color, position, and pages you would like to show the button before and after the page or post content and the floating share button and the fallback color via our plugin. To customize go to Super Web Share from the admin dashboard.
 
 == Frequently Asked Questions ==
 
 = Which all browsers do the Super Web Share plugin works? =
 
-The Web Share plugin works on browsers like Chrome for Android, iOS Safari (from version 12.2), Samsung Internet for Android (version 9.2+), Edge for Android, Brave for Android, Opera for Android, Google Chrome 89 or later on Chrome OS and Windows and Safari 12 or later on macOS and iOS.
+The Web Share plugin works on browsers like Chrome for Android, iOS Safari (from version 12.2), Samsung Internet for Android (version 9.2+), Edge for Android, Brave for Android, Opera for Android, Google Chrome 89 or later on Chrome OS and Windows and Safari 12 or later on macOS and iOS. Else our fallback prompt to output the share icons.
 
-= Will the floating share button and normal button on page and post will show upon non-supported browsers? =
+= Will the floating share button and Inline content button on page and post will show upon non-supported browsers? =
 
-No, the floating share button and normal share button on pages and posts will be hidden automatically if the browser won't support Web Share API.
+No, the floating share button and Inline content share button on pages and posts will be hidden automatically if the browser won't support Web Share API.
 
 = How do I report bugs and new feature suggestions? =
 
-You can report the bugs and features you need at our [GitHub repository](https://github.com/superwebshare/featurerequests/issues) 
+You can report the bugs and request new features you need to see at our [GitHub repository Discussion page](https://github.com/superwebshare/featurerequests/discussions/1) 
 
 = How can I contribute to this awesome plugin? =
 
@@ -84,8 +84,35 @@ Yes, SuperWebShare is fully GDPR Compliant. Unlike other social sharing tools, t
 
 == Changelog ==
 
-= 2.0 =
+= 2.1 =
+Release Date: March 31st, 2022
+
+New Features:
+
+* Now you can select all the post types on your website to show the Super Web Share buttons.
+* Added option to enable and disable within all the pages/post types pages via our Metabox. You can now fully control on which page you need to show the Super Web Share button for Floating and Inline buttons.
+* Added option to change the color of the fallback popup
+* Now you can add the button text for the Floating button. Thanks to [aga2442](https://wordpress.org/support/users/aga2442/) for the feature request.
+* Option to select the layout you prefer (see the Fallback tab)
+* Option to select the fallback prompt for the Fallback.
+
+Bug Fix:
+
+* The Inline share button which was showing twice within the WooCommerce products pages is now fixed and the position changed from description tab to the short descritpion section.
+* Multilanguage plugin translation issue fixed. Thanks to [aga2442](https://wordpress.org/support/users/aga2442/) for reporting this bug report.
+
+Enhancements:
+
+* Added toggle for the selection of the settings.
+* Changed the name 'General' to 'Inline content' for better understanding.
+* Optimized the code
+
+
+= 2.0.1 & 2.0 =
 Release Date: January 8th, 2022
+
+Bug Fix:
+* Small fix on CSS where the fallback was not loading on some themes
 
 Enhancements:
 
@@ -95,6 +122,7 @@ Bugfixes:
 
 * Fixed floating button not showing as round shape within the AMP pages
 * Made the plugin lightweight
+
 
 = 1.4.5 =
 Release Date: March 16th, 2021
@@ -166,7 +194,7 @@ Release Date: April 19th, 2019
 
 Enhancements:
 
-* Normal Share Button default value set to disabled, once plugin is activated
+* Inline content Share Button default value set to disabled, once plugin is activated
 
 = 1.3 =
 Release Date: April 19th, 2019
@@ -189,7 +217,7 @@ Enhancements:
 
 * Adds share button to prompt native share over above and below of the post/page content
 * Option to select the color, text on the share button added
-* Adds option's to select the pages to display the normal share button
+* Adds option's to select the pages to display the Inline content share button
 * Minor performance improvements to render SuperWebShare faster.
 Thanks to Jyothis for reporting the bug.
 
