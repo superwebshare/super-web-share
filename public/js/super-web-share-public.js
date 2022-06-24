@@ -15,7 +15,7 @@ var DOMReady = function(callback) {
 DOMReady(function() {
   setTimeout(hasPermission, 200);
    if (window.location.protocol != "https:") {
-       document.querySelector(".sws-copy").style.display = 'none'
+       if( document.querySelector(".sws-copy") ) document.querySelector(".sws-copy").style.display = 'none'
    }
 });
 

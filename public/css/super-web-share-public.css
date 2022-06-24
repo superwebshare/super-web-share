@@ -19,7 +19,6 @@
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    background-color: #3740ff;
     border: 0;
     border-radius: 50%;
     -webkit-box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
@@ -43,22 +42,19 @@
 }
 
 .superwebshare_prompt::before {
-    content: '';
-    height: 24px;
-    left: 16px;
-    position: absolute;
-    top: 16px;
-    width: 24px;
+  content: '';
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 5px;
+  height: 24px;
+  width: 24px;
 }
-
-.superwebshare_prompt:hover {
-    background-color: #3740ff;
+.superwebshare_prompt.superwebshare_normal_button1::before {
+  position: unset;
 }
-
-.superwebshare_prompt:active {
-  background-color: #3740ff;
-  -webkit-box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
-  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+.superwebshare_prompt::before { 
+  background-image: url('../assets/android_share.svg');
 }
 
 .superwebshare_prompt:hover,
@@ -68,27 +64,25 @@
     text-decoration: none;
 }
 
-@media (min-width: 1264px) {
-  .superwebshare_prompt {
-      border-radius: 28px;
-      padding: 0 24px 0 52px;
-      text-indent: 0;
-      width: auto;
-  }
-}
-/*
-.superwebshare_button::before {
-    background-image: url(https://web.dev/images/icons/share_white.svg);
-}*/
-
-
-/* Button for Above and Below post */
-.superwebshare_normal_button1 {
+.superwebshare_prompt {
     border-radius: 28px;
-    padding: 0 24px 0 52px;
+    padding: 0 24px;
     text-indent: 0;
     width: auto;
 }
+@media ( max-width: 1264px ){
+  .superwebshare_tada{
+    justify-content: center;
+    padding: 0;
+    height: 56px;
+    width: 56px;
+  }
+  .superwebshare_tada span{
+    display: none;
+  }
+}
+
+/* Button for Above and Below post */
 
 .woocommerce-page .superwebshare_normal_button1 {
   margin: 16px 0;

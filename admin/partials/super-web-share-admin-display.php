@@ -96,7 +96,7 @@ function inline_amp_enable_cb() {
 	superwebshare_input_toggle("superwebshare_inline_settings[inline_amp_enable]","enable", $settings['inline_amp_enable']);
 	?>
 	<p class="description">
-		<?php _e( "Right now, we are only supporting the official AMP plugin. We are extending the AMP support to more AMP plugins on the coming version.", 'super-web-share' );?>
+		<?php _e( "Right now, we are supporting the official AMP plugin and AMPforWP. We are extending the AMP support to more AMP plugins on the coming version.", 'super-web-share' );?>
 	</p>
 	<?php
 }
@@ -213,7 +213,7 @@ function floating_amp_enable_cb() {
 	superwebshare_input_toggle( 'superwebshare_floating_settings[floating_amp_enable]', 'enable',  $settings_floating['floating_amp_enable']  );
 	?>
 	<p class="description">
-		<?php _e( "Right now, we are only supporting the official AMP plugin. We are extending the AMP support to more AMP plugins on the coming version.", 'super-web-share' );?>
+		<?php _e( "Right now, we are supporting the official AMP plugin and AMPforWP. We are extending the AMP support to more AMP plugins on the coming version.", 'super-web-share' );?>
 	</p>
 	<?php
 }

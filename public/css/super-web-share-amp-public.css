@@ -1,0 +1,37 @@
+.superwebshare_amp_floating_button_box {
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    bottom: 12px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    position: fixed;
+    z-index: 997;
+    
+    
+}
+
+
+.superwebshare-lightbox {
+    background: rgba(0, 0, 0, 0.25);
+    -webkit-backdrop-filter: blur(5px);
+    -moz-backdrop-filter: blur(5px);
+    -ms-backdrop-filter: blur(5px);
+    -o-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.superwebshare_amp_native_button_floating, .superwebshare_amp_native_button_inline{
+    border-radius: 24px;
+    background-size: 70%;
+}

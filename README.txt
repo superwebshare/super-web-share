@@ -4,16 +4,16 @@ Donate link: https://www.superwebshare.com
 Tags: share button, web share, native share, Share API, share
 Requires at least: 3.0.1
 Tested up to: 5.9.2
-Stable tag: 2.1.1
+Stable tag: 2.2
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Super Web Share helps to easily add native share prompt to your website for easy page/post sharing in less than a minute.
+Super Web Share helps to easily add native share prompt to your website to easily share page/post in less than a minute.
 
 == Description ==
 
-Super Web Share is a WordPress-based native share plugin that helps users easily share the page/post with others by prompting the native share action. As SuperWebShare only shows the apps installed within the device upon the share prompt, the rate of sharing of post/page will be higher. Due to that reason, website developers can skip the usage of other social media icons upon their website and keep the share more prominent. 
+Super Web Share is a WordPress-based native share plugin that helps users easily share the page/post with others by prompting the native share action. As SuperWebShare only shows the apps installed within the device upon the share prompt on Android or share sheet on iOS, the rate of sharing of post/page will be higher. Due to that reason, website developers can skip the usage of other social media icons upon their website and keep the share more prominent. 
 
 The Super Web Share plugin for WordPress helps increase your traffic and engagement by a single quick click to share the website with your friends and social media. Super Web Share works on all supported browsers like Chrome for Android, Edge for Android, Brave for Android, and Opera for Android. It will show the native apps installed upon the device once you share the article with others; due to that, users can easily share the page/post with others super easily in just a click. Upon the native share, which prompts up, they can easily copy the website page link if the users need it.
 
@@ -22,21 +22,22 @@ It takes less than a minute to set up Super Web Share, and we provide a clean un
 Currently, the Super Web Share plugin provides a share button before and after the post/page content and a floating share button where you can set the color, the text of the share buttons, the position of the floating button, and can also set the pages or posts which you would like to show the share buttons via our Settings page, to easily add the share feature to your websites. As an addon, we are fully compatible with the AMP plugin, which means you can add the native share to your AMP pages provided by the AMP plugin.
 
 ### Advantages of using Super Web Share
-* Increase the rate of sharing of pages and posts by users
-* Developers / Bloggers can easily skip the number of social icons to be used on the page or post
+* Increase the rate of sharing of pages and posts by users by the power of native share
+* Your visitors can easily skip the number of social icons to be used on the page or post
 * Lightweight and super fast loading share plugin
-* Fully AMP supported native share plugin
+* Fully AMP supported native share plugin/ screen sheet plugin (We supports official AMP plugin and AMPforWP plugin, with fallback options)
+* Fully responsive
 
 #### Want to test to know how SuperWebShare works on a website? 
 
 * Open [SuperWebShare.com](https://superwebshare.com/?utm_source=wordpress-plugin&utm_medium=wordpress-readme) in a supported device. See [FAQ to know the supported browsers](https://wordpress.org/plugins/super-web-share/#faq)
 * You can see a floating button at the right bottom corner
-* Tap on it, instantly you can see the native Web Share prompt with the applications, which you can share the page.
+* Tap on it, instantly you can see the native Web Share prompt with the applications, which you can share the page. (As for Android devices you will notice the Native share prompt and on iOS devices you will notice the share sheet)
 * Tap on the icon of application from the prompt, and send.
 * If the website is not supporting Native share option, you will notice the fallback popup which we created to make a all in one Share plugin for your website
 
 #### Requirments for working SuperWebShare?
-* The Website should be served fully via a secured origin, i.e., the green padlock should be there on the address for working Super Web Share. Else by default, our fallback popup will show on those browsers where users can share via WhatsApp, Facebook, LinkedIn and Twitter with copy link option.
+* The Website should be served fully via a secured origin, i.e., the green padlock should be there on the address for working Super Web Share to show the native share prompt or the share sheet on iOS devices like iPhone, Mac, iPad etc. Else by default, our fallback popup will show on those browsers where users can share via WhatsApp, Facebook, LinkedIn and Twitter with copy link option.
 
 == Installation ==
 
@@ -85,10 +86,27 @@ Yes, SuperWebShare is fully GDPR Compliant. Unlike other social sharing tools, t
 
 == Changelog ==
 
+= 2.2 =
+Release Date: May 1st, 2022
+
+New Features:
+
+* Added fallback and native share support for official AMP plugin and AMP for WordPress plugin.
+    (Make sure to enable to Fallback within our settings page to see the fallback social buttons
+
+Enhancements:
+
+Coding improved a lot for the easily implementation new features to the plugin quickly on the future release.
+
+Bug Fix:
+
+* Removed the showing of the share button from the Archive pages as share button won't archives pages won't make any sense.
+
 = 2.1.1 =
 Release Date: April 1st, 2022
 
 Bug Fix:
+
 * Removed the Copy Link URL encoding. Thanks to [kscl](https://wordpress.org/support/users/kscl/) for reporting this issue.
 
 = 2.1 =
@@ -112,13 +130,12 @@ Enhancements:
 
 * Added toggle for the selection of the settings.
 * Changed the name 'General' to 'Inline content' for better understanding.
-* Optimized the code
-
 
 = 2.0.1 & 2.0 =
 Release Date: January 8th, 2022
 
 Bug Fix:
+
 * Small fix on CSS where the fallback was not loading on some themes
 
 Enhancements:

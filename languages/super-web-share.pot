@@ -177,7 +177,7 @@ msgstr ""
 #: admin/partials/super-web-share-admin-display.php:99 
 #: admin/partials/super-web-share-admin-display.php:216
 msgid ""
-"Right now, we are only supporting the official AMP plugin. We are extending "
+"Right now, we are supporting the official AMP plugin and AMPforWP. We are extending "
 "the AMP support to more AMP plugins on the coming version."
 msgstr ""
 
