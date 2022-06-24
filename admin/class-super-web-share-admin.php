@@ -100,7 +100,7 @@ function superwebshare_plugin_row_meta( $links, $file ) {
 	
 	if ( strpos( $file, 'super-web-share.php' ) !== false ) {
 		$new_links = array(
-				'demo' 	=> '<a href="https://www.superwebshare.com/?utm_source=WordPress-Demo" target="_blank">' . __( 'Demo', 'super-web-share' ) . '</a>',
+				'demo' 	=> '<a href="https://www.josevarghese.com/?utm_source=WordPress-Demo" target="_blank">' . __( 'Demo', 'super-web-share' ) . '</a>',
 				);
 		$links = array_merge( $links, $new_links );
 	}
