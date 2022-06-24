@@ -21,7 +21,7 @@
     <a href="https://superwebshare.com/?utm_source=GitHub&utm_medium=Readme-viewWeb"><strong>Visit Website »</strong></a>
     <br>
     <br>
-    <a href="https://github.com/superwebshare/SuperWebShare-WordPress-Plugin/issues/new?template=bug.md">Report bug</a>
+    <a href="https://github.com/superwebshare/super-web-share/issues/new?template=bug.md">Report bug</a>
     ·
     <a href="https://wordpress.org/plugins/super-web-share/">WordPress Plugin</a>
     ·
@@ -80,15 +80,16 @@ Anyone is welcome to contribute to Super Web Share to make it SUPER.
 
 There are various ways you can contribute:
 
-* [Raise an issue](https://github.com/superwebshare/SuperWebShare-WordPress-Plugin/issues) on GitHub.
+* [Raise an issue](https://github.com/superwebshare/super-web-share/issues) on GitHub.
 * Follow and Engage with us on Social Media
 
- &nbsp;&nbsp;&nbsp; <a href="https://twitter.com/intent/follow?screen_name=superwebshare" target="_blank" style="width:100%"><img src="https://image.flaticon.com/icons/svg/174/174876.svg" title="Follow SuperWebShare on Twitter" width=35 height=35></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://www.youtube.com/channel/UCFKvXcUyijXIh8JeyZUX56w" target="_blank" style="width:100%"><img src="https://image.flaticon.com/icons/svg/174/174883.svg" title="Follow SuperWebShare on YouTube" width=35 height=35></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://www.facebook.com/SuperWebShare/" target="_blank" style="width:100%"><img src="https://image.flaticon.com/icons/svg/174/174848.svg" title="Follow SuperWebShare on Facebook" width=35 height=35></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://www.instagram.com/superwebshare/" target="_blank" style="width:100%"><img src="https://image.flaticon.com/icons/svg/174/174855.svg" title="Follow SuperWebShare on Instagram" width=35 height=35></a>&nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp; <a href="https://twitter.com/intent/follow?screen_name=superwebshare" target="_blank" style="width:100%">Twitter</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://www.youtube.com/channel/UCFKvXcUyijXIh8JeyZUX56w" target="_blank" style="width:100%">YouTube</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://www.facebook.com/SuperWebShare/" target="_blank" style="width:100%">Facebook</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://www.instagram.com/superwebshare/" target="_blank" style="width:100%">Instagram</a>&nbsp;&nbsp;&nbsp;&nbsp;
 
 * Send us a Pull Request with your bug fixes and/or new features.
-* Provide feedback and [suggestions on enhancements](https://github.com/superwebshare/SuperWebShare-WordPress-Plugin/issues?direction=desc&labels=Enhancement&page=1&sort=created&state=open).
-Emoji Credits : [Emojipedia](emojipedia.org)
-Social Media Icon Credits : [Flaticon](flaticon.com)
+* Provide feedback and [suggestions on enhancements](https://github.com/superwebshare/super-web-share/issues?direction=desc&labels=Enhancement&page=1&sort=created&state=open).
+
+* Emoji Credits : [Emojipedia](emojipedia.org)
+* Social Media Icon Credits : [Flaticon](flaticon.com)
