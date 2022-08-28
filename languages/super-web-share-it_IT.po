@@ -163,7 +163,7 @@ msgstr ""
 #: admin/class-super-web-share-admin.php:124
 msgid ""
 "If the share button is not showing on the page, kindly please make sure that "
-"the Floating amd Inline Content settings are enabled and the respective page "
+"the Floating and Inline Content settings are enabled and the respective page "
 "type is selected"
 msgstr ""
 
