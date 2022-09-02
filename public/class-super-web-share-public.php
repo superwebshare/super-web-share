@@ -518,9 +518,9 @@ function superwebshare_amp_modal( $force_display = false  ){
 					<?php 
 					if( $fallback_on_amp == 'enable' || $force_display ){
 						?>
-							<amp-social-share class="rounded" aria-label="Share on Twitter" type="twitter" width="48" height="48"></amp-social-share>
-							<amp-social-share type="linkedin" aria-label="Share on LinkedIn" width="48" height="48"></amp-social-share>
-							<amp-social-share class="rounded" aria-label="Share on WhatsApp" type="whatsapp" width="48" height="48"></amp-social-share>
+							<amp-social-share class="rounded" aria-describedby="Share on Twitter" type="twitter" width="48" height="48"></amp-social-share>
+							<amp-social-share type="linkedin" aria-describedby="Share on LinkedIn" width="48" height="48"></amp-social-share>
+							<amp-social-share class="rounded" aria-describedby"Share on WhatsApp" type="whatsapp" width="48" height="48"></amp-social-share>
 						<?php
 					}
 					?>
