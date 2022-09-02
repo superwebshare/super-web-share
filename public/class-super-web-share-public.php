@@ -513,7 +513,7 @@ function superwebshare_amp_modal( $force_display = false  ){
 	
 		?>
 		<amp-lightbox id="superwebshare-lightbox" layout="nodisplay">
-			<div class="superwebshare-lightbox" on="tap:superwebshare-lightbox.close" role="button" tabindex="0">
+			<div class="superwebshare-lightbox" on="tap:superwebshare-lightbox.close" role="button" tabindex="0" aria-label="Lightbox">
 				<div class="">
 					<?php 
 					if( $fallback_on_amp == 'enable' || $force_display ){
