@@ -4,7 +4,7 @@ Donate link: https://superwebshare.com/donate
 Tags: share button, web share, native share, Share API, share, social share
 Requires at least: 3.0.1
 Tested up to: 6.0
-Stable tag: 2.4
+Stable tag: 2.3.1
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -93,6 +93,9 @@ Yes, from v2.3 we do support shortcodes to add floating and inline button like a
 6. Fallback on the desktop with social media platforms like WhatsApp, Twitter, Facebook and LinkedIn.
 
 == Changelog ==
+
+= 2.3.1 =
+Fixed : Accessibility issues
 
 = 2.3 =
 Release Date: May 23rd, 2022
