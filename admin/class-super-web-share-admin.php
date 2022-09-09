@@ -38,9 +38,9 @@ class Super_Web_Share_Admin extends Super_Web_Share
 	}
 	
 	public function enqueue_styles() {
-		wp_enqueue_style( "superwebshare-admin", plugin_dir_url( __FILE__ ) . 'css/super-web-share-admin.css', array(), $this->version, 'all' );
+		wp_enqueue_style( "superwebshare-admin", plugin_dir_url( __FILE__ ) . 'css/super-web-share-admin.min.css', array(), $this->version, 'all' );
 		if( ! empty( $_GET[ 'page' ] ) && $_GET[ 'page' ] == 'superwebshare-appearance' ){
-			wp_enqueue_style( "superwebshare-public", SUPERWEBSHARE_PLUGIN_DIR_URI . '/public/css/super-web-share-public.css', array(), $this->version, 'all' );
+			wp_enqueue_style( "superwebshare-public", SUPERWEBSHARE_PLUGIN_DIR_URI . '/public/css/super-web-share-public.min.css', array(), $this->version, 'all' );
 		}
 	}
 	public function enqueue_scripts($hook) {
@@ -54,7 +54,7 @@ class Super_Web_Share_Admin extends Super_Web_Share
 		wp_enqueue_style( 'wp-color-picker' );
 
 		// Main JS
-		wp_enqueue_script(  'superwebshare-main-js', plugin_dir_url( __FILE__ ) . 'js/super-web-share-admin.js', array( 'wp-color-picker' ), $this->version, true );
+		wp_enqueue_script(  'superwebshare-main-js', plugin_dir_url( __FILE__ ) . 'js/super-web-share-admin.min.js', array( 'wp-color-picker' ), $this->version, true );
 	}
 	
 	public function add_meta_box( $post_type ){
