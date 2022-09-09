@@ -52,13 +52,13 @@ class Super_Web_Share_Public {
 
 			add_action( 'amp_post_template_css', function() {
 				
-				$style_path = plugin_dir_path( __FILE__ ) . 'css/super-web-share-public.css' ;
+				$style_path = plugin_dir_path( __FILE__ ) . 'css/super-web-share-public.min.css' ;
 				if( file_exists( $style_path ) ){
 					echo file_get_contents( $style_path );
 					
 				}
 
-				$amp_style_path = plugin_dir_path( __FILE__ ) . 'css/super-web-share-amp-public.css' ;
+				$amp_style_path = plugin_dir_path( __FILE__ ) . 'css/super-web-share-amp-public.min.css' ;
 				if( file_exists( $amp_style_path ) ){
 					echo file_get_contents( $amp_style_path );
 					echo ".superwebshare_prompt::before { 
@@ -91,9 +91,9 @@ class Super_Web_Share_Public {
 	 */
 	public function enqueue_styles() {
 		
-		wp_register_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/super-web-share-public.css', array(), $this->version, 'all'  );
+		wp_register_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/super-web-share-public.min.css', array(), $this->version, 'all'  );
 
-		wp_register_style( $this->plugin_name . "-amp", plugin_dir_url( __FILE__ ) . 'css/super-web-share-amp-public.css', array(), $this->version, 'all' );
+		wp_register_style( $this->plugin_name . "-amp", plugin_dir_url( __FILE__ ) . 'css/super-web-share-amp-public.min.css', array(), $this->version, 'all' );
 
 		if ( can_display_button( 'inline' ) || can_display_button( 'floating' ) ) {
 
@@ -113,7 +113,7 @@ class Super_Web_Share_Public {
 	 */
 	public function enqueue_scripts() {
 		
-		wp_register_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/super-web-share-public.js', array(), $this->version, true );
+		wp_register_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/super-web-share-public.min.js', array(), $this->version, true );
 
 		if ( ! superwebshare_is_amp() ) {
 			if ( can_display_button( 'inline' ) || can_display_button( 'floating' )  ) {
