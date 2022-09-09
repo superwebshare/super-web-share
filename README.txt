@@ -94,6 +94,9 @@ Yes, from v2.3 we do support shortcodes to add floating and inline button like a
 
 == Changelog ==
 
+= 2.3.1 =
+Fixed : Accessibility issues
+
 = 2.3 =
 Release Date: May 23rd, 2022
 Shortcodes! Shortcodes!!! Yes, we are now supporting shortcodes.

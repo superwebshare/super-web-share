@@ -12,7 +12,7 @@
  *
  * @package    Super_Web_Share
  * @subpackage Super_Web_Share/public
- * @author     SuperWebShare <info@superwebshare.com>
+ * @author     SuperWebShare <support@superwebshare.com>
  */
 class Super_Web_Share_Public {
 	/**
@@ -150,7 +150,7 @@ function superwebshare_floating_button_code() {
 			$floatingbuttontext = empty( $settings_floating[ 'floating_button_text' ] ) ? 'Share' : $settings_floating[ 'floating_button_text' ];
 
 			$tags  = '<!-- Floating Button by SuperWebShare - Native Share Plugin for WordPress -->' . PHP_EOL;
-			echo '<div class="sws_superaction" style="'. esc_html( $settings_floating['floating_position'] ) .':24px"><button class="superwebshare_tada superwebshare_button superwebshare_button_svg superwebshare_prompt superwebshare-button-' . esc_html( $button_size ) . ' superwebshare-button-' . esc_html( $button_style ) . ' " style="background-color: '. esc_html( $settings_floating['floating_share_color'] ) .'; '. esc_html( $settings_floating['floating_position'] ) .':'. esc_html( $settings_floating['floating_position_leftright'] ) .'px; bottom:'. esc_html( $settings_floating['floating_position_bottom'] ) .'px;";> ' . $icon . '  <span> ' .  esc_html( $floatingbuttontext ) . ' </span></button></div>' . PHP_EOL;
+			echo '<div class="sws_superaction" style="'. esc_html( $settings_floating['floating_position'] ) .':24px"><button class="superwebshare_tada superwebshare_button superwebshare_button_svg superwebshare_prompt superwebshare-button-' . esc_html( $button_size ) . ' superwebshare-button-' . esc_html( $button_style ) . ' " style="background-color: '. esc_html( $settings_floating['floating_share_color'] ) .'; '. esc_html( $settings_floating['floating_position'] ) .':'. esc_html( $settings_floating['floating_position_leftright'] ) .'px; bottom:'. esc_html( $settings_floating['floating_position_bottom'] ) .'px;" aria-label="Share"> ' . $icon . '  <span> ' .  esc_html( $floatingbuttontext ) . ' </span></button></div>' . PHP_EOL;
 			echo $tags;
 		}
 	}
@@ -513,14 +513,14 @@ function superwebshare_amp_modal( $force_display = false  ){
 	
 		?>
 		<amp-lightbox id="superwebshare-lightbox" layout="nodisplay">
-			<div class="superwebshare-lightbox" on="tap:superwebshare-lightbox.close" role="button" tabindex="0">
+			<div class="superwebshare-lightbox" on="tap:superwebshare-lightbox.close" role="button" tabindex="0" aria-label="Lightbox">
 				<div class="">
 					<?php 
 					if( $fallback_on_amp == 'enable' || $force_display ){
 						?>
-							<amp-social-share class="rounded" aria-label="Share on Twitter" type="twitter" width="48" height="48"></amp-social-share>
-							<amp-social-share type="linkedin" aria-label="Share on LinkedIn" width="48" height="48"></amp-social-share>
-							<amp-social-share class="rounded" aria-label="Share on WhatsApp" type="whatsapp" width="48" height="48"></amp-social-share>
+							<amp-social-share class="rounded" aria-hidden="true" type="twitter" width="48" height="48"></amp-social-share>
+							<amp-social-share class="rounded" aria-hidden="true" type="linkedin" width="48" height="48"></amp-social-share>
+							<amp-social-share class="rounded" aria-hidden="true" type="whatsapp" width="48" height="48"></amp-social-share>
 						<?php
 					}
 					?>
