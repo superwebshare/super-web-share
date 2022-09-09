@@ -12,7 +12,7 @@
  *
  * @package    Super_Web_Share
  * @subpackage Super_Web_Share/public
- * @author     SuperWebShare <info@superwebshare.com>
+ * @author     SuperWebShare <support@superwebshare.com>
  */
 class Super_Web_Share_Public {
 	/**
@@ -518,7 +518,7 @@ function superwebshare_amp_modal( $force_display = false  ){
 					<?php 
 					if( $fallback_on_amp == 'enable' || $force_display ){
 						?>
-							<amp-social-share class="rounded" aria-label="true" type="twitter" width="48" height="48"></amp-social-share>
+							<amp-social-share class="rounded" aria-hidden="true" type="twitter" width="48" height="48"></amp-social-share>
 							<amp-social-share class="rounded" aria-hidden="true" type="linkedin" width="48" height="48"></amp-social-share>
 							<amp-social-share class="rounded" aria-hidden="true" type="whatsapp" width="48" height="48"></amp-social-share>
 						<?php
