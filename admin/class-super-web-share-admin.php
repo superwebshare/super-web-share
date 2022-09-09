@@ -121,7 +121,7 @@ class Super_Web_Share_Admin extends Super_Web_Share
 		</div>
 		<div>
 			<p class="description">
-				<?php _e('If the share button is not showing on the page, kindly please make sure that the Floating amd Inline Content settings are enabled and the respective page type is selected', 'super-web-share'); ?>
+				<?php _e('If the share button is not showing on the page, kindly please make sure that the Floating and Inline Content settings are enabled and the respective page type is selected', 'super-web-share'); ?>
 			</p>
 		</div>
 		<?php
