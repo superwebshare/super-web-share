@@ -730,3 +730,22 @@ function super_web_share_fallback_modal_for_shortcode(){
 
 	) );
 }
+
+
+/**
+ * To Add async attributes to Script tag
+ *
+ * @param $tag
+ * @param $handle
+ * @return string|string[]
+ * 
+ * @since 2.3.1
+ */
+function super_web_share_add_async_attribute( $tag, $handle ) {
+	if ( substr( $handle, 0, strlen( 'super-web-share' ) ) === 'super-web-share' ) {
+		$tag = str_replace( ' src', ' async src', $tag );
+	}
+
+	return $tag;
+}
+add_filter( 'script_loader_tag', 'super_web_share_add_async_attribute', 10, 2 );
