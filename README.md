@@ -21,7 +21,7 @@
     <a href="https://superwebshare.com/?utm_source=GitHub&utm_medium=Readme-viewWeb"><strong>Visit Website »</strong></a>
     <br>
     <br>
-    <a href="https://github.com/superwebshare/SuperWebShare-WordPress-Plugin/issues/new?template=bug.md">Report bug</a>
+    <a href="https://github.com/superwebshare/super-web-share/issues/new?template=bug.md">Report bug</a>
     ·
     <a href="https://wordpress.org/plugins/super-web-share/">WordPress Plugin</a>
     ·
@@ -80,7 +80,7 @@ Anyone is welcome to contribute to Super Web Share to make it SUPER.
 
 There are various ways you can contribute:
 
-* [Raise an issue](https://github.com/superwebshare/SuperWebShare-WordPress-Plugin/issues) on GitHub.
+* [Raise an issue](https://github.com/superwebshare/super-web-share/issues) on GitHub.
 * Follow and Engage with us on Social Media
 
  &nbsp;&nbsp;&nbsp; <a href="https://twitter.com/intent/follow?screen_name=superwebshare" target="_blank" style="width:100%"><img src="https://image.flaticon.com/icons/svg/174/174876.svg" title="Follow SuperWebShare on Twitter" width=35 height=35></a>&nbsp;&nbsp;&nbsp;&nbsp;
