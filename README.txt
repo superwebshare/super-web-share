@@ -37,7 +37,7 @@ Currently, the Super Web Share plugin provides a share button before and after t
 
 #### Requirments for working SuperWebShare?
 * The Website should be served fully via a secured origin, i.e., the green padlock should be there on the address for working Super Web Share. 
-* Else by default, our fallback popup will show on those browsers where users can share via WhatsApp, Facebook, LinkedIn and Twitter and also comes with the Copy link option (on https sites).
+* Else by default, our fallback popup will show on those browsers where users can share via the major social sharing platforms like WhatsApp, Facebook, LinkedIn and Twitter and also comes with the Copy link option (on https sites).
 
 == Installation ==
 
@@ -61,7 +61,7 @@ The Web Share plugin works on browsers like Chrome for Android, iOS Safari (from
 
 = Will the floating share button and Inline content button on page and post will show upon non-supported browsers? =
 
-No, the floating share button and Inline content share button on pages and posts will be hidden automatically if the browser won't support Web Share API. If you have enabled the fallback within our settings, we show the fallback prompt with share icons and copy link option.
+No, the floating share button and Inline content share button on pages and posts will be hidden automatically if the browser won't support Web Share API. If you have enabled the fallback within our settings, we show the fallback prompt with social share icons and copy link option.
 
 = How do I report bugs and new feature suggestions? =
 
@@ -73,7 +73,7 @@ You can contribute to this Web Share plugin via our [GitHub repository](https://
 
 = Did I need to register or signup anywhere to use Super Web Share plugin? =
 
-No, super web share is super easy to set up for anyone to create a native share on their websites without any registration needed. If the browser supports the API, it will do the magic prompt over those browsers. 
+No, super web share is super easy to set up for anyone to create a native social sharing experience on their websites, without any registrations. If the browser supports the Share API, it will magically prompt the native shareing on the supported browsers. 
 
 = Is SuperWebShare plugin GDPR Compliant? =
 
@@ -81,7 +81,7 @@ Yes, SuperWebShare is fully GDPR Compliant. Unlike other social sharing tools, t
 
 = Shortcode support available? =
 
-Yes, from v2.3 we do support shortcodes to add floating and inline button like as on your mind. You can read more about how to [add shortcodes at here](https://superwebshare.com/docs/shortcodes/).
+Yes, from v2.3 we do support shortcodes to add floating and inline button like as on your mind. You can read more about how to [add shortcodes](https://superwebshare.com/docs/shortcodes/).
 
 == Screenshots ==
 
@@ -90,7 +90,7 @@ Yes, from v2.3 we do support shortcodes to add floating and inline button like a
 3. Inline sharing button settings page of Super Web Share
 4. Fallback settings page
 5. Appearance page settings
-6. Fallback on the desktop
+6. Fallback on the desktop with social media platforms like WhatsApp, Twitter, Facebook and LinkedIn.
 
 == Changelog ==
 
