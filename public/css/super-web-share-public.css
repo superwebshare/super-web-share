@@ -137,7 +137,8 @@
 }
 
 .superwebshare_normal_button1:hover {
-    opacity: .8!important;
+	opacity: .8 !important;
+	color: #fff;
 }
 
 /*Tada*/
