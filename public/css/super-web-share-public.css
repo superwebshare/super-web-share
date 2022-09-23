@@ -246,6 +246,11 @@
   color: #fff;
   text-align: center;
 }
+
+.modal-container p {
+  color: #fff;
+}
+
 .sws-copy a {
   text-decoration: none;
   display: inline-block;
