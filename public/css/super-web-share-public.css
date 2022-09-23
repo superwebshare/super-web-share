@@ -66,6 +66,7 @@
 .superwebshare_prompt:active {
     outline: 0;
     text-decoration: none;
+    color: #fff;
 }
 
 .superwebshare_prompt {
@@ -232,6 +233,7 @@
   justify-content: space-around;
   margin-bottom: 1px;
   flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 
 .sws-links a {
@@ -249,6 +251,10 @@
 }
 
 .modal-container p {
+  color: #ffffffd1;
+  transition: all 0.200s;
+}
+.modal-container .sws-links a:hover p {
   color: #fff;
 }
 
