@@ -38,9 +38,9 @@ class Super_Web_Share_Admin extends Super_Web_Share
 	}
 	
 	public function enqueue_styles() {
-		wp_enqueue_style( "superwebshare-admin", plugin_dir_url( __FILE__ ) . 'css/super-web-share-admin.css', array(), $this->version, 'all' );
+		wp_enqueue_style( "superwebshare-admin", plugin_dir_url( __FILE__ ) . 'css/super-web-share-admin.min.css', array(), $this->version, 'all' );
 		if( ! empty( $_GET[ 'page' ] ) && $_GET[ 'page' ] == 'superwebshare-appearance' ){
-			wp_enqueue_style( "superwebshare-public", SUPERWEBSHARE_PLUGIN_DIR_URI . '/public/css/super-web-share-public.css', array(), $this->version, 'all' );
+			wp_enqueue_style( "superwebshare-public", SUPERWEBSHARE_PLUGIN_DIR_URI . '/public/css/super-web-share-public.min.css', array(), $this->version, 'all' );
 		}
 	}
 	public function enqueue_scripts($hook) {
@@ -54,7 +54,7 @@ class Super_Web_Share_Admin extends Super_Web_Share
 		wp_enqueue_style( 'wp-color-picker' );
 
 		// Main JS
-		wp_enqueue_script(  'superwebshare-main-js', plugin_dir_url( __FILE__ ) . 'js/super-web-share-admin.js', array( 'wp-color-picker' ), $this->version, true );
+		wp_enqueue_script(  'superwebshare-main-js', plugin_dir_url( __FILE__ ) . 'js/super-web-share-admin.min.js', array( 'wp-color-picker' ), $this->version, true );
 	}
 	
 	public function add_meta_box( $post_type ){
@@ -121,7 +121,7 @@ class Super_Web_Share_Admin extends Super_Web_Share
 		</div>
 		<div>
 			<p class="description">
-				<?php _e('If the share button is not showing on the page, kindly please make sure that the Floating amd Inline Content settings are enabled and the respective page type is selected', 'super-web-share'); ?>
+				<?php _e('If the share button is not showing on the page, kindly please make sure that the Floating and Inline Content settings are enabled and the respective page type is selected', 'super-web-share'); ?>
 			</p>
 		</div>
 		<?php
