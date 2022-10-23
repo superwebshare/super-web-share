@@ -423,7 +423,7 @@ function superwebshare_inline_amp_button_code($content) {
 */
 function superwebshare_amp_floating_button_code() {
 
-	if( can_display_button_page_wise( ) || can_display_button_page_wise( 'inline' ) ){
+	if( superwebshare_is_amp() && ( can_display_button_page_wise( ) || can_display_button_page_wise( 'inline' ) ) ){
 		superwebshare_amp_modal();
 	}
 
@@ -469,9 +469,6 @@ function superwebshare_amp_floating_button_code() {
 								<?php esc_html_e( $button_text, 'superwebshare' ) ?>
 							</span>
 						</button>
-						<!-- <button  type="button" class="superwebshare_tada rounded superwebshare_button superwebshare_prompt superwebshare_amp_fallback_button" on="tap:superwebshare-lightbox" style="background-color: <?= esc_html( $bg_color ) ?>">
-							<span> <?php esc_html_e( $button_text, 'superwebshare' ) ?></span>
-						</button> -->
 					<?php
 				}else{
 					?>
@@ -513,7 +510,7 @@ function superwebshare_amp_modal( $force_display = false  ){
 	
 		?>
 		<amp-lightbox id="superwebshare-lightbox" layout="nodisplay">
-			<div class="superwebshare-lightbox" on="tap:superwebshare-lightbox.close" role="button" tabindex="0" aria-label="Lightbox">
+			<div class="superwebshare-lightbox" on="tap:superwebshare-lightbox.close" role="button" tabindex="0" aria-hidden="true">
 				<div class="">
 					<?php 
 					if( $fallback_on_amp == 'enable' || $force_display ){
