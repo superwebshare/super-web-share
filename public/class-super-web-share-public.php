@@ -72,7 +72,7 @@ class Super_Web_Share_Public {
 	}
 	
 	
-		/**
+	/**
 	 * Hook the plugin function on 'init' event.
 	 *
 	 * @since    1.0.0
@@ -306,8 +306,10 @@ function superwebshare_fallback_modal( $args, $echo = true ){
 
 	 $args[ 'twitter_via' ] = empty( $args[ 'twitter_via' ] ) ? "" : "&via=" . $args[ 'twitter_via' ];
 
+	 $icon_class = new Super_Web_Share_Icons();
+	
 	  ob_start();
-
+	  
 	 ?>
 			<div class="sws-modal-bg sws-layout-<?= $args[ 'layout' ] ?>">
 				<div class="modal-container" style="background-color: <?= $args[ 'bg' ] ?>" >
@@ -317,13 +319,13 @@ function superwebshare_fallback_modal( $args, $echo = true ){
 						
 						<div class="sws-modal-content">
 							<div class="sws-links">
-								<a  target="_blank" href="#" class="sws-open-in-tab" data-type='facebook' rel="nofollow noreferrer"> <i class="sws-icon sws-icon-facebook"></i><p> <?= _e( 'Facebook', 'super-web-share' ) ?></p></a>
-								<a  target="_blank" href="#" class="sws-open-in-tab" data-type='twitter' data-params='<?=$args[ 'twitter_via' ]?>' rel="nofollow noreferrer"> <i  class="sws-icon sws-icon-twitter"></i><p> <?= _e( 'Twitter', 'super-web-share' ) ?></p></a>
-								<a  target="_blank" href="#" class="sws-open-in-tab" data-type='linkedin' rel="nofollow noreferrer"> <i  class="sws-icon sws-icon-linked-in"></i> <p> <?= _e( 'LinkedIn', 'super-web-share' ) ?> </p></a>
-								<a  target="_blank" href="#" class="sws-open-in-tab" data-type='whatsapp' rel="nofollow noreferrer"> <i  class="sws-icon sws-icon-whatsapp"></i> <p><?= _e( 'WhatsApp', 'super-web-share' ) ?></p></a>
+								<a  target="_blank" href="#" class="sws-open-in-tab sws-social-facebook" data-type='facebook' rel="nofollow noreferrer"> <?= $icon_class->get_icon( 'icon-facebook', [ 'fill' => $args[ 'layout' ] == 3 ? "#3a579a" :"currentColor" ] ); ?><p> <?= _e( 'Facebook', 'super-web-share' ) ?></p></a>
+								<a  target="_blank" href="#" class="sws-open-in-tab sws-social-twitter" data-type='twitter' data-params='<?=$args[ 'twitter_via' ]?>' rel="nofollow noreferrer"> <?= $icon_class->get_icon( 'icon-twitter', [ 'fill' => $args[ 'layout' ] == 3 ? "#00abf0" : "currentColor" ] ); ?><p> <?= _e( 'Twitter', 'super-web-share' ) ?></p></a>
+								<a  target="_blank" href="#" class="sws-open-in-tab sws-social-linkedin" data-type='linkedin' rel="nofollow noreferrer"> <?= $icon_class->get_icon( 'icon-linkedin', [ 'fill' => $args[ 'layout' ] == 3 ? "#0073b1" :"currentColor" ] ); ?> <p> <?= _e( 'LinkedIn', 'super-web-share' ) ?> </p></a>
+								<a  target="_blank" href="#" class="sws-open-in-tab sws-social-whatsapp" data-type='whatsapp' rel="nofollow noreferrer"> <?= $icon_class->get_icon( 'icon-whatsapp', [ 'fill' => $args[ 'layout' ] == 3 ? "#48c757" :"currentColor" ] ); ?> <p> <?= _e( 'WhatsApp', 'super-web-share' ) ?></p></a>
 							</div>
 							<div class="sws-copy">
-								<a href="#" > <i  class="sws-icon sws-icon-copy"></i><span><?= _e( 'Copy Link', 'super-web-share' ) ?></span></a>
+								<a href="#" class="sws-copy-link" > <?= $icon_class->get_icon( 'icon-copy' ); ?> <span><?= _e( 'Copy Link', 'super-web-share' ) ?></span></a>
 							</div>
 
 						</div>
