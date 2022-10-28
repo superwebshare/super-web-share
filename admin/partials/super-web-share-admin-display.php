@@ -485,17 +485,22 @@ function superwebshare_admin_interface_render() {
 
 	}else if(  $active_tab == "superwebshare-support"  ){
 		?>
+			<br>
 			<h2>Need any help or facing any issues?</h2>
-			<p>We're happy to help you! Just <a href="https://wordpress.org/support/plugin/super-web-share/#new-topic-0" target="_blank">open a new topic on WordPress.org support</a>, we will try our best to reply asap to sort out the issues or doubts.</p>
+				<ul style="list-style-type: disc;margin-left:16px">
+					<li><p>We're happy to help you! Just <a href="https://wordpress.org/support/plugin/super-web-share/#new-topic-0" target="_blank">open a new topic on WordPress.org support</a>, we will try our best to reply asap to sort out the issues or doubts. </li>
+					<li><p>You can also drop email to our support mailbox for more help from us: <b>support@superwebshare.com</b></p></li>
+					<br>
+				</ul>
 
 			<h2>Active on Social medias?</h2>
 			<p>Connect with us on our social media. You can also share your suggestions and feedback with us to improve our small plugin:</p>
-
-			<ul style="list-style-type: disc;margin-left:16px">
-				<li><a href="https://www.facebook.com/SuperWebShare/" target="_blank">Facebook</a></li>
-				<li><a href="https://twitter.com/superwebshare" target="_blank">Twitter</a></li>
-				<li><a href="https://www.instagram.com/superwebshare/" target="_blank">Instagram</a></li>
-			</ul>
+				<ul style="list-style-type: disc;margin-left:16px">
+					<li><a href="https://www.facebook.com/SuperWebShare/" target="_blank">Facebook</a></li>
+					<li><a href="https://twitter.com/superwebshare" target="_blank">Twitter</a></li>
+					<li><a href="https://www.instagram.com/superwebshare/" target="_blank">Instagram</a></li>
+					<li>Our email: <b>support@superwebshare.com</b></li>
+				</ul>
 		<?php
 	}else if(  $active_tab == "superwebshare-appearance" ){
 
