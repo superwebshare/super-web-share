@@ -275,6 +275,7 @@
 .modal-container a, .modal-container a:link, .modal-container a:visited {
   color: #fff;
   text-align: center;
+  text-decoration: none;
 }
 
 .modal-container p {
