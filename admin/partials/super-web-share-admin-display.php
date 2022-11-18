@@ -81,7 +81,7 @@ function superwebshare_inline_button_text_cb() {
 function superwebshare_inline_button_color_cb() {
 	$settings = superwebshare_get_settings_inline();
 	?>
-	<input type="text" name="superwebshare_inline_settings[inline_button_share_color]" id="superwebshare_inline_settings[inline_button_share_color]" class="superwebshare-colorpicker" value="<?php echo isset( $settings['inline_button_share_color'] ) ? esc_html( $settings['inline_button_share_color'] ) : '#D5E0EB'; ?>" data-default-color="#000000">
+	<input type="text" name="superwebshare_inline_settings[inline_button_share_color]" id="superwebshare_inline_settings[inline_button_share_color]" class="superwebshare-colorpicker" value="<?php echo isset( $settings['inline_button_share_color'] ) ? esc_html( $settings['inline_button_share_color'] ) : '#D5E0EB'; ?>" data-default-color="#D5E0EB">
     <?php
 }
 
@@ -150,7 +150,7 @@ function superwebshare_floating_enable_cb() {
 function superwebshare_floating_color_cb() {
 	$settings_floating = superwebshare_get_settings_floating();
 	?>
-		<input type="text" name="superwebshare_floating_settings[floating_share_color]" id="superwebshare_floating_settings[floating_share_color]" class="superwebshare-colorpicker" value="<?php echo isset( $settings_floating['floating_share_color'] ) ? esc_html( $settings_floating['floating_share_color']) : '#D5E0EB'; ?>" data-default-color="#000000">
+		<input type="text" name="superwebshare_floating_settings[floating_share_color]" id="superwebshare_floating_settings[floating_share_color]" class="superwebshare-colorpicker" value="<?php echo isset( $settings_floating['floating_share_color'] ) ? esc_html( $settings_floating['floating_share_color']) : '#D5E0EB'; ?>" data-default-color="#D5E0EB">
 			<p class="description">
 				<?php _e('Select the color that you would like to add to the floating share button.', 'super-web-share'); ?>
 			</p>
