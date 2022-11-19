@@ -319,7 +319,7 @@ function superwebshare_appearance_icon_cb() {
 	$key = 'superwebshare_appearance_settings';
 
 	$class_icon = new Super_Web_Share_Icons();
-	$icons = $class_icon->get_icons();
+	$icons = $class_icon->get_icons( "share" );
 
 	?>
 		<div class='sws-appearance-checkbox sws-appearance-icons'>
