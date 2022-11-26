@@ -66,8 +66,8 @@ const getPageMeta = () =>{
 
     if (document.querySelector('meta[property="og:title"]') != null) {
         mData.meta_title = document.querySelector('meta[property="og:title"]').content;
-    } else if (document.querySelector('meta[property="description"]') != null) {
-        mData.meta_title = document.querySelector('meta[property="description"]').content;
+    } else if (document.querySelector('meta[property="twitter:title"]') != null) {
+        mData.meta_title =  document.querySelector('meta[property="twitter:title"]').content;
     } else {
         mData.meta_title = document.title;
     }
