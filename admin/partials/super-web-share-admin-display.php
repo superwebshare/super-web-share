@@ -351,7 +351,7 @@ function superwebshare_appearance_icon_cb() {
 function superwebshare_appearance_button_style_cb() {
 
 	$settings_appearance = superwebshare_get_settings_appearance();
-
+	$color = isset($settings_appearance[ 'superwebshare_appearance_button_text_color' ]) ? $settings_appearance[ 'superwebshare_appearance_button_text_color' ] : "#fff";
 	$class_icon = new Super_Web_Share_Icons();
 	$icon = $class_icon->get_icon();
 
@@ -368,7 +368,7 @@ function superwebshare_appearance_button_style_cb() {
 							<li>
 								<input type="radio" class='sws-input-radio' id='sws-input-radio-<?= $rand ?>' <?= $checked ?>  name="<?= $key ?>[superwebshare_appearance_button_style]" value="<?= $button_name ?>">
 								<label  for="sws-input-radio-<?= $rand ?>">
-									<span class="superwebshare_tada superwebshare_button superwebshare_button_svg superwebshare_prompt superwebshare-button-<?= $button_name ?>" style="background-color: #BD3854; right:5px; bottom:5px;" ;="">  <?= $icon ?>  <span> Share </span></span>
+									<span class="superwebshare_tada superwebshare_button superwebshare_button_svg superwebshare_prompt superwebshare-button-<?= $button_name ?>" style="background-color: #BD3854; right:5px; bottom:5px;color: <?= $color ?> ">  <?= $icon ?>  <span> Share </span></span>
 								</label>
 								
 							</li>
@@ -390,7 +390,7 @@ function superwebshare_appearance_button_text_color_cb() {
 	$key = 'superwebshare_appearance_settings';
 	$value = isset( $settings_appearance[ 'superwebshare_appearance_button_text_color' ] ) ? esc_html( $settings_appearance[ 'superwebshare_appearance_button_text_color' ] ) : "#fff";
 ?>
-	<input type="text" name="<?= $key ?>[superwebshare_appearance_button_text_color]" class="superwebshare-colorpicker" id="<?= $key ?>[superwebshare_appearance_button_text_color]" placeholder="Twitter Username"  value="<?php echo $value ?>" >
+	<input type="text" name="<?= $key ?>[superwebshare_appearance_button_text_color]" class="button-text-color" id="<?= $key ?>[superwebshare_appearance_button_text_color]"  value="<?php echo $value ?>" >
 	<p class="description">
 		<?php _e('Select a color for share button', 'super-web-share'); ?>
 	</p>
