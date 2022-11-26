@@ -137,7 +137,8 @@ function superwebshare_floating_button_code() {
 		$icon_name = empty( $settings_appearance[ 'superwebshare_appearance_button_icon' ] ) ? "share-icon-1" : $settings_appearance[ 'superwebshare_appearance_button_icon' ];
 		$button_size = empty( $settings_appearance[ 'superwebshare_appearance_button_size' ] ) ? "large" : $settings_appearance[ 'superwebshare_appearance_button_size' ];
 		$button_style = empty( $settings_appearance[ 'superwebshare_appearance_button_style' ] ) ? "style-1" : $settings_appearance[ 'superwebshare_appearance_button_style' ];
-
+		$text_color =  empty( $settings_appearance['superwebshare_appearance_button_text_color'] ) ? "#fff" : $settings_appearance['superwebshare_appearance_button_text_color'];
+		
 		$icon_class = new Super_Web_Share_Icons();
 		$icon = $icon_class->get_icon( $icon_name );
 
@@ -150,7 +151,7 @@ function superwebshare_floating_button_code() {
 			$floatingbuttontext = empty( $settings_floating[ 'floating_button_text' ] ) ? 'Share' : $settings_floating[ 'floating_button_text' ];
 
 			$tags  = '<!-- Floating Button by SuperWebShare - Native Share Plugin for WordPress -->' . PHP_EOL;
-			echo '<div class="sws_superaction" style="'. esc_html( $settings_floating['floating_position'] ) .':24px"><button class="superwebshare_tada superwebshare_button superwebshare_button_svg superwebshare_prompt superwebshare-button-' . esc_html( $button_size ) . ' superwebshare-button-' . esc_html( $button_style ) . ' " style="background-color: '. esc_html( $settings_floating['floating_share_color'] ) .'; '. esc_html( $settings_floating['floating_position'] ) .':'. esc_html( $settings_floating['floating_position_leftright'] ) .'px; bottom:'. esc_html( $settings_floating['floating_position_bottom'] ) .'px;" aria-label="Share"> ' . $icon . '  <span> ' .  esc_html( $floatingbuttontext ) . ' </span></button></div>' . PHP_EOL;
+			echo '<div class="sws_superaction" style="'. esc_html( $settings_floating['floating_position'] ) .':24px"><button class="superwebshare_tada superwebshare_button superwebshare_button_svg superwebshare_prompt superwebshare-button-' . esc_html( $button_size ) . ' superwebshare-button-' . esc_html( $button_style ) . ' " style="background-color: '. esc_html( $settings_floating['floating_share_color'] ) .'; '. esc_html( $settings_floating['floating_position'] ) .':'. esc_html( $settings_floating['floating_position_leftright'] ) .'px; bottom:'. esc_html( $settings_floating['floating_position_bottom'] ) .'px;color: ' .  esc_html( $text_color ) . ' " aria-label="Share"> ' . $icon . '  <span> ' .  esc_html( $floatingbuttontext ) . ' </span></button></div>' . PHP_EOL;
 			echo $tags;
 		}
 	}
