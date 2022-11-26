@@ -379,6 +379,24 @@ function superwebshare_appearance_button_style_cb() {
 		</div>
 	<?php
 }
+
+/**
+ * Color for Appearance Button style to be used for the fallback and inline share button text and icon
+ *
+ * @since 2.4
+ */ 
+function superwebshare_appearance_button_text_color_cb() {
+	$settings_appearance = superwebshare_get_settings_appearance();
+	$key = 'superwebshare_appearance_settings';
+	$value = isset( $settings_appearance[ 'superwebshare_appearance_button_text_color' ] ) ? esc_html( $settings_appearance[ 'superwebshare_appearance_button_text_color' ] ) : "#fff";
+?>
+	<input type="text" name="<?= $key ?>[superwebshare_appearance_button_text_color]" class="superwebshare-colorpicker" id="<?= $key ?>[superwebshare_appearance_button_text_color]" placeholder="Twitter Username"  value="<?php echo $value ?>" >
+	<p class="description">
+		<?php _e('Select a color for share button', 'super-web-share'); ?>
+	</p>
+<?php
+}
+
 /**
  * Appearance Button Size
  *
