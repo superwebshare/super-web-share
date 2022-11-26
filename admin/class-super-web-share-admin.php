@@ -687,45 +687,55 @@ add_action( 'admin_init', 'superwebshare_register_settings_fallback' );
 function superwebshare_register_settings_appearance(){
 	// Register Setting
 	register_setting( 
-		'superwebshare_settings_appearance_group', 					// Group name
-		'superwebshare_appearance_settings', 						// Setting name = html form <input> name on settings form
-		'superwebshare_validator_and_sanitizer_appearance'			// Input sanitizer
+		'superwebshare_settings_appearance_group', 			// Group name
+		'superwebshare_appearance_settings', 				// Setting name = html form <input> name on settings form
+		'superwebshare_validator_and_sanitizer_appearance'		// Input sanitizer
 	);
 
 	// Appearance Settings Section
 	add_settings_section(
         'superwebshare_appearance_settings_section',				// ID
         __('Appearance Settings', 'super-web-share'),				// Title
-        '__return_false',											// Callback Function
-        'superwebshare_appearance_settings_section'					// Page slug
+        '__return_false',							// Callback Function
+        'superwebshare_appearance_settings_section'				// Page slug
 	);
 
 	
 	//Since 2.3 for share button icon.
 	add_settings_field(
-		'superwebshare_appearance_button_icon',						// ID
-		__('Button icon', 'super-web-share'),						// Title
-		'superwebshare_appearance_icon_cb',							// CB
-		'superwebshare_appearance_settings_section',				// Page slug
-		'superwebshare_appearance_settings_section'					// Settings Section ID
+		'superwebshare_appearance_button_icon',				// ID
+		__('Button icon', 'super-web-share'),				// Title
+		'superwebshare_appearance_icon_cb',				// CB
+		'superwebshare_appearance_settings_section',			// Page slug
+		'superwebshare_appearance_settings_section'			// Settings Section ID
 	);
 
 	//Since 2.3 for share button Style.
 	add_settings_field(
-		'superwebshare_appearance_button_style',					// ID
-		__('Style for share button', 'super-web-share'),			// Title
-		'superwebshare_appearance_button_style_cb',					// CB
-		'superwebshare_appearance_settings_section',				// Page slug
-		'superwebshare_appearance_settings_section'					// Settings Section ID
+		'superwebshare_appearance_button_style',			// ID
+		__('Style for share button', 'super-web-share'),		// Title
+		'superwebshare_appearance_button_style_cb',			// CB
+		'superwebshare_appearance_settings_section',			// Page slug
+		'superwebshare_appearance_settings_section'			// Settings Section ID
+	);
+	
+	
+	//Since 2.4 for Share button text and icon color
+	add_settings_field(
+		'superwebshare_appearance_button_text_color',			// ID
+		__('Text color for share button', 'super-web-share'),		// Title
+		'superwebshare_appearance_button_text_color_cb',		// CB
+		'superwebshare_appearance_settings_section',			// Page slug
+		'superwebshare_appearance_settings_section'			// Settings Section ID
 	);
 
 	//Since 2.3 for share button Size.
 	add_settings_field(
-		'superwebshare_appearance_button_size',						// ID
-		__('Button Size', 'super-web-share'),						// Title
-		'superwebshare_appearance_button_size_cb',					// CB
-		'superwebshare_appearance_settings_section',				// Page slug
-		'superwebshare_appearance_settings_section'					// Settings Section ID
+		'superwebshare_appearance_button_size',				// ID
+		__('Button Size', 'super-web-share'),				// Title
+		'superwebshare_appearance_button_size_cb',			// CB
+		'superwebshare_appearance_settings_section',			// Page slug
+		'superwebshare_appearance_settings_section'			// Settings Section ID
 	);
 
 }
@@ -823,6 +833,7 @@ function superwebshare_settings_default( $name ){
 			'superwebshare_appearance_button_icon' => 'share-icon-1', 	// default value "share-icon-1"
 			'superwebshare_appearance_button_size' => 'lg', 			// default value "lg"
 			'superwebshare_appearance_button_style' => 'style-1', 		// default value "style-1"
+			'superwebshare_appearance_button_text_color' => '' // default value as none, as we output the text color as white
 
 		),
 	];

@@ -51,5 +51,13 @@ jQuery(document).ready(function($){
         jQuery( '.sws-appearance-style .superwebshare_button svg' ).html(svg)
     })
     
+    
+    jQuery( '.button-text-color' ).wpColorPicker({
+        change: function(event, ui) {
+            jQuery( ".superwebshare_button" ).css( "color", ui.color.toString())
+
+        }
+    });
+    
 });
 
