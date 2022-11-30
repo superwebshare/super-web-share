@@ -426,20 +426,20 @@ function superwebshare_register_settings_inline() {
 	// Register Setting
 	register_setting( 
 		'superwebshare_settings_inline_group', 		// Group name
-		'superwebshare_inline_settings', 			// Setting name = html form <input> name on settings form
+		'superwebshare_inline_settings', 		// Setting name = html form <input> name on settings form
 		'superwebshare_validater_and_sanitizer'		// Input sanitizer
 	);
 	// Above & Below Post Share Settings Options
     add_settings_section(
         'superwebshare_inline_settings_section',				// ID
-        __('Inline Content Settings', 'super-web-share'),	// Title
-        '__return_false',										// Callback Function
+        __('Inline Content Settings', 'super-web-share'),			// Title
+        '__return_false',							// Callback Function
         'superwebshare_inline_settings_section'					// Page slug
 	);
 			// Description
 			add_settings_field(
 				'superwebshare_inline_description_share',						// ID
-				__('', 'super-web-share'),										// Title
+				__('', 'super-web-share'),								// Title
 				'superwebshare_inline_description_cb',							// CB
 				'superwebshare_inline_settings_section',						// Page slug
 				'superwebshare_inline_settings_section'							// Settings Section ID
@@ -447,30 +447,30 @@ function superwebshare_register_settings_inline() {
 			// Show Inline Content Share button
 			add_settings_field(
 				'superwebshare_inline_enable_share',							// ID
-				__('Show Inline Content share button', 'super-web-share'),		// Title
-				'superwebshare_inline_enable_cb',								// CB
+				__('Show Inline Content share button', 'super-web-share'),				// Title
+				'superwebshare_inline_enable_cb',							// CB
 				'superwebshare_inline_settings_section',						// Page slug
 				'superwebshare_inline_settings_section'							// Settings Section ID
 			);
 			// Display settings of Share Button (Inline) Above and Below Post/Page Content
 			add_settings_field(
 				'superwebshare_inline_display_share',							// ID
-				__('Post Types to show Inline share', 'super-web-share'),		// Title
-				'superwebshare_inline_display_cb',								// CB
+				__('Post Types to show Inline share', 'super-web-share'),				// Title
+				'superwebshare_inline_display_cb',							// CB
 				'superwebshare_inline_settings_section',						// Page slug
 				'superwebshare_inline_settings_section'							// Settings Section ID
 			);
 			// Position of Share Button (Inline)
 			add_settings_field(
 				'superwebshare_inline_position_share',							// ID
-				__('Position of the button', 'super-web-share'),				// Title
+				__('Position of the button', 'super-web-share'),					// Title
 				'superwebshare_inline_button_position_cb',						// CB
 				'superwebshare_inline_settings_section',						// Page slug
 				'superwebshare_inline_settings_section'							// Settings Section ID
 			);
 			// Text for share button
 			add_settings_field(
-				'superwebshare_inline_text_share',								// ID
+				'superwebshare_inline_text_share',							// ID
 				__('Button text', 'super-web-share'),							// Title
 				'superwebshare_inline_button_text_cb',							// CB
 				'superwebshare_inline_settings_section',						// Page slug
@@ -478,7 +478,7 @@ function superwebshare_register_settings_inline() {
 			);
 			// Inline Button Color
 			add_settings_field(
-				'superwebshare_inline_color_share',								// ID
+				'superwebshare_inline_color_share',							// ID
 				__('Button color', 'super-web-share'),							// Title
 				'superwebshare_inline_button_color_cb',							// CB
 				'superwebshare_inline_settings_section',						// Page slug
@@ -488,8 +488,8 @@ function superwebshare_register_settings_inline() {
 			// Enable/Disable Share Button - AMP (1.4.4)
 			add_settings_field(
 				'superwebshare_inline_enable_amp_share',						// ID
-				__('Show Inline on AMP Pages', 'super-web-share'),				// Title
-				'inline_amp_enable_cb',											// CB
+				__('Show Inline on AMP Pages', 'super-web-share'),					// Title
+				'inline_amp_enable_cb',									// CB
 				'superwebshare_inline_settings_section',						// Page slug
 				'superwebshare_inline_settings_section'							// Settings Section ID
 			);
@@ -529,20 +529,20 @@ function superwebshare_register_settings_floating() {
 	// Register Setting
 	register_setting( 
 		'superwebshare_settings_floating_group', 			// Group name
-		'superwebshare_floating_settings', 					// Setting name = html form <input> name on settings form
-		'superwebshare_validater_and_sanitizer_floating'	// Input sanitizer
+		'superwebshare_floating_settings', 				// Setting name = html form <input> name on settings form
+		'superwebshare_validater_and_sanitizer_floating'		// Input sanitizer
 	);
 	// Floating Button Settings
     add_settings_section(
         'superwebshare_floating_settings_section',				// ID
-        __('Floating Button Settings', 'super-web-share'),	// Title
-        '__return_false',										// Callback Function
+        __('Floating Button Settings', 'super-web-share'),			// Title
+        '__return_false',							// Callback Function
         'superwebshare_floating_settings_section'				// Page slug
 	);
 			// Description
 			add_settings_field(
 				'superwebshare_floating_description_share',						// ID
-				__('', 'super-web-share'),										// Title
+				__('', 'super-web-share'),									// Title
 				'superwebshare_floating_description_cb',						// CB
 				'superwebshare_floating_settings_section',						// Page slug
 				'superwebshare_floating_settings_section'						// Settings Section ID
@@ -550,8 +550,8 @@ function superwebshare_register_settings_floating() {
 			// Enable/Disable the floating share button
 			add_settings_field(
 				'superwebshare_floating_enable_share',							// ID
-				__('Show Floating share button', 'super-web-share'),			// Title
-				'superwebshare_floating_enable_cb',								// CB
+				__('Show Floating share button', 'super-web-share'),					// Title
+				'superwebshare_floating_enable_cb',							// CB
 				'superwebshare_floating_settings_section',						// Page slug
 				'superwebshare_floating_settings_section'						// Settings Section ID
 			);
@@ -559,14 +559,14 @@ function superwebshare_register_settings_floating() {
 			add_settings_field(
 				'superwebshare_floating_color_share',							// ID
 				__('Button color', 'super-web-share'),							// Title
-				'superwebshare_floating_color_cb',								// CB
+				'superwebshare_floating_color_cb',							// CB
 				'superwebshare_floating_settings_section',						// Page slug
 				'superwebshare_floating_settings_section'						// Settings Section ID
 			);
 			// Floating Display Pages
 			add_settings_field(
 				'superwebshare_floating_display_share',							// ID
-				__('Post Types for Floating button', 'super-web-share'),		// Title
+				__('Post Types for Floating button', 'super-web-share'),				// Title
 				'superwebshare_floating_display_cb',							// CB
 				'superwebshare_floating_settings_section',						// Page slug
 				'superwebshare_floating_settings_section'						// Settings Section ID
@@ -579,18 +579,10 @@ function superwebshare_register_settings_floating() {
 				'superwebshare_floating_settings_section',						// Page slug
 				'superwebshare_floating_settings_section'						// Settings Section ID
 			);
-			// Position from Bottom
-			add_settings_field(
-				'superwebshare_floating_position_bottom_share',					// ID
-				__('Position from bottom', 'super-web-share'),					// Title
-				'superwebshare_floating_position_bottom_cb',					// CB
-				'superwebshare_floating_settings_section',						// Page slug
-				'superwebshare_floating_settings_section'						// Settings Section ID
-			);
 			// Text for Floating Button (2.1)
 			add_settings_field(
-				'floating_button_text',											// ID
-				__('Button text for Floating button', 'super-web-share'),		// Title
+				'floating_button_text',									// ID
+				__('Button text for Floating button', 'super-web-share'),				// Title
 				'superwebshare_floating_button_text_cb',						// CB
 				'superwebshare_floating_settings_section',						// Page slug
 				'superwebshare_floating_settings_section'						// Settings Section ID
@@ -598,8 +590,8 @@ function superwebshare_register_settings_floating() {
 			// Enable/Disable Share Button - AMP (1.4.4)
 			add_settings_field(
 				'superwebshare_floating_enable_amp_share',						// ID
-				__('Show floating on AMP Pages', 'super-web-share'),			// Title
-				'floating_amp_enable_cb',										// CB
+				__('Show floating on AMP Pages', 'super-web-share'),					// Title
+				'floating_amp_enable_cb',								// CB
 				'superwebshare_floating_settings_section',						// Page slug
 				'superwebshare_floating_settings_section'						// Settings Section ID
 			);
