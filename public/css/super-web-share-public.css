@@ -273,13 +273,12 @@
 }
 
 .modal-container a, .modal-container a:link, .modal-container a:visited {
-  color: #fff;
   text-align: center;
   text-decoration: none;
 }
 
 .modal-container p {
-  color: #ffffffd1;
+  color: inherit;
   transition: all 0.200s;
 }
 .modal-container .sws-links a:hover p {
@@ -293,6 +292,7 @@
   padding: 8px 0;
   text-align: center;
   background: #252525;
+  color:#fff;
   border-radius: 50px;
   font-size: 16px;
   display: flex;
