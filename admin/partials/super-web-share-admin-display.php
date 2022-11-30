@@ -294,6 +294,22 @@ function superwebshare_fallback_text_color_cb(){
 }
 
 /**
+ *  Disable native share on desktop to forcefully show the fallback
+ *
+ * @since 2.4
+ */ 
+function superwebshare_fallback_show_fallback_cb(){
+	$settings_fallback = superwebshare_get_settings_fallback();
+	$saved = isset( $settings_fallback[ 'fallback_show_in_desktop' ] ) ? esc_html( $settings_fallback[ 'fallback_show_in_desktop' ] ) : "disable";
+	superwebshare_input_toggle( 'superwebshare_fallback_settings[fallback_show_in_desktop]', 'enable',  $saved );
+	?>
+		<p class="description">
+			<?php _e('This setting does not apply to Microsoft Edge Browser as the sharing dialog box has social media links same as our fallback.', 'super-web-share'); ?>
+		</p>
+	<?php
+}
+
+/**
  * Fallback twitter Via parameter value field
  * @since 2.3
  */ 
