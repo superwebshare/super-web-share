@@ -606,63 +606,72 @@ add_action( 'admin_init', 'superwebshare_register_settings_floating' );
 function superwebshare_register_settings_fallback(){
 	// Register Setting
 	register_setting( 
-		'superwebshare_settings_fallback_group', 					// Group name
-		'superwebshare_fallback_settings', 							// Setting name = html form <input> name on settings form
-		'superwebshare_validater_and_sanitizer_fallback'			// Input sanitizer
+		'superwebshare_settings_fallback_group', 		// Group name
+		'superwebshare_fallback_settings', 			// Setting name = html form <input> name on settings form
+		'superwebshare_validater_and_sanitizer_fallback'	// Input sanitizer
 	);
 
 	// Floating Button Settings
 	add_settings_section(
-        'superwebshare_fallback_settings_section',					// ID
-        __('Fallback Settings', 'super-web-share'),					// Title
-        '__return_false',											// Callback Function
-        'superwebshare_fallback_settings_section'					// Page slug
+        'superwebshare_fallback_settings_section',				// ID
+        __('Fallback Settings', 'super-web-share'),				// Title
+        '__return_false',							// Callback Function
+        'superwebshare_fallback_settings_section'				// Page slug
 	);
 
 	// Description
 	add_settings_field(
-		'superwebshare_inline_description_share',					// ID
-		__('', 'super-web-share'),									// Title
-		'superwebshare_fallback_description_cb',					// CB
-		'superwebshare_fallback_settings_section',					// Page slug
-		'superwebshare_fallback_settings_section'					// Settings Section ID
+		'superwebshare_inline_description_share',			// ID
+		__('', 'super-web-share'),					// Title
+		'superwebshare_fallback_description_cb',			// CB
+		'superwebshare_fallback_settings_section',			// Page slug
+		'superwebshare_fallback_settings_section'			// Settings Section ID
 	);
 
 	// Since 2.0
 	add_settings_field(
-		'superwebshare_fallback_enable',							// ID
-		__('Show fallback share buttons', 'super-web-share'),	// Title
-		'superwebshare_fallback_enable_cb',							// CB
-		'superwebshare_fallback_settings_section',					// Page slug
-		'superwebshare_fallback_settings_section'					// Settings Section ID
+		'superwebshare_fallback_enable',				// ID
+		__('Show fallback share buttons', 'super-web-share'),		// Title
+		'superwebshare_fallback_enable_cb',				// CB
+		'superwebshare_fallback_settings_section',			// Page slug
+		'superwebshare_fallback_settings_section'			// Settings Section ID
 	);
 
 	//Since 2.1  for fallback modal color
 	add_settings_field(
-		'fallback_modal_background',								// ID
+		'fallback_modal_background',					// ID
 		__('Background color for fallback', 'super-web-share'),		// Title
-		'superwebshare_fallback_modal_background_color_cb',			// CB
-		'superwebshare_fallback_settings_section',					// Page slug
-		'superwebshare_fallback_settings_section'					// Settings Section ID
+		'superwebshare_fallback_modal_background_color_cb',		// CB
+		'superwebshare_fallback_settings_section',			// Page slug
+		'superwebshare_fallback_settings_section'			// Settings Section ID
 	);
 
 	//Since 2.1 for layout selection for fallback
 	add_settings_field(
-		'superwebshare_fallback_modal_layout',						// ID
-		__('Fallback layout', 'super-web-share'),					// Title
-		'superwebshare_fallback_modal_layout_cb',					// CB
-		'superwebshare_fallback_settings_section',					// Page slug
-		'superwebshare_fallback_settings_section'					// Settings Section ID
+		'superwebshare_fallback_modal_layout',				// ID
+		__('Fallback layout', 'super-web-share'),			// Title
+		'superwebshare_fallback_modal_layout_cb',			// CB
+		'superwebshare_fallback_settings_section',			// Page slug
+		'superwebshare_fallback_settings_section'			// Settings Section ID
 	);
 	
 	//Since 2.4 - Color settings for the Fallback text
 	add_settings_field(
-		'superwebshare_fallback_text_color',						// ID
-		__('Fallback text color', 'super-web-share'),					// Title
-		'superwebshare_fallback_text_color_cb',						// CB
-		'superwebshare_fallback_settings_section',					// Page slug
-		'superwebshare_fallback_settings_section'					// Settings Section ID
-	);	
+		'superwebshare_fallback_text_color',				// ID
+		__('Fallback text color', 'super-web-share'),			// Title
+		'superwebshare_fallback_text_color_cb',				// CB
+		'superwebshare_fallback_settings_section',			// Page slug
+		'superwebshare_fallback_settings_section'			// Settings Section ID
+	);
+	
+	//Since 2.4 - Disable native share on desktop to forcefully show the fallback
+	add_settings_field(
+		'superwebshare_fallback_show_fallback',								// ID
+		__('Do you want to show the fallback modal within the desktop devices?', 'super-web-share'),	// Title
+		'superwebshare_fallback_show_fallback_cb',							// CB
+		'superwebshare_fallback_settings_section',							// Page slug
+		'superwebshare_fallback_settings_section'							// Settings Section ID
+	);
 
 	/**
 	 * Since 2.3 for twitter via url parameter
@@ -670,11 +679,11 @@ function superwebshare_register_settings_fallback(){
 	 */
 
 	add_settings_field(
-		'fallback_twitter_via',										// ID
-		__('Twitter username', 'super-web-share'),					// Title
-		'fallback_twitter_via_cb',									// CB
-		'superwebshare_fallback_settings_section',					// Page slug
-		'superwebshare_fallback_settings_section'					// Settings Section ID
+		'fallback_twitter_via',						// ID
+		__('Twitter username', 'super-web-share'),			// Title
+		'fallback_twitter_via_cb',					// CB
+		'superwebshare_fallback_settings_section',			// Page slug
+		'superwebshare_fallback_settings_section'			// Settings Section ID
 	);
 
 }
@@ -829,7 +838,8 @@ function superwebshare_settings_default( $name ){
 			'fallback_modal_background' 		=> '#BD3854',		// default color for fallback modal - 2.1
 			'fallback_layout'			=> '1',			// fallback layout color - 2.1
 			'fallback_twitter_via'			=> '',			// default value none
-			'fallback_text_color'			=> '#fff'		// default color #fff
+			'fallback_text_color'			=> '#fff',		// default color #fff
+			'fallback_show_in_desktop'		=> 'disable'		// default value as disable to trigger based on API support - 2.4
 		),
 		"appearance" => array(
 			'superwebshare_appearance_button_icon' 	=> 'share-icon-1', 	// default value "share-icon-1"
