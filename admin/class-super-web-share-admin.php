@@ -662,6 +662,15 @@ function superwebshare_register_settings_fallback(){
 		'superwebshare_fallback_settings_section',					// Page slug
 		'superwebshare_fallback_settings_section'					// Settings Section ID
 	);
+	
+	//Since 2.4 - Color settings for the Fallback text
+	add_settings_field(
+		'superwebshare_fallback_text_color',						// ID
+		__('Fallback text color', 'super-web-share'),					// Title
+		'superwebshare_fallback_text_color_cb',						// CB
+		'superwebshare_fallback_settings_section',					// Page slug
+		'superwebshare_fallback_settings_section'					// Settings Section ID
+	);	
 
 	/**
 	 * Since 2.3 for twitter via url parameter
@@ -805,35 +814,36 @@ function superwebshare_settings_default( $name ){
 	$default = [
 		"inline" => array(
 			'inline_display_pages'			=>	[], 		// allowed post types. is empty allow all
-			'inline_position'				=>	'before',   // both = Top and Bottom of the content
+			'inline_position'			=>	'before',   	// both = Top and Bottom of the content
 			'inline_button_share_text'		=>	'Share',	// content for share button
 			'inline_button_share_color'		=>	'#BD3854',	// default color for Inline share button
-			'superwebshare_inline_enable'	=>	'disable',	// disabled by default
-			'inline_amp_enable' 			=> 'enable' 	// default enable - 1.4.4 amp settings
+			'superwebshare_inline_enable'		=>	'disable',	// disabled by default
+				'inline_amp_enable' 		=>	'enable' 	// default enable - 1.4.4 amp settings
 
 		),
 		"floating" => array(
-			'floating_share_color' 			=> '#BD3854', 		// defautlt color
-			'floating_display_pages'    	=>  [], 			// allowed post types. is empty allow all
-			'floating_position'				=>	'right', 		// left or right
-			'floating_position_leftright'	=>	'5', 			// in pixel
-			'floating_position_bottom'		=>	'5', 			// in pixel
-			'superwebshare_floating_enable'	=>	'enable',		// enable by default
-			'floating_amp_enable'			=>	'enable',		// enable by default - 1.4.4
-			'floating_button_text'			=> 'Share'   		// default share text - 2.1
+			'floating_share_color' 			=>	'#BD3854', 	// defautlt color
+			'floating_display_pages'    		=>	[], 		// allowed post types. is empty allow all
+			'floating_position'			=>	'right', 	// left or right
+			'floating_position_leftright'		=>	'5', 		// in pixel
+			'floating_position_bottom'		=>	'5', 		// in pixel
+			'superwebshare_floating_enable'		=>	'enable',	// enable by default
+			'floating_amp_enable'			=>	'enable',	// enable by default - 1.4.4
+			'floating_button_text'			=>	'Share'   	// default share text - 2.1
 
 		),
 		"fallback" => array(
-			'superwebshare_fallback_enable' => 'enable', 	// default value - 2.0
-			'fallback_modal_background' 	=> '#BD3854',	// default color for fallback modal - 2.1
-			'fallback_layout'				=> '1',			// Fallback layout color - 2.1
-			'fallback_twitter_via'			=> ''
+			'superwebshare_fallback_enable' 	=> 'enable', 		// default value - 2.0
+			'fallback_modal_background' 		=> '#BD3854',		// default color for fallback modal - 2.1
+			'fallback_layout'			=> '1',			// fallback layout color - 2.1
+			'fallback_twitter_via'			=> '',			// default value none
+			'fallback_text_color'			=> '#fff'		// default color #fff
 		),
 		"appearance" => array(
-			'superwebshare_appearance_button_icon' => 'share-icon-1', 	// default value "share-icon-1"
-			'superwebshare_appearance_button_size' => 'lg', 			// default value "lg"
+			'superwebshare_appearance_button_icon' 	=> 'share-icon-1', 	// default value "share-icon-1"
+			'superwebshare_appearance_button_size' 	=> 'lg', 		// default value "lg"
 			'superwebshare_appearance_button_style' => 'style-1', 		// default value "style-1"
-			'superwebshare_appearance_button_text_color' => '' // default value as none, as we output the text color as white
+			'superwebshare_appearance_button_text_color' => '' 		// default value as none, as we output the text color as white
 
 		),
 	];
