@@ -279,6 +279,23 @@ function superwebshare_fallback_modal_layout_cb(){
 }
 
 /**
+ * Fallback Text Color
+ *
+ * @since 2.4
+ */ 
+function superwebshare_fallback_text_color_cb(){
+	$settings_fallback = superwebshare_get_settings_fallback();
+	$key = 'superwebshare_fallback_settings';
+	$value = isset( $settings_fallback[ 'fallback_text_color' ] ) ? esc_html( $settings_fallback[ 'fallback_text_color' ] ) : "#fff";
+?>
+	<input type="text" name="<?= $key ?>[fallback_text_color]" class="button-text-color" id="<?= $key ?>[fallback_text_color]"  value="<?php echo $value ?>" >
+	<p class="description">
+			<?php _e('Select the color for text and icon for fallback', 'super-web-share'); ?>
+		</p>
+    <?php
+}
+
+/**
  * Fallback twitter Via parameter value field
  * @since 2.3
  */ 
