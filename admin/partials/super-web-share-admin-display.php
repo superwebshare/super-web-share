@@ -183,7 +183,8 @@ function superwebshare_floating_position_cb() {
 					</select>
 			</label> with 
 
-            <input type="number" min="0" step="any" style="width:50px" name="superwebshare_floating_settings[floating_position_leftright]" id="superwebshare_floating_settings[floating_position_leftright]" value="<?php echo isset( $settings_floating['floating_position_leftright'] ) ? esc_html( $settings_floating['floating_position_leftright']) : '30'; ?>">px from left/right
+            	<input type="number" min="0" step="any" style="width:50px" name="superwebshare_floating_settings[floating_position_leftright]" id="superwebshare_floating_settings[floating_position_leftright]" value="<?php echo isset( $settings_floating['floating_position_leftright'] ) ? esc_html( $settings_floating['floating_position_leftright']) : '30'; ?>">px from left/right,
+		<input type="number" min="0" step="any" style="width:50px" name="superwebshare_floating_settings[floating_position_bottom]" id="superwebshare_floating_settings[floating_position_bottom]" value="<?php echo isset( $settings_floating['floating_position_bottom'] ) ? esc_html( $settings_floating['floating_position_bottom']) : '30'; ?>">px from bottom<p>
 	<?php
 }
 
@@ -193,10 +194,7 @@ function superwebshare_floating_position_cb() {
  * @since 1.3
  */ 
 function superwebshare_floating_position_bottom_cb() {
-	$settings_floating = superwebshare_get_settings_floating();
-	?>
-		<input type="number" min="0" step="any" style="width:50px" name="superwebshare_floating_settings[floating_position_bottom]" id="superwebshare_floating_settings[floating_position_bottom]" value="<?php echo isset( $settings_floating['floating_position_bottom'] ) ? esc_html( $settings_floating['floating_position_bottom']) : '30'; ?>">px<p>
-	<?php
+	return ""; // moved this field to superwebshare_floating_position_cb function since 2.4
 }
 
 /**
