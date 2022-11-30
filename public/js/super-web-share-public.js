@@ -35,8 +35,20 @@ function hasPermission() {
       console.log('SuperWebShare: Your browser does not seems to support SuperWebShare, as the browser is incompatible');
   }
 }
+const fallbackForcefullyShowDesktop = () =>{
+    // This settings not applicable for MS Edge browser.
+    if( window.superWebShareFallback.fallback_show_in_desktop === 'enable' ){
+
+        let isIEedge = window.navigator.userAgent.indexOf("Edg") > -1;
+        let regexp = /android|iphone|kindle|ipad|webos|ipod/i;
+        let isDesktop = ! regexp.test( window.navigator.userAgent )
+        return isDesktop && !isIEedge
+    }else{
+        return false;
+    }
+}
 async function SuperWebSharefn(Title, URL, Description) {
-  if (typeof navigator.share === 'undefined' || !navigator.share) {
+  if (typeof navigator.share === 'undefined' || !navigator.share || fallbackForcefullyShowDesktop()) {
       modal();
   } else if (window.location.protocol != 'https:') {
       console.log('SuperWebShare: Seems like the website is not served fully via https://. As for supporting SuperWebShare the website should be served fully via https://');
