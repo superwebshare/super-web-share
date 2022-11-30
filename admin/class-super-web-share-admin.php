@@ -636,6 +636,15 @@ function superwebshare_register_settings_fallback(){
 		'superwebshare_fallback_settings_section',			// Page slug
 		'superwebshare_fallback_settings_section'			// Settings Section ID
 	);
+	
+	// Option to change the fallback popup title - Since 2.4 
+	add_settings_field(
+		'superwebshare_fallback_title',					// ID
+		__('Show fallback title', 'super-web-share'),			// Title
+		'superwebshare_fallback_title_cb',				// CB
+		'superwebshare_fallback_settings_section',			// Page slug
+		'superwebshare_fallback_settings_section'			// Settings Section ID
+	);
 
 	//Since 2.1  for fallback modal color
 	add_settings_field(
@@ -835,6 +844,7 @@ function superwebshare_settings_default( $name ){
 		),
 		"fallback" => array(
 			'superwebshare_fallback_enable' 	=> 'enable', 		// default value - 2.0
+			'fallback_title' 			=> 'Share', 		// default value - Share for the popup title
 			'fallback_modal_background' 		=> '#BD3854',		// default color for fallback modal - 2.1
 			'fallback_layout'			=> '1',			// fallback layout color - 2.1
 			'fallback_twitter_via'			=> '',			// default value none

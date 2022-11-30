@@ -282,8 +282,8 @@ function superwebshare_inline_button( $text = '', $color = '' , $echo = true ){
 					'layout' 	=> $layout,
 					'bg' 		=> $bg,
 					'twitter_via' 	=> $twitter_via,
-					'text_color' 	=> $settings_fallback['fallback_text_color']
-
+					'text_color' 	=> $settings_fallback['fallback_text_color'],
+					'title'		=> empty( $settings_fallback[ 'fallback_title' ] ) ? "Share" : $settings_fallback[ 'fallback_title' ],
 				) );
 
 			}
@@ -304,7 +304,8 @@ function superwebshare_fallback_modal( $args, $echo = true ){
 		'layout' 	=> 1,
 		'bg'		=> '#BD3854',
 		'twitter_via'	=> "",
-		'text_color'	=> '#fff'
+		'text_color'	=> '#fff',
+		"title"		=> ''
 	 ) );
 
 	 $args[ 'twitter_via' ] = empty( $args[ 'twitter_via' ] ) ? "" : "&via=" . $args[ 'twitter_via' ];
@@ -317,7 +318,7 @@ function superwebshare_fallback_modal( $args, $echo = true ){
 			<div class="sws-modal-bg sws-layout-<?= $args[ 'layout' ] ?>">
 				<div class="modal-container" style="background-color: <?= $args[ 'bg' ] ?>;color:<?= $args[ 'text_color' ] ?>" >
 						<div class="modal-title">
-							<?= _e( 'Share', 'super-web-share' ) ?>
+							<?= $args[ "title" ] ?>
 						</div>
 						
 						<div class="sws-modal-content">
