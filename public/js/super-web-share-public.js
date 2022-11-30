@@ -132,7 +132,7 @@ DOMReady(function() {
                   'facebook':`https://www.facebook.com/sharer/sharer.php?u=${encodeURI(meta_url)}${encodeURI(moreD)}`,
                   'twitter':`http://twitter.com/share?text=${encodeURI(meta_title)}&url=${encodeURI(meta_url)}${encodeURI(moreD)}`,
                   'linkedin':`https://www.linkedin.com/sharing/share-offsite?url=${encodeURI(meta_url)}${encodeURI(moreD)}`,
-                  'whatsapp':`https://api.whatsapp.com/send?text=${encodeURI(meta_url)}${encodeURI(moreD)}`,
+                  'whatsapp':`https://api.whatsapp.com/send?text=${encodeURI(meta_title)}${encodeURI('\n\r')}${encodeURI(meta_url)}${encodeURI(moreD)}`,
               }
               if( 'whatsapp' == type ){
                 window.open(urlParams[type]);
