@@ -855,7 +855,7 @@ function superwebshare_settings_default( $name ){
 			'superwebshare_appearance_button_icon' 	=> 'share-icon-1', 	// default value "share-icon-1"
 			'superwebshare_appearance_button_size' 	=> 'lg', 		// default value "lg"
 			'superwebshare_appearance_button_style' => 'style-1', 		// default value "style-1"
-			'superwebshare_appearance_button_text_color' => '' 		// default value as none, as we output the text color as white
+			'superwebshare_appearance_button_text_color' => '#ffffff' 	// default value as #ffffff, as we output the text color as white
 
 		),
 	];
