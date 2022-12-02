@@ -434,7 +434,7 @@ function superwebshare_appearance_button_text_color_cb() {
 	$key = 'superwebshare_appearance_settings';
 	$value = isset( $settings_appearance[ 'superwebshare_appearance_button_text_color' ] ) ? esc_html( $settings_appearance[ 'superwebshare_appearance_button_text_color' ] ) : "#fff";
 ?>
-	<input type="text" name="<?= $key ?>[superwebshare_appearance_button_text_color]" class="superwebshare-colorpicker" id="<?= $key ?>[superwebshare_appearance_button_text_color]"  value="<?php echo $value ?>" data-default-color="#ffffff">
+	<input type="text" name="<?= $key ?>[superwebshare_appearance_button_text_color]" class="button-text-color" id="<?= $key ?>[superwebshare_appearance_button_text_color]"  value="<?php echo $value ?>" data-default-color="#ffffff">
 	<p class="description">
 		<?php _e('Select a color for share button', 'super-web-share'); ?>
 	</p>
