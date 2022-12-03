@@ -395,9 +395,14 @@ function superwebshare_appearance_icon_cb() {
 function superwebshare_appearance_button_style_cb() {
 
 	$settings_appearance = superwebshare_get_settings_appearance();
+	$settings_floating = superwebshare_get_settings_floating();
+	$settings_inline = superwebshare_get_settings_inline();
+	
 	$color = isset($settings_appearance[ 'superwebshare_appearance_button_text_color' ]) ? $settings_appearance[ 'superwebshare_appearance_button_text_color' ] : "#fff";
 	$class_icon = new Super_Web_Share_Icons();
 	$icon = $class_icon->get_icon();
+	
+	$button_color = $settings_floating[ 'superwebshare_floating_enable' ] =='enable' ? $settings_floating[ 'floating_share_color' ] : $settings_inline[ 'inline_button_share_color' ] ;
 
 	$key = 'superwebshare_appearance_settings';
 	$values = [ "default", "curved", "square", 'circle' ];
@@ -412,7 +417,7 @@ function superwebshare_appearance_button_style_cb() {
 							<li>
 								<input type="radio" class='sws-input-radio' id='sws-input-radio-<?= $rand ?>' <?= $checked ?>  name="<?= $key ?>[superwebshare_appearance_button_style]" value="<?= $button_name ?>">
 								<label  for="sws-input-radio-<?= $rand ?>">
-									<span class="superwebshare_tada superwebshare_button superwebshare_button_svg superwebshare_prompt superwebshare-button-<?= $button_name ?>" style="background-color: #BD3854; right:5px; bottom:5px;color: <?= $color ?> ">  <?= $icon ?>  <span> Share </span></span>
+									<span class="superwebshare_tada superwebshare_button superwebshare_button_svg superwebshare_prompt superwebshare-button-<?= $button_name ?>" style="background-color: <?= $button_color ?>; right:5px; bottom:5px;color: <?= $color ?> ">  <?= $icon ?>  <span> Share </span></span>
 								</label>
 								
 							</li>
