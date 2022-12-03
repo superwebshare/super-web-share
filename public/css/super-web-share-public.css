@@ -282,7 +282,7 @@
   transition: all 0.200s;
 }
 .modal-container .sws-links a:hover p {
-  color: #fff;
+  color: inherit;
 }
 
 .sws-copy a {
@@ -411,13 +411,13 @@
 
 .sws-layout-3.sws-modal-bg .modal-title {
   text-align: center;
-  color: rgb(36, 36, 36);
+  color: inherit;
 }
 
 .sws-layout-3 .modal-container a,
 .sws-layout-3 .modal-container a:link,
 .sws-layout-3 .modal-container a:visited {
-  color: rgb(36, 36, 36);
+  color: inherit;
 }
 
 .sws-layout-3 .sws-links a,
