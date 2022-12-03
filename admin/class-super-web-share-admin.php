@@ -640,7 +640,7 @@ function superwebshare_register_settings_fallback(){
 	// Option to change the fallback popup title - Since 2.4 
 	add_settings_field(
 		'superwebshare_fallback_title',					// ID
-		__('Show fallback title', 'super-web-share'),			// Title
+		__('Title for fallback modal', 'super-web-share'),			// Title
 		'superwebshare_fallback_title_cb',				// CB
 		'superwebshare_fallback_settings_section',			// Page slug
 		'superwebshare_fallback_settings_section'			// Settings Section ID
@@ -676,7 +676,7 @@ function superwebshare_register_settings_fallback(){
 	//Since 2.4 - Disable native share on desktop to forcefully show the fallback
 	add_settings_field(
 		'superwebshare_fallback_show_fallback',								// ID
-		__('Do you want to show the fallback modal within the desktop devices?', 'super-web-share'),	// Title
+		__('Show the fallback modal on the desktop devices?', 'super-web-share'),			// Title
 		'superwebshare_fallback_show_fallback_cb',							// CB
 		'superwebshare_fallback_settings_section',							// Page slug
 		'superwebshare_fallback_settings_section'							// Settings Section ID
@@ -742,7 +742,7 @@ function superwebshare_register_settings_appearance(){
 	//Since 2.4 for Share button text and icon color
 	add_settings_field(
 		'superwebshare_appearance_button_text_color',			// ID
-		__('Text color for share button', 'super-web-share'),		// Title
+		__('Text color for the button', 'super-web-share'),		// Title
 		'superwebshare_appearance_button_text_color_cb',		// CB
 		'superwebshare_appearance_settings_section',			// Page slug
 		'superwebshare_appearance_settings_section'			// Settings Section ID
