@@ -351,6 +351,20 @@ function superwebshare_fallback_description_cb() {
 	<?php
 }
 
+
+/**
+ * Appearance description
+ *
+ * @since 2.4
+ */ 
+function superwebshare_appearance_description_cb() {
+	?>
+	<tr valign="top">
+		<p><b>Appearance settings is to change the Icon, style, size and also to select a color for the icon and text of the Share button you would like to show on the pages</p>
+	</tr>
+	<?php
+}
+
 /**
  * Appearance Icon
  *
@@ -441,7 +455,7 @@ function superwebshare_appearance_button_text_color_cb() {
 ?>
 	<input type="text" name="<?= $key ?>[superwebshare_appearance_button_text_color]" class="button-text-color" id="<?= $key ?>[superwebshare_appearance_button_text_color]"  value="<?php echo $value ?>" data-default-color="#ffffff">
 	<p class="description">
-		<?php _e('Select a color for share button', 'super-web-share'); ?>
+		<?php _e('Select the color for icon and text for the Share button', 'super-web-share'); ?>
 	</p>
 <?php
 }
