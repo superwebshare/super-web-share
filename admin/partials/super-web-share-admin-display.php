@@ -317,7 +317,7 @@ function superwebshare_fallback_show_fallback_cb(){
 	superwebshare_input_toggle( 'superwebshare_fallback_settings[fallback_show_in_desktop]', 'enable',  $saved );
 	?>
 		<p class="description">
-			<?php _e('This setting does not apply to Microsoft Edge Browser as the sharing dialog box has social media links same as our fallback.', 'super-web-share'); ?>
+			<?php _e('This setting does not apply to Microsoft Edge Browser, as the specific browser is now showing a dialog box somewhat similiar to our fallback', 'super-web-share'); ?>
 		</p>
 	<?php
 }
