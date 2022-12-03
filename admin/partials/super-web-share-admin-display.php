@@ -332,7 +332,7 @@ function fallback_twitter_via_cb(){
 	?>
 	<input type="text" name="superwebshare_fallback_settings[fallback_twitter_via]" id="superwebshare_floating_settings[fallback_twitter_via]" placeholder="Twitter Username" pattern='[0-9a-zA-Z_]+' value="<?php echo $value ?>" >
 		<p class="description">
-			<?php _e('Enter Your twitter user name. Eg: IamJoseVarghese', 'super-web-share'); ?>
+			<?php _e('Enter your Twitter username. This will be outputted when the users click the Twitter share on the fallback modal. Eg: IamJoseVarghese', 'super-web-share'); ?>
 		</p>
     <?php
 }
