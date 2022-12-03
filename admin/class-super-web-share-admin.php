@@ -718,6 +718,15 @@ function superwebshare_register_settings_appearance(){
         '__return_false',							// Callback Function
         'superwebshare_appearance_settings_section'				// Page slug
 	);
+	
+	// Description
+	add_settings_field(
+		'superwebshare_appearance_description_share',			// ID
+		__('', 'super-web-share'),					// Title
+		'superwebshare_appearance_description_cb',			// CB
+		'superwebshare_appearance_settings_section',			// Page slug
+		'superwebshare_appearance_settings_section'			// Settings Section ID
+	);
 
 	
 	//Since 2.3 for share button icon.
