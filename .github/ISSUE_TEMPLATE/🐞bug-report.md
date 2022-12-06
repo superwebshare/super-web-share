@@ -1,17 +1,20 @@
 ---
-name: Bug report
-about: Create a report to help us improve
+name: "\U0001F41EBug report"
+about: Report a bug if something isn't working as expected in SuperWebShare
 title: ''
-labels: ''
-assignees: ''
+labels: bug
+assignees: josevarghese
 
 ---
 
 <!-- Please use this template when creating an issue. 
 - Please check the boxes after you've created your issue.
-- Please use the latest version of Super Web Share.-->
+- Please create GitHub issues only for SuperWebShare bugs. GitHub issues ARE NOT FOR SUPPORT.
+- To avoid duplicates, please search this repository for the issue.
+- Make sure you are using the most updated versions of SuperWebShare, WordPress & your theme.
+-->
 
-* [ ] I've read and understood the [contribution guidelines](https://github.com/superwebshare/SuperWebShare-WordPress-Plugin/blob/master/.github/CONTRIBUTING.md).
+* [ ] I've read and understood the [contribution guidelines](https://github.com/superwebshare/super-web-share/blob/trunk/.github/CONTRIBUTING.md).
 * [ ] I've searched for any related issues and avoided creating a duplicate issue.
 
 ### Please give us a description of what happened.
