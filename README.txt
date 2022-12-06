@@ -3,8 +3,8 @@ Contributors: superwebshare
 Donate link: https://superwebshare.com/donate
 Tags: share button, web share, native share, Share API, share, social share
 Requires at least: 3.0.1
-Tested up to: 6.0
-Stable tag: 2.3
+Tested up to: 6.1
+Stable tag: 2.4
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -93,6 +93,24 @@ Yes, from v2.3 we do support shortcodes to add floating and inline button like a
 6. Fallback on the desktop with social media platforms like WhatsApp, Twitter, Facebook and LinkedIn.
 
 == Changelog ==
+
+= 2.4 =
+Release Date: November 14th, 2022
+Need For Speed!
+
+New Features:
+
+* Added defer to the JS file to improve the loading of the pages
+* Changed icons to SVG for faster loading
+* Minified the CSS and JS files
+* Added accessibility to the buttons. Props to Samot80
+* Compatible with WordPress 6.1
+
+Bug Fix:
+* Fixed the fallback layout 3 not outputing the LinkedIn and WhatsApp icons coreectly
+
+= 2.3.1 =
+Fixed : Accessibility issues
 
 = 2.3 =
 Release Date: May 23rd, 2022

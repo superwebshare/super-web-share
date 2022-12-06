@@ -35,8 +35,20 @@ function hasPermission() {
       console.log('SuperWebShare: Your browser does not seems to support SuperWebShare, as the browser is incompatible');
   }
 }
+const fallbackForcefullyShowDesktop = () =>{
+    // This settings not applicable for MS Edge browser.
+    if( window.superWebShareFallback.fallback_show_in_desktop === 'enable' ){
+
+        let isIEedge = window.navigator.userAgent.indexOf("Edg") > -1;
+        let regexp = /android|iphone|kindle|ipad|webos|ipod/i;
+        let isDesktop = ! regexp.test( window.navigator.userAgent )
+        return isDesktop && !isIEedge
+    }else{
+        return false;
+    }
+}
 async function SuperWebSharefn(Title, URL, Description) {
-  if (typeof navigator.share === 'undefined' || !navigator.share) {
+  if (typeof navigator.share === 'undefined' || !navigator.share || fallbackForcefullyShowDesktop()) {
       modal();
   } else if (window.location.protocol != 'https:') {
       console.log('SuperWebShare: Seems like the website is not served fully via https://. As for supporting SuperWebShare the website should be served fully via https://');
@@ -66,8 +78,8 @@ const getPageMeta = () =>{
 
     if (document.querySelector('meta[property="og:title"]') != null) {
         mData.meta_title = document.querySelector('meta[property="og:title"]').content;
-    } else if (document.querySelector('meta[property="description"]') != null) {
-        mData.meta_title = document.querySelector('meta[property="description"]').content;
+    } else if (document.querySelector('meta[property="twitter:title"]') != null) {
+        mData.meta_title =  document.querySelector('meta[property="twitter:title"]').content;
     } else {
         mData.meta_title = document.title;
     }
@@ -132,7 +144,7 @@ DOMReady(function() {
                   'facebook':`https://www.facebook.com/sharer/sharer.php?u=${encodeURI(meta_url)}${encodeURI(moreD)}`,
                   'twitter':`http://twitter.com/share?text=${encodeURI(meta_title)}&url=${encodeURI(meta_url)}${encodeURI(moreD)}`,
                   'linkedin':`https://www.linkedin.com/sharing/share-offsite?url=${encodeURI(meta_url)}${encodeURI(moreD)}`,
-                  'whatsapp':`https://api.whatsapp.com/send?text=${encodeURI(meta_url)}${encodeURI(moreD)}`,
+                  'whatsapp':`https://api.whatsapp.com/send?text=${encodeURI(meta_title)}${encodeURI('\n\r')}${encodeURI(meta_url)}${encodeURI(moreD)}`,
               }
               if( 'whatsapp' == type ){
                 window.open(urlParams[type]);

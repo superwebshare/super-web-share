@@ -43,14 +43,14 @@
 }
 .superwebshare_button_svg.superwebshare_prompt > svg{
   width: 29px;
-  padding-right: 5px;
+  padding-inline-end: 5px;
 }
 .superwebshare_prompt:not(.superwebshare_button_svg)::before {
   content: '';
   display: inline-block;
   background-repeat: no-repeat;
   background-size: contain;
-  margin-right: 5px;
+  margin-inline-end: 5px;
   height: 24px;
   width: 24px;
 }
@@ -66,6 +66,7 @@
 .superwebshare_prompt:active {
     outline: 0;
     text-decoration: none;
+    color: #fff;
 }
 
 .superwebshare_prompt {
@@ -137,7 +138,8 @@
 }
 
 .superwebshare_normal_button1:hover {
-    opacity: .8!important;
+	opacity: .8 !important;
+	color: #fff;
 }
 
 /*Tada*/
@@ -207,6 +209,7 @@
   justify-content: center;
   align-items: center;
   z-index: 9999;
+  line-height: initial;
 }
 .sws-modal-bg .modal-container {
   max-width: 420px;
@@ -231,21 +234,57 @@
   justify-content: space-around;
   margin-bottom: 1px;
   flex-wrap: wrap;
+  margin-bottom: 20px;
 }
-
+.sws-layout-1 .sws-links {
+  margin-bottom: 24px;
+}
 .sws-links a {
   font-size: 14px;
   text-decoration: none;
 }
+.sws-layout-1 .sws-links a svg{
+  width: 35px;
+  display: inline-block;
+  margin: auto;
+  margin-bottom: 7px;
+}
+.sws-layout-1 .sws-links a p{
+  line-height: 16px;
+  margin-bottom: 0;
+}
+.sws-layout-1 .sws-links a{
+  opacity: 0.7;
+  transition: 0.3s;
+}
 
-.sws-links a:hover .sws-icon::after {
+.sws-layout-1 .sws-copy a svg{
+  width: 16px;
+  margin-inline-end: 5px;
+}
+.sws-layout-2 .sws-links a svg, .sws-layout-2 .sws-copy a svg, .sws-layout-3 .sws-links a svg, .sws-layout-3 .sws-copy a svg{
+  width: 18px;
+  height: min-content;
+  padding-top: 3px;
+}
+
+.sws-links a:hover {
   opacity: 1;
 }
 
 .modal-container a, .modal-container a:link, .modal-container a:visited {
-  color: #fff;
   text-align: center;
+  text-decoration: none;
 }
+
+.modal-container p {
+  color: inherit;
+  transition: all 0.200s;
+}
+.modal-container .sws-links a:hover p {
+  color: inherit;
+}
+
 .sws-copy a {
   text-decoration: none;
   display: inline-block;
@@ -253,6 +292,7 @@
   padding: 8px 0;
   text-align: center;
   background: #252525;
+  color:#fff;
   border-radius: 50px;
   font-size: 16px;
   display: flex;
@@ -293,35 +333,8 @@
   text-decoration: none;
   transform: scale(1.5);
 }
-.sws-icon::after {
-  content: "";
-  width:40px;
-  height:40px;
-  background: url('../assets/sws-icons.png');
-  display: inline-block;
-  background-size: auto 41px;
-  transition: all 0.3s;
-  opacity: 0.7;
-}
-.sws-icon.sws-icon-facebook::after {
-  background-position: 0px;
-}
-.sws-icon.sws-icon-twitter::after {
-  background-position: -40px;
-}
 
-.sws-icon.sws-icon-linked-in::after {
-  background-position: -120px;
-}
-
-.sws-icon.sws-icon-whatsapp::after {
-  background-position: -80px;
-}
-
-.sws-icon.sws-icon-copy::after,
 .sws-icon.sws-icon-copy {
-    background-size: auto 22px;
-    background-position: -305px;
     height: 20px;
     width: 20px;
     opacity: 1;
@@ -335,7 +348,7 @@
 }
 
 .sws-layout-2 .modal-container {
-    padding-left: 0;
+    padding-inline-start: 0;
     padding-bottom: 0;
 }
 
@@ -398,13 +411,13 @@
 
 .sws-layout-3.sws-modal-bg .modal-title {
   text-align: center;
-  color: rgb(36, 36, 36);
+  color: inherit;
 }
 
 .sws-layout-3 .modal-container a,
 .sws-layout-3 .modal-container a:link,
 .sws-layout-3 .modal-container a:visited {
-  color: rgb(36, 36, 36);
+  color: inherit;
 }
 
 .sws-layout-3 .sws-links a,

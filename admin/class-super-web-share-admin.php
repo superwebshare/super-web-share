@@ -38,9 +38,9 @@ class Super_Web_Share_Admin extends Super_Web_Share
 	}
 	
 	public function enqueue_styles() {
-		wp_enqueue_style( "superwebshare-admin", plugin_dir_url( __FILE__ ) . 'css/super-web-share-admin.css', array(), $this->version, 'all' );
+		wp_enqueue_style( "superwebshare-admin", plugin_dir_url( __FILE__ ) . 'css/super-web-share-admin.min.css', array(), $this->version, 'all' );
 		if( ! empty( $_GET[ 'page' ] ) && $_GET[ 'page' ] == 'superwebshare-appearance' ){
-			wp_enqueue_style( "superwebshare-public", SUPERWEBSHARE_PLUGIN_DIR_URI . '/public/css/super-web-share-public.css', array(), $this->version, 'all' );
+			wp_enqueue_style( "superwebshare-public", SUPERWEBSHARE_PLUGIN_DIR_URI . '/public/css/super-web-share-public.min.css', array(), $this->version, 'all' );
 		}
 	}
 	public function enqueue_scripts($hook) {
@@ -54,7 +54,7 @@ class Super_Web_Share_Admin extends Super_Web_Share
 		wp_enqueue_style( 'wp-color-picker' );
 
 		// Main JS
-		wp_enqueue_script(  'superwebshare-main-js', plugin_dir_url( __FILE__ ) . 'js/super-web-share-admin.js', array( 'wp-color-picker' ), $this->version, true );
+		wp_enqueue_script(  'superwebshare-main-js', plugin_dir_url( __FILE__ ) . 'js/super-web-share-admin.min.js', array( 'wp-color-picker' ), $this->version, true );
 	}
 	
 	public function add_meta_box( $post_type ){
@@ -121,7 +121,7 @@ class Super_Web_Share_Admin extends Super_Web_Share
 		</div>
 		<div>
 			<p class="description">
-				<?php _e('If the share button is not showing on the page, kindly please make sure that the Floating amd Inline Content settings are enabled and the respective page type is selected', 'super-web-share'); ?>
+				<?php _e('If the share button is not showing on the page, kindly please make sure that the Floating and Inline Content settings are enabled and the respective page type is selected', 'super-web-share'); ?>
 			</p>
 		</div>
 		<?php
@@ -426,20 +426,20 @@ function superwebshare_register_settings_inline() {
 	// Register Setting
 	register_setting( 
 		'superwebshare_settings_inline_group', 		// Group name
-		'superwebshare_inline_settings', 			// Setting name = html form <input> name on settings form
+		'superwebshare_inline_settings', 		// Setting name = html form <input> name on settings form
 		'superwebshare_validater_and_sanitizer'		// Input sanitizer
 	);
 	// Above & Below Post Share Settings Options
     add_settings_section(
         'superwebshare_inline_settings_section',				// ID
-        __('Inline Content Settings', 'super-web-share'),	// Title
-        '__return_false',										// Callback Function
+        __('Inline Content Settings', 'super-web-share'),			// Title
+        '__return_false',							// Callback Function
         'superwebshare_inline_settings_section'					// Page slug
 	);
 			// Description
 			add_settings_field(
 				'superwebshare_inline_description_share',						// ID
-				__('', 'super-web-share'),										// Title
+				__('', 'super-web-share'),								// Title
 				'superwebshare_inline_description_cb',							// CB
 				'superwebshare_inline_settings_section',						// Page slug
 				'superwebshare_inline_settings_section'							// Settings Section ID
@@ -447,30 +447,30 @@ function superwebshare_register_settings_inline() {
 			// Show Inline Content Share button
 			add_settings_field(
 				'superwebshare_inline_enable_share',							// ID
-				__('Show Inline Content share button', 'super-web-share'),		// Title
-				'superwebshare_inline_enable_cb',								// CB
+				__('Show Inline Content share button', 'super-web-share'),				// Title
+				'superwebshare_inline_enable_cb',							// CB
 				'superwebshare_inline_settings_section',						// Page slug
 				'superwebshare_inline_settings_section'							// Settings Section ID
 			);
 			// Display settings of Share Button (Inline) Above and Below Post/Page Content
 			add_settings_field(
 				'superwebshare_inline_display_share',							// ID
-				__('Post Types to show Inline share', 'super-web-share'),		// Title
-				'superwebshare_inline_display_cb',								// CB
+				__('Post Types to show Inline share', 'super-web-share'),				// Title
+				'superwebshare_inline_display_cb',							// CB
 				'superwebshare_inline_settings_section',						// Page slug
 				'superwebshare_inline_settings_section'							// Settings Section ID
 			);
 			// Position of Share Button (Inline)
 			add_settings_field(
 				'superwebshare_inline_position_share',							// ID
-				__('Position of the button', 'super-web-share'),				// Title
+				__('Position of the button', 'super-web-share'),					// Title
 				'superwebshare_inline_button_position_cb',						// CB
 				'superwebshare_inline_settings_section',						// Page slug
 				'superwebshare_inline_settings_section'							// Settings Section ID
 			);
 			// Text for share button
 			add_settings_field(
-				'superwebshare_inline_text_share',								// ID
+				'superwebshare_inline_text_share',							// ID
 				__('Button text', 'super-web-share'),							// Title
 				'superwebshare_inline_button_text_cb',							// CB
 				'superwebshare_inline_settings_section',						// Page slug
@@ -478,7 +478,7 @@ function superwebshare_register_settings_inline() {
 			);
 			// Inline Button Color
 			add_settings_field(
-				'superwebshare_inline_color_share',								// ID
+				'superwebshare_inline_color_share',							// ID
 				__('Button color', 'super-web-share'),							// Title
 				'superwebshare_inline_button_color_cb',							// CB
 				'superwebshare_inline_settings_section',						// Page slug
@@ -488,8 +488,8 @@ function superwebshare_register_settings_inline() {
 			// Enable/Disable Share Button - AMP (1.4.4)
 			add_settings_field(
 				'superwebshare_inline_enable_amp_share',						// ID
-				__('Show Inline on AMP Pages', 'super-web-share'),				// Title
-				'inline_amp_enable_cb',											// CB
+				__('Show Inline on AMP Pages', 'super-web-share'),					// Title
+				'inline_amp_enable_cb',									// CB
 				'superwebshare_inline_settings_section',						// Page slug
 				'superwebshare_inline_settings_section'							// Settings Section ID
 			);
@@ -529,20 +529,20 @@ function superwebshare_register_settings_floating() {
 	// Register Setting
 	register_setting( 
 		'superwebshare_settings_floating_group', 			// Group name
-		'superwebshare_floating_settings', 					// Setting name = html form <input> name on settings form
-		'superwebshare_validater_and_sanitizer_floating'	// Input sanitizer
+		'superwebshare_floating_settings', 				// Setting name = html form <input> name on settings form
+		'superwebshare_validater_and_sanitizer_floating'		// Input sanitizer
 	);
 	// Floating Button Settings
     add_settings_section(
         'superwebshare_floating_settings_section',				// ID
-        __('Floating Button Settings', 'super-web-share'),	// Title
-        '__return_false',										// Callback Function
+        __('Floating Button Settings', 'super-web-share'),			// Title
+        '__return_false',							// Callback Function
         'superwebshare_floating_settings_section'				// Page slug
 	);
 			// Description
 			add_settings_field(
 				'superwebshare_floating_description_share',						// ID
-				__('', 'super-web-share'),										// Title
+				__('', 'super-web-share'),									// Title
 				'superwebshare_floating_description_cb',						// CB
 				'superwebshare_floating_settings_section',						// Page slug
 				'superwebshare_floating_settings_section'						// Settings Section ID
@@ -550,8 +550,8 @@ function superwebshare_register_settings_floating() {
 			// Enable/Disable the floating share button
 			add_settings_field(
 				'superwebshare_floating_enable_share',							// ID
-				__('Show Floating share button', 'super-web-share'),			// Title
-				'superwebshare_floating_enable_cb',								// CB
+				__('Show Floating share button', 'super-web-share'),					// Title
+				'superwebshare_floating_enable_cb',							// CB
 				'superwebshare_floating_settings_section',						// Page slug
 				'superwebshare_floating_settings_section'						// Settings Section ID
 			);
@@ -559,14 +559,14 @@ function superwebshare_register_settings_floating() {
 			add_settings_field(
 				'superwebshare_floating_color_share',							// ID
 				__('Button color', 'super-web-share'),							// Title
-				'superwebshare_floating_color_cb',								// CB
+				'superwebshare_floating_color_cb',							// CB
 				'superwebshare_floating_settings_section',						// Page slug
 				'superwebshare_floating_settings_section'						// Settings Section ID
 			);
 			// Floating Display Pages
 			add_settings_field(
 				'superwebshare_floating_display_share',							// ID
-				__('Post Types for Floating button', 'super-web-share'),		// Title
+				__('Post Types for Floating button', 'super-web-share'),				// Title
 				'superwebshare_floating_display_cb',							// CB
 				'superwebshare_floating_settings_section',						// Page slug
 				'superwebshare_floating_settings_section'						// Settings Section ID
@@ -579,18 +579,10 @@ function superwebshare_register_settings_floating() {
 				'superwebshare_floating_settings_section',						// Page slug
 				'superwebshare_floating_settings_section'						// Settings Section ID
 			);
-			// Position from Bottom
-			add_settings_field(
-				'superwebshare_floating_position_bottom_share',					// ID
-				__('Position from bottom', 'super-web-share'),					// Title
-				'superwebshare_floating_position_bottom_cb',					// CB
-				'superwebshare_floating_settings_section',						// Page slug
-				'superwebshare_floating_settings_section'						// Settings Section ID
-			);
 			// Text for Floating Button (2.1)
 			add_settings_field(
-				'floating_button_text',											// ID
-				__('Button text for Floating button', 'super-web-share'),		// Title
+				'floating_button_text',									// ID
+				__('Button text for Floating button', 'super-web-share'),				// Title
 				'superwebshare_floating_button_text_cb',						// CB
 				'superwebshare_floating_settings_section',						// Page slug
 				'superwebshare_floating_settings_section'						// Settings Section ID
@@ -598,8 +590,8 @@ function superwebshare_register_settings_floating() {
 			// Enable/Disable Share Button - AMP (1.4.4)
 			add_settings_field(
 				'superwebshare_floating_enable_amp_share',						// ID
-				__('Show floating on AMP Pages', 'super-web-share'),			// Title
-				'floating_amp_enable_cb',										// CB
+				__('Show floating on AMP Pages', 'super-web-share'),					// Title
+				'floating_amp_enable_cb',								// CB
 				'superwebshare_floating_settings_section',						// Page slug
 				'superwebshare_floating_settings_section'						// Settings Section ID
 			);
@@ -614,53 +606,80 @@ add_action( 'admin_init', 'superwebshare_register_settings_floating' );
 function superwebshare_register_settings_fallback(){
 	// Register Setting
 	register_setting( 
-		'superwebshare_settings_fallback_group', 					// Group name
-		'superwebshare_fallback_settings', 							// Setting name = html form <input> name on settings form
-		'superwebshare_validater_and_sanitizer_fallback'			// Input sanitizer
+		'superwebshare_settings_fallback_group', 		// Group name
+		'superwebshare_fallback_settings', 			// Setting name = html form <input> name on settings form
+		'superwebshare_validater_and_sanitizer_fallback'	// Input sanitizer
 	);
 
 	// Floating Button Settings
 	add_settings_section(
-        'superwebshare_fallback_settings_section',					// ID
-        __('Fallback Settings', 'super-web-share'),					// Title
-        '__return_false',											// Callback Function
-        'superwebshare_fallback_settings_section'					// Page slug
+        'superwebshare_fallback_settings_section',				// ID
+        __('Fallback Settings', 'super-web-share'),				// Title
+        '__return_false',							// Callback Function
+        'superwebshare_fallback_settings_section'				// Page slug
 	);
 
 	// Description
 	add_settings_field(
-		'superwebshare_inline_description_share',					// ID
-		__('', 'super-web-share'),									// Title
-		'superwebshare_fallback_description_cb',					// CB
-		'superwebshare_fallback_settings_section',					// Page slug
-		'superwebshare_fallback_settings_section'					// Settings Section ID
+		'superwebshare_inline_description_share',			// ID
+		__('', 'super-web-share'),					// Title
+		'superwebshare_fallback_description_cb',			// CB
+		'superwebshare_fallback_settings_section',			// Page slug
+		'superwebshare_fallback_settings_section'			// Settings Section ID
 	);
 
 	// Since 2.0
 	add_settings_field(
-		'superwebshare_fallback_enable',							// ID
-		__('Show fallback share buttons', 'super-web-share'),	// Title
-		'superwebshare_fallback_enable_cb',							// CB
-		'superwebshare_fallback_settings_section',					// Page slug
-		'superwebshare_fallback_settings_section'					// Settings Section ID
+		'superwebshare_fallback_enable',				// ID
+		__('Show fallback share buttons', 'super-web-share'),		// Title
+		'superwebshare_fallback_enable_cb',				// CB
+		'superwebshare_fallback_settings_section',			// Page slug
+		'superwebshare_fallback_settings_section'			// Settings Section ID
+	);
+	
+	// Option to change the fallback popup title - Since 2.4 
+	add_settings_field(
+		'superwebshare_fallback_title',					// ID
+		__('Title for fallback modal', 'super-web-share'),			// Title
+		'superwebshare_fallback_title_cb',				// CB
+		'superwebshare_fallback_settings_section',			// Page slug
+		'superwebshare_fallback_settings_section'			// Settings Section ID
 	);
 
 	//Since 2.1  for fallback modal color
 	add_settings_field(
-		'fallback_modal_background',								// ID
+		'fallback_modal_background',					// ID
 		__('Background color for fallback', 'super-web-share'),		// Title
-		'superwebshare_fallback_modal_background_color_cb',			// CB
-		'superwebshare_fallback_settings_section',					// Page slug
-		'superwebshare_fallback_settings_section'					// Settings Section ID
+		'superwebshare_fallback_modal_background_color_cb',		// CB
+		'superwebshare_fallback_settings_section',			// Page slug
+		'superwebshare_fallback_settings_section'			// Settings Section ID
 	);
 
 	//Since 2.1 for layout selection for fallback
 	add_settings_field(
-		'superwebshare_fallback_modal_layout',						// ID
-		__('Fallback layout', 'super-web-share'),					// Title
-		'superwebshare_fallback_modal_layout_cb',					// CB
-		'superwebshare_fallback_settings_section',					// Page slug
-		'superwebshare_fallback_settings_section'					// Settings Section ID
+		'superwebshare_fallback_modal_layout',				// ID
+		__('Fallback layout', 'super-web-share'),			// Title
+		'superwebshare_fallback_modal_layout_cb',			// CB
+		'superwebshare_fallback_settings_section',			// Page slug
+		'superwebshare_fallback_settings_section'			// Settings Section ID
+	);
+	
+	//Since 2.4 - Color settings for the Fallback text
+	add_settings_field(
+		'superwebshare_fallback_text_color',				// ID
+		__('Fallback text color', 'super-web-share'),			// Title
+		'superwebshare_fallback_text_color_cb',				// CB
+		'superwebshare_fallback_settings_section',			// Page slug
+		'superwebshare_fallback_settings_section'			// Settings Section ID
+	);
+	
+	//Since 2.4 - Disable native share on desktop to forcefully show the fallback
+	add_settings_field(
+		'superwebshare_fallback_show_fallback',								// ID
+		__('Show the fallback modal on the desktop devices?', 'super-web-share'),			// Title
+		'superwebshare_fallback_show_fallback_cb',							// CB
+		'superwebshare_fallback_settings_section',							// Page slug
+		'superwebshare_fallback_settings_section'							// Settings Section ID
 	);
 
 	/**
@@ -669,11 +688,11 @@ function superwebshare_register_settings_fallback(){
 	 */
 
 	add_settings_field(
-		'fallback_twitter_via',										// ID
-		__('Twitter username', 'super-web-share'),					// Title
-		'fallback_twitter_via_cb',									// CB
-		'superwebshare_fallback_settings_section',					// Page slug
-		'superwebshare_fallback_settings_section'					// Settings Section ID
+		'fallback_twitter_via',						// ID
+		__('Twitter username', 'super-web-share'),			// Title
+		'fallback_twitter_via_cb',					// CB
+		'superwebshare_fallback_settings_section',			// Page slug
+		'superwebshare_fallback_settings_section'			// Settings Section ID
 	);
 
 }
@@ -687,45 +706,64 @@ add_action( 'admin_init', 'superwebshare_register_settings_fallback' );
 function superwebshare_register_settings_appearance(){
 	// Register Setting
 	register_setting( 
-		'superwebshare_settings_appearance_group', 					// Group name
-		'superwebshare_appearance_settings', 						// Setting name = html form <input> name on settings form
-		'superwebshare_validator_and_sanitizer_appearance'			// Input sanitizer
+		'superwebshare_settings_appearance_group', 			// Group name
+		'superwebshare_appearance_settings', 				// Setting name = html form <input> name on settings form
+		'superwebshare_validator_and_sanitizer_appearance'		// Input sanitizer
 	);
 
 	// Appearance Settings Section
 	add_settings_section(
         'superwebshare_appearance_settings_section',				// ID
         __('Appearance Settings', 'super-web-share'),				// Title
-        '__return_false',											// Callback Function
-        'superwebshare_appearance_settings_section'					// Page slug
+        '__return_false',							// Callback Function
+        'superwebshare_appearance_settings_section'				// Page slug
+	);
+	
+	// Description
+	add_settings_field(
+		'superwebshare_appearance_description_share',			// ID
+		__('', 'super-web-share'),					// Title
+		'superwebshare_appearance_description_cb',			// CB
+		'superwebshare_appearance_settings_section',			// Page slug
+		'superwebshare_appearance_settings_section'			// Settings Section ID
 	);
 
 	
 	//Since 2.3 for share button icon.
 	add_settings_field(
-		'superwebshare_appearance_button_icon',						// ID
-		__('Button icon', 'super-web-share'),						// Title
-		'superwebshare_appearance_icon_cb',							// CB
-		'superwebshare_appearance_settings_section',				// Page slug
-		'superwebshare_appearance_settings_section'					// Settings Section ID
+		'superwebshare_appearance_button_icon',				// ID
+		__('Button icon', 'super-web-share'),				// Title
+		'superwebshare_appearance_icon_cb',				// CB
+		'superwebshare_appearance_settings_section',			// Page slug
+		'superwebshare_appearance_settings_section'			// Settings Section ID
 	);
 
 	//Since 2.3 for share button Style.
 	add_settings_field(
-		'superwebshare_appearance_button_style',					// ID
-		__('Style for share button', 'super-web-share'),			// Title
-		'superwebshare_appearance_button_style_cb',					// CB
-		'superwebshare_appearance_settings_section',				// Page slug
-		'superwebshare_appearance_settings_section'					// Settings Section ID
+		'superwebshare_appearance_button_style',			// ID
+		__('Style for share button', 'super-web-share'),		// Title
+		'superwebshare_appearance_button_style_cb',			// CB
+		'superwebshare_appearance_settings_section',			// Page slug
+		'superwebshare_appearance_settings_section'			// Settings Section ID
+	);
+	
+	
+	//Since 2.4 for Share button text and icon color
+	add_settings_field(
+		'superwebshare_appearance_button_text_color',			// ID
+		__('Text color for the button', 'super-web-share'),		// Title
+		'superwebshare_appearance_button_text_color_cb',		// CB
+		'superwebshare_appearance_settings_section',			// Page slug
+		'superwebshare_appearance_settings_section'			// Settings Section ID
 	);
 
 	//Since 2.3 for share button Size.
 	add_settings_field(
-		'superwebshare_appearance_button_size',						// ID
-		__('Button Size', 'super-web-share'),						// Title
-		'superwebshare_appearance_button_size_cb',					// CB
-		'superwebshare_appearance_settings_section',				// Page slug
-		'superwebshare_appearance_settings_section'					// Settings Section ID
+		'superwebshare_appearance_button_size',				// ID
+		__('Button Size', 'super-web-share'),				// Title
+		'superwebshare_appearance_button_size_cb',			// CB
+		'superwebshare_appearance_settings_section',			// Page slug
+		'superwebshare_appearance_settings_section'			// Settings Section ID
 	);
 
 }
@@ -795,34 +833,38 @@ function superwebshare_settings_default( $name ){
 	$default = [
 		"inline" => array(
 			'inline_display_pages'			=>	[], 		// allowed post types. is empty allow all
-			'inline_position'				=>	'before',   // both = Top and Bottom of the content
+			'inline_position'			=>	'before',   	// both = Top and Bottom of the content
 			'inline_button_share_text'		=>	'Share',	// content for share button
 			'inline_button_share_color'		=>	'#BD3854',	// default color for Inline share button
-			'superwebshare_inline_enable'	=>	'disable',	// disabled by default
-			'inline_amp_enable' 			=> 'enable' 	// default enable - 1.4.4 amp settings
+			'superwebshare_inline_enable'		=>	'disable',	// disabled by default
+				'inline_amp_enable' 		=>	'enable' 	// default enable - 1.4.4 amp settings
 
 		),
 		"floating" => array(
-			'floating_share_color' 			=> '#BD3854', 		// defautlt color
-			'floating_display_pages'    	=>  [], 			// allowed post types. is empty allow all
-			'floating_position'				=>	'right', 		// left or right
-			'floating_position_leftright'	=>	'5', 			// in pixel
-			'floating_position_bottom'		=>	'5', 			// in pixel
-			'superwebshare_floating_enable'	=>	'enable',		// enable by default
-			'floating_amp_enable'			=>	'enable',		// enable by default - 1.4.4
-			'floating_button_text'			=> 'Share'   		// default share text - 2.1
+			'floating_share_color' 			=>	'#BD3854', 	// defautlt color
+			'floating_display_pages'    		=>	[], 		// allowed post types. is empty allow all
+			'floating_position'			=>	'right', 	// left or right
+			'floating_position_leftright'		=>	'5', 		// in pixel
+			'floating_position_bottom'		=>	'5', 		// in pixel
+			'superwebshare_floating_enable'		=>	'enable',	// enable by default
+			'floating_amp_enable'			=>	'enable',	// enable by default - 1.4.4
+			'floating_button_text'			=>	'Share'   	// default share text - 2.1
 
 		),
 		"fallback" => array(
-			'superwebshare_fallback_enable' => 'enable', 	// default value - 2.0
-			'fallback_modal_background' 	=> '#BD3854',	// default color for fallback modal - 2.1
-			'fallback_layout'				=> '1',			// Fallback layout color - 2.1
-			'fallback_twitter_via'			=> ''
+			'superwebshare_fallback_enable' 	=> 'enable', 		// default value - 2.0
+			'fallback_title' 			=> 'Share', 		// default value - Share for the popup title
+			'fallback_modal_background' 		=> '#BD3854',		// default color for fallback modal - 2.1
+			'fallback_layout'			=> '1',			// fallback layout color - 2.1
+			'fallback_twitter_via'			=> '',			// default value none
+			'fallback_text_color'			=> '#fff',		// default color #fff
+			'fallback_show_in_desktop'		=> 'disable'		// default value as disable to trigger based on API support - 2.4
 		),
 		"appearance" => array(
-			'superwebshare_appearance_button_icon' => 'share-icon-1', 	// default value "share-icon-1"
-			'superwebshare_appearance_button_size' => 'lg', 			// default value "lg"
-			'superwebshare_appearance_button_style' => 'style-1', 		// default value "style-1"
+			'superwebshare_appearance_button_icon' 	=> 'share-icon-1', 	// default value "share-icon-1"
+			'superwebshare_appearance_button_size' 	=> 'lg', 		// default value "lg"
+			'superwebshare_appearance_button_style' => 'default', 		// default value "default", which is style 1
+			'superwebshare_appearance_button_text_color' => '#ffffff' 	// default value as #ffffff, as we output the text color as white
 
 		),
 	];

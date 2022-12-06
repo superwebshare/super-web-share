@@ -81,7 +81,7 @@ function superwebshare_inline_button_text_cb() {
 function superwebshare_inline_button_color_cb() {
 	$settings = superwebshare_get_settings_inline();
 	?>
-	<input type="text" name="superwebshare_inline_settings[inline_button_share_color]" id="superwebshare_inline_settings[inline_button_share_color]" class="superwebshare-colorpicker" value="<?php echo isset( $settings['inline_button_share_color'] ) ? esc_html( $settings['inline_button_share_color'] ) : '#D5E0EB'; ?>" data-default-color="#000000">
+	<input type="text" name="superwebshare_inline_settings[inline_button_share_color]" id="superwebshare_inline_settings[inline_button_share_color]" class="superwebshare-colorpicker" value="<?php echo isset( $settings['inline_button_share_color'] ) ? esc_html( $settings['inline_button_share_color'] ) : '#D5E0EB'; ?>" data-default-color="#D5E0EB">
     <?php
 }
 
@@ -150,7 +150,7 @@ function superwebshare_floating_enable_cb() {
 function superwebshare_floating_color_cb() {
 	$settings_floating = superwebshare_get_settings_floating();
 	?>
-		<input type="text" name="superwebshare_floating_settings[floating_share_color]" id="superwebshare_floating_settings[floating_share_color]" class="superwebshare-colorpicker" value="<?php echo isset( $settings_floating['floating_share_color'] ) ? esc_html( $settings_floating['floating_share_color']) : '#D5E0EB'; ?>" data-default-color="#000000">
+		<input type="text" name="superwebshare_floating_settings[floating_share_color]" id="superwebshare_floating_settings[floating_share_color]" class="superwebshare-colorpicker" value="<?php echo isset( $settings_floating['floating_share_color'] ) ? esc_html( $settings_floating['floating_share_color']) : '#D5E0EB'; ?>" data-default-color="#D5E0EB">
 			<p class="description">
 				<?php _e('Select the color that you would like to add to the floating share button.', 'super-web-share'); ?>
 			</p>
@@ -183,7 +183,8 @@ function superwebshare_floating_position_cb() {
 					</select>
 			</label> with 
 
-            <input type="number" min="0" step="any" style="width:50px" name="superwebshare_floating_settings[floating_position_leftright]" id="superwebshare_floating_settings[floating_position_leftright]" value="<?php echo isset( $settings_floating['floating_position_leftright'] ) ? esc_html( $settings_floating['floating_position_leftright']) : '30'; ?>">px from left/right
+            	<input type="number" min="0" step="any" style="width:50px" name="superwebshare_floating_settings[floating_position_leftright]" id="superwebshare_floating_settings[floating_position_leftright]" value="<?php echo isset( $settings_floating['floating_position_leftright'] ) ? esc_html( $settings_floating['floating_position_leftright']) : '30'; ?>">px from left/right,
+		<input type="number" min="0" step="any" style="width:50px" name="superwebshare_floating_settings[floating_position_bottom]" id="superwebshare_floating_settings[floating_position_bottom]" value="<?php echo isset( $settings_floating['floating_position_bottom'] ) ? esc_html( $settings_floating['floating_position_bottom']) : '30'; ?>">px from bottom<p>
 	<?php
 }
 
@@ -193,10 +194,7 @@ function superwebshare_floating_position_cb() {
  * @since 1.3
  */ 
 function superwebshare_floating_position_bottom_cb() {
-	$settings_floating = superwebshare_get_settings_floating();
-	?>
-		<input type="number" min="0" step="any" style="width:50px" name="superwebshare_floating_settings[floating_position_bottom]" id="superwebshare_floating_settings[floating_position_bottom]" value="<?php echo isset( $settings_floating['floating_position_bottom'] ) ? esc_html( $settings_floating['floating_position_bottom']) : '30'; ?>">px<p>
-	<?php
+	return ""; // moved this field to superwebshare_floating_position_cb function since 2.4
 }
 
 /**
@@ -235,6 +233,19 @@ function superwebshare_fallback_enable_cb() {
 	}
 	
 	superwebshare_input_toggle( 'superwebshare_fallback_settings[superwebshare_fallback_enable]', 'enable',  $saved );
+}
+
+/**
+ * Option to change the title of Fallback Pop-up
+ *
+ * @since 2.4
+ */ 
+function superwebshare_fallback_title_cb() {
+	$settings_fallback = superwebshare_get_settings_fallback();
+	$value = isset( $settings_fallback[ 'fallback_title' ] ) ? esc_html( $settings_fallback[ 'fallback_title' ] ) : "Share";
+	?>
+	<input type="text" name="superwebshare_fallback_settings[fallback_title]" id="superwebshare_floating_settings[fallback_title]" placeholder="Title Of fallback dialog box" value="<?php echo $value ?>" >
+    <?php
 }
 
 /**
@@ -279,6 +290,39 @@ function superwebshare_fallback_modal_layout_cb(){
 }
 
 /**
+ * Fallback Text Color
+ *
+ * @since 2.4
+ */ 
+function superwebshare_fallback_text_color_cb(){
+	$settings_fallback = superwebshare_get_settings_fallback();
+	$key = 'superwebshare_fallback_settings';
+	$value = isset( $settings_fallback[ 'fallback_text_color' ] ) ? esc_html( $settings_fallback[ 'fallback_text_color' ] ) : "#fff";
+?>
+	<input type="text" name="<?= $key ?>[fallback_text_color]" class="superwebshare-colorpicker" id="<?= $key ?>[fallback_text_color]"  value="<?php echo $value ?>" data-default-color="#ffffff">
+	<p class="description">
+			<?php _e('Select the color for text and icon for fallback', 'super-web-share'); ?>
+		</p>
+    <?php
+}
+
+/**
+ *  Disable native share on desktop to forcefully show the fallback
+ *
+ * @since 2.4
+ */ 
+function superwebshare_fallback_show_fallback_cb(){
+	$settings_fallback = superwebshare_get_settings_fallback();
+	$saved = isset( $settings_fallback[ 'fallback_show_in_desktop' ] ) ? esc_html( $settings_fallback[ 'fallback_show_in_desktop' ] ) : "disable";
+	superwebshare_input_toggle( 'superwebshare_fallback_settings[fallback_show_in_desktop]', 'enable',  $saved );
+	?>
+		<p class="description">
+			<?php _e('This setting does not apply to Microsoft Edge Browser, as the specific browser is now showing a dialog box somewhat similiar to our fallback', 'super-web-share'); ?>
+		</p>
+	<?php
+}
+
+/**
  * Fallback twitter Via parameter value field
  * @since 2.3
  */ 
@@ -288,7 +332,7 @@ function fallback_twitter_via_cb(){
 	?>
 	<input type="text" name="superwebshare_fallback_settings[fallback_twitter_via]" id="superwebshare_floating_settings[fallback_twitter_via]" placeholder="Twitter Username" pattern='[0-9a-zA-Z_]+' value="<?php echo $value ?>" >
 		<p class="description">
-			<?php _e('Enter Your twitter user name. Eg: john_wick', 'super-web-share'); ?>
+			<?php _e('Enter your Twitter username. This will be outputted when the users click the Twitter share on the fallback modal. Eg: IamJoseVarghese', 'super-web-share'); ?>
 		</p>
     <?php
 }
@@ -307,6 +351,20 @@ function superwebshare_fallback_description_cb() {
 	<?php
 }
 
+
+/**
+ * Appearance description
+ *
+ * @since 2.4
+ */ 
+function superwebshare_appearance_description_cb() {
+	?>
+	<tr valign="top">
+		<p><b>Appearance settings is to change the Icon, style, size and also to select a color for the icon and text of the Share button you would like to show on the pages</p>
+	</tr>
+	<?php
+}
+
 /**
  * Appearance Icon
  *
@@ -319,7 +377,7 @@ function superwebshare_appearance_icon_cb() {
 	$key = 'superwebshare_appearance_settings';
 
 	$class_icon = new Super_Web_Share_Icons();
-	$icons = $class_icon->get_icons();
+	$icons = $class_icon->get_icons( "share" );
 
 	?>
 		<div class='sws-appearance-checkbox sws-appearance-icons'>
@@ -351,9 +409,14 @@ function superwebshare_appearance_icon_cb() {
 function superwebshare_appearance_button_style_cb() {
 
 	$settings_appearance = superwebshare_get_settings_appearance();
-
+	$settings_floating = superwebshare_get_settings_floating();
+	$settings_inline = superwebshare_get_settings_inline();
+	
+	$color = isset($settings_appearance[ 'superwebshare_appearance_button_text_color' ]) ? $settings_appearance[ 'superwebshare_appearance_button_text_color' ] : "#fff";
 	$class_icon = new Super_Web_Share_Icons();
 	$icon = $class_icon->get_icon();
+	
+	$button_color = $settings_floating[ 'superwebshare_floating_enable' ] =='enable' ? $settings_floating[ 'floating_share_color' ] : $settings_inline[ 'inline_button_share_color' ] ;
 
 	$key = 'superwebshare_appearance_settings';
 	$values = [ "default", "curved", "square", 'circle' ];
@@ -368,7 +431,7 @@ function superwebshare_appearance_button_style_cb() {
 							<li>
 								<input type="radio" class='sws-input-radio' id='sws-input-radio-<?= $rand ?>' <?= $checked ?>  name="<?= $key ?>[superwebshare_appearance_button_style]" value="<?= $button_name ?>">
 								<label  for="sws-input-radio-<?= $rand ?>">
-									<span class="superwebshare_tada superwebshare_button superwebshare_button_svg superwebshare_prompt superwebshare-button-<?= $button_name ?>" style="background-color: #BD3854; right:5px; bottom:5px;" ;="">  <?= $icon ?>  <span> Share </span></span>
+									<span class="superwebshare_tada superwebshare_button superwebshare_button_svg superwebshare_prompt superwebshare-button-<?= $button_name ?>" style="background-color: <?= $button_color ?>; right:5px; bottom:5px;color: <?= $color ?> ">  <?= $icon ?>  <span> Share </span></span>
 								</label>
 								
 							</li>
@@ -379,6 +442,24 @@ function superwebshare_appearance_button_style_cb() {
 		</div>
 	<?php
 }
+
+/**
+ * Color for Appearance Button style to be used for the fallback and inline share button text and icon
+ *
+ * @since 2.4
+ */ 
+function superwebshare_appearance_button_text_color_cb() {
+	$settings_appearance = superwebshare_get_settings_appearance();
+	$key = 'superwebshare_appearance_settings';
+	$value = isset( $settings_appearance[ 'superwebshare_appearance_button_text_color' ] ) ? esc_html( $settings_appearance[ 'superwebshare_appearance_button_text_color' ] ) : "#fff";
+?>
+	<input type="text" name="<?= $key ?>[superwebshare_appearance_button_text_color]" class="button-text-color" id="<?= $key ?>[superwebshare_appearance_button_text_color]"  value="<?php echo $value ?>" data-default-color="#ffffff">
+	<p class="description">
+		<?php _e('Select the color for icon and text for the Share button', 'super-web-share'); ?>
+	</p>
+<?php
+}
+
 /**
  * Appearance Button Size
  *
@@ -485,17 +566,22 @@ function superwebshare_admin_interface_render() {
 
 	}else if(  $active_tab == "superwebshare-support"  ){
 		?>
+			<br>
 			<h2>Need any help or facing any issues?</h2>
-			<p>We're happy to help you! Just <a href="https://wordpress.org/support/plugin/super-web-share/#new-topic-0" target="_blank">open a new topic on WordPress.org support</a>, we will try our best to reply asap to sort out the issues or doubts.</p>
+				<ul style="list-style-type: disc;margin-left:16px">
+					<li><p>We're happy to help you! Just <a href="https://wordpress.org/support/plugin/super-web-share/#new-topic-0" target="_blank">open a new topic on WordPress.org support</a>, we will try our best to reply asap to sort out the issues or doubts. </li>
+					<li><p>You can also drop email to our support mailbox for more help from us: <b>support@superwebshare.com</b></p></li>
+					<br>
+				</ul>
 
 			<h2>Active on Social medias?</h2>
 			<p>Connect with us on our social media. You can also share your suggestions and feedback with us to improve our small plugin:</p>
-
-			<ul style="list-style-type: disc;margin-left:16px">
-				<li><a href="https://www.facebook.com/SuperWebShare/" target="_blank">Facebook</a></li>
-				<li><a href="https://twitter.com/superwebshare" target="_blank">Twitter</a></li>
-				<li><a href="https://www.instagram.com/superwebshare/" target="_blank">Instagram</a></li>
-			</ul>
+				<ul style="list-style-type: disc;margin-left:16px">
+					<li><a href="https://www.facebook.com/SuperWebShare/" target="_blank">Facebook</a></li>
+					<li><a href="https://twitter.com/superwebshare" target="_blank">Twitter</a></li>
+					<li><a href="https://www.instagram.com/superwebshare/" target="_blank">Instagram</a></li>
+					<li>Our email: <b>support@superwebshare.com</b></li>
+				</ul>
 		<?php
 	}else if(  $active_tab == "superwebshare-appearance" ){
 
