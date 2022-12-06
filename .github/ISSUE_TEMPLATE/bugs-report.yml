@@ -7,17 +7,15 @@ body:
       value: |
         ## BEFORE POSTING YOUR ISSUE
 
-        - Please create GitHub issues only for Elementor bugs. GitHub issues ARE NOT FOR SUPPORT.
+        - Please create GitHub issues only for SuperWebShare bugs. GitHub issues ARE NOT FOR SUPPORT.
 
         - To avoide duplicates, please search this repository for the issue.
 
-        - If the issue can't be recreated on other sites, it's not an Elementor bug. In that case use the support links above.
-
-        - Make sure you are using the most updated versions of Elementor, WordPress & your theme.
+        - Make sure you are using the most updated versions of SuperWebShare, WordPress & your theme.
 
         - Deactivate all of your plugins. If this solves the problem, gradually activate your plugins one by one, until you spot the problematic plugin.
 
-        - Change your WordPress theme to [Hello theme](https://wordpress.org/themes/hello-elementor/).
+        - Change your WordPress theme to [default WordPress theme](https://wordpress.org/themes/twentytwenty/).
 
         ## THE ISSUE
   - type: checkboxes
