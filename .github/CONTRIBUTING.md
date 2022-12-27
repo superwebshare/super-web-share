@@ -4,7 +4,7 @@ Howdy, it’s really great you want to contribute to the Super Web Share! Before
 
 ## Reporting an issue
 
-Super Web Share WordPress plugin should have all issues reported on GitHub at https://github.com/superwebshare/SuperWebShare-WordPress-Plugin/issues.
+Super Web Share WordPress plugin should have all issues reported on GitHub at https://github.com/superwebshare/super-web-share/issues.
 
 ## Submitting Changes
 
