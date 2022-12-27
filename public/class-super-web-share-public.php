@@ -205,7 +205,7 @@ add_action( 'init', 'superwebshare_wp_init' );
  * Inline Share Button
  *
  * @param string $button text
- * @param string $color Default #BD3854
+ * @param string $color default is #BD3854
  * @param boolean $echo make it false if you won't echo by function self
  * @since 2.2
 */
@@ -295,7 +295,7 @@ function superwebshare_inline_button( $text = '', $color = '' , $echo = true ){
  */
 function superwebshare_fallback_modal( $args, $echo = true ){
 
-	// Just blocking multiple render html.
+// Just blocking multiple render HTML
     static $fallback_modal_called = false;
     if ( $fallback_modal_called ) return false;
 	$fallback_modal_called = true;
@@ -328,8 +328,8 @@ function superwebshare_fallback_modal( $args, $echo = true ){
 							<div class="sws-links" >
 								<a  target="_blank" href="#" style="color:<?= $text_color ?>" class="sws-open-in-tab sws-social-facebook" data-type='facebook' rel="nofollow noreferrer"> <?= $icon_class->get_icon( 'icon-facebook', [ 'fill' => $args[ 'layout' ] == 3 ? "#3a579a" : $text_color ] ); ?><p> <?= _e( 'Facebook', 'super-web-share' ) ?></p></a>
 								<a  target="_blank" href="#" style="color:<?= $text_color ?>" class="sws-open-in-tab sws-social-twitter" data-type='twitter' data-params='<?=$args[ 'twitter_via' ]?>' rel="nofollow noreferrer"> <?= $icon_class->get_icon( 'icon-twitter', [ 'fill' => $args[ 'layout' ] == 3 ? "#00abf0" : $text_color ] ); ?><p> <?= _e( 'Twitter', 'super-web-share' ) ?></p></a>
-								<a  target="_blank" href="#"  style="color:<?= $text_color ] ?>" class="sws-open-in-tab sws-social-linkedin" data-type='linkedin' rel="nofollow noreferrer"> <?= $icon_class->get_icon( 'icon-linkedin', [ 'fill' => $args[ 'layout' ] == 3 ? "#0073b1" : $text_color ] ] ); ?> <p> <?= _e( 'LinkedIn', 'super-web-share' ) ?> </p></a>
-								<a  target="_blank" href="#"  style="color:<?= $text_color ] ?>" class="sws-open-in-tab sws-social-whatsapp" data-type='whatsapp' rel="nofollow noreferrer"> <?= $icon_class->get_icon( 'icon-whatsapp', [ 'fill' => $args[ 'layout' ] == 3 ? "#48c757" : $text_color ] ] ); ?> <p> <?= _e( 'WhatsApp', 'super-web-share' ) ?></p></a>
+								<a  target="_blank" href="#"  style="color:<?= $text_color ?>" class="sws-open-in-tab sws-social-linkedin" data-type='linkedin' rel="nofollow noreferrer"> <?= $icon_class->get_icon( 'icon-linkedin', [ 'fill' => $args[ 'layout' ] == 3 ? "#0073b1" : $text_color ] ); ?> <p> <?= _e( 'LinkedIn', 'super-web-share' ) ?> </p></a>
+								<a  target="_blank" href="#"  style="color:<?= $text_color ?>" class="sws-open-in-tab sws-social-whatsapp" data-type='whatsapp' rel="nofollow noreferrer"> <?= $icon_class->get_icon( 'icon-whatsapp', [ 'fill' => $args[ 'layout' ] == 3 ? "#48c757" : $text_color ] ); ?> <p> <?= _e( 'WhatsApp', 'super-web-share' ) ?></p></a>
 							</div>
 							<div class="sws-copy">
 								<a href="#" class="sws-copy-link" > <?= $icon_class->get_icon( 'icon-copy' ); ?> <span><?= _e( 'Copy Link', 'super-web-share' ) ?></span></a>
