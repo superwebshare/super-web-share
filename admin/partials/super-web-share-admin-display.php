@@ -296,10 +296,9 @@ function superwebshare_fallback_modal_layout_cb(){
  */ 
 function superwebshare_fallback_text_color_cb(){
 	$settings_fallback = superwebshare_get_settings_fallback();
-	$key = 'superwebshare_fallback_settings';
-	$value = isset( $settings_fallback[ 'fallback_text_color' ] ) ? esc_html( $settings_fallback[ 'fallback_text_color' ] ) : "#fff";
+	$value = isset( $settings_fallback[ 'fallback_text_color' ] ) ? esc_html( $settings_fallback[ 'fallback_text_color' ] ) : "#ffffff";
 ?>
-	<input type="text" name="<?= $key ?>[fallback_text_color]" class="superwebshare-colorpicker" id="<?= $key ?>[fallback_text_color]"  value="<?php echo $value ?>" data-default-color="#ffffff">
+	<input type="text" name="superwebshare_fallback_settings[fallback_text_color]" class="superwebshare-colorpicker" id="superwebshare_fallback_settings[fallback_text_color]"  value="<?php echo $value ?>" data-default-color="#ffffff">
 	<p class="description">
 			<?php _e('Select the color for text and icon for fallback', 'super-web-share'); ?>
 		</p>
