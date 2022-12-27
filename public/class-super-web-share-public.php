@@ -282,7 +282,7 @@ function superwebshare_inline_button( $text = '', $color = '' , $echo = true ){
 					'layout' 	=> $layout,
 					'bg' 		=> $bg,
 					'twitter_via' 	=> $twitter_via,
-					'text_color' 	=> $settings_fallback['fallback_text_color'],
+					'text_color' 	=> empty( $settings_fallback['fallback_text_color'] ) ? "#ffffff" : $settings_fallback['fallback_text_color'],
 					'title'		=> empty( $settings_fallback[ 'fallback_title' ] ) ? "Share" : $settings_fallback[ 'fallback_title' ],
 				) );
 
@@ -305,8 +305,9 @@ function superwebshare_fallback_modal( $args, $echo = true ){
 		'bg'		=> '#BD3854',
 		'twitter_via'	=> "",
 		'text_color'	=> '#fff',
-		"title"		=> ''
+		"title"		=> 'Share'
 	 ) );
+	var_dump( $args );
 
 	 $args[ 'twitter_via' ] = empty( $args[ 'twitter_via' ] ) ? "" : "&via=" . $args[ 'twitter_via' ];
 
@@ -728,8 +729,10 @@ function super_web_share_fallback_modal_for_shortcode(){
 	superwebshare_fallback_modal( 
 		array(
 		'layout' => $layout,
-		'bg' => $bg,
-		'twitter_via' => $twitter_via
+		'bg'		=> $bg,
+		'twitter_via'	=> $twitter_via,
+		'text_color'	=> empty( $settings_fallback['fallback_text_color'] ) ? "#ffffff" : $settings_fallback['fallback_text_color'],
+		'title'		=> empty( $settings_fallback[ 'fallback_title' ] ) ? "Share" : $settings_fallback[ 'fallback_title' ],
 
 	) );
 }
