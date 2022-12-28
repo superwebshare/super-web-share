@@ -860,7 +860,7 @@ function superwebshare_settings_default( $name ){
 			'fallback_modal_background' 		=> '#BD3854',		// default color for fallback modal - 2.1
 			'fallback_layout'			=> '1',			// fallback layout color - 2.1
 			'fallback_twitter_via'			=> '',			// default value none
-			'fallback_text_color'			=> '#fff',		// default color #fff
+			'fallback_text_color'			=> '#ffffff',		// default color #fff
 			'fallback_show_in_desktop'		=> 'disable'		// default value as disable to trigger based on API support - 2.4
 		),
 		"appearance" => array(
