@@ -244,7 +244,7 @@ function superwebshare_fallback_title_cb() {
 	$settings_fallback = superwebshare_get_settings_fallback();
 	$value = isset( $settings_fallback[ 'fallback_title' ] ) ? esc_html( $settings_fallback[ 'fallback_title' ] ) : "Share";
 	?>
-	<input type="text" name="superwebshare_fallback_settings[fallback_title]" id="superwebshare_floating_settings[fallback_title]" placeholder="Title Of fallback dialog box" value="<?php echo $value ?>" >
+	<input type="text" name="superwebshare_fallback_settings[fallback_title]" id="superwebshare_floating_settings[fallback_title]" placeholder="Enter the title for fallback dialog box" value="<?php echo $value ?>" >
     <?php
 }
 
