@@ -800,8 +800,8 @@ function superwebshare_validater_and_sanitizer_floating( $settings_floating ) {
 	$settings_floating[ 'floating_position_button'] = preg_match( '/^[0-9]$/i', isset($settings_floating['floating_position_button']) ) ? sanitize_text_field( $settings_floating['floating_position_button'] ) : '30';
 	$settings_floating[ 'floating_button_text' ] = ! empty( sanitize_text_field( $settings_floating[ 'floating_button_text' ] ) )  ? sanitize_text_field( $settings_floating[ 'floating_button_text' ] ) : 'Share';
 	
-	foreach( $settings as $key => $value ){
-		$settings[ $key ] = sanitize_text_field( $value );
+	foreach( $settings_floating as $key => $value ){
+		$settings_floating[ $key ] = sanitize_text_field( $value );
 	}
 	
 	return $settings_floating;
