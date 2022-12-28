@@ -807,6 +807,8 @@ function superwebshare_validater_and_sanitizer_fallback( $settings_fallback ) {
 	$default = superwebshare_settings_default( 'fallback' );
 	$settings_fallback[ 'fallback_twitter_via' ] = preg_replace('/[^0-9a-zA-Z_]/', '', $settings_fallback[ 'fallback_twitter_via' ] );
 	$settings_fallback[ 'fallback_modal_background' ] = preg_match( '/#([a-f0-9]{3}){1,2}\b/i', $settings_fallback['fallback_modal_background'], $mt ) ? $mt[0] : $default['fallback_modal_background'];
+	$settings_fallback[ 'fallback_title' ] = ! empty( sanitize_text_field( $settings_fallback[ 'fallback_title' ] ) )  ? sanitize_text_field( $settings_fallback[ 'fallback_title' ] ) : 'Share';
+	$settings_fallback[ 'fallback_text_color' ] = preg_match( '/#([a-f0-9]{3}){1,2}\b/i', $settings_fallback['fallback_text_color'], $mt ) ? $mt[0] : $default['fallback_text_color'];
 	return $settings_fallback;
 }
 
@@ -819,6 +821,7 @@ function superwebshare_validator_and_sanitizer_appearance( $settings_appearance 
 	// Sanitize hex color input for appearance theme_color
 
 	$settings_appearance[ 'superwebshare_appearance_button_icon' ] = sanitize_text_field( $settings_appearance[ 'superwebshare_appearance_button_icon' ] );
+	
 	return $settings_appearance;
 }
 
