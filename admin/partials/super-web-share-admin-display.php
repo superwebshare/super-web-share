@@ -410,7 +410,7 @@ function superwebshare_appearance_button_style_cb() {
 	$settings_floating = superwebshare_get_settings_floating();
 	$settings_inline = superwebshare_get_settings_inline();
 	
-	$color = isset($settings_appearance[ 'superwebshare_appearance_button_text_color' ]) ? $settings_appearance[ 'superwebshare_appearance_button_text_color' ] : "#fff";
+	$color = isset($settings_appearance[ 'superwebshare_appearance_button_text_color' ]) ? esc_html( $settings_appearance[ 'superwebshare_appearance_button_text_color' ]) : "#ffffff";
 	$class_icon = new Super_Web_Share_Icons();
 	$icon = $class_icon->get_icon();
 	
