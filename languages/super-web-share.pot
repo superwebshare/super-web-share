@@ -1,9 +1,9 @@
-# Copyright (C) 2021 Super Web Share
+# Copyright (C) 2023 Super Web Share
 # This file is distributed under the same license as the Super Web Share package.
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Super Web Share 1.4.5\n"
+"Project-Id-Version: Super Web Share 2.4\n"
 "Report-Msgid-Bugs-To: https://wordpress."
 "org/support/plugin/qs_tool_wp_pot_gen_1583311971_6233_772510\n"
 "POT-Creation-Date: 2022-12-28 20:07+0000\n"
