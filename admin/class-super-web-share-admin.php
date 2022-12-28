@@ -780,6 +780,11 @@ function superwebshare_validater_and_sanitizer( $settings ) {
 	$default = superwebshare_settings_default( 'inline' );
 	$settings['inline_button_share_color'] = preg_match( '/#([a-f0-9]{3}){1,2}\b/i', $settings['inline_button_share_color'], $mt ) ? $mt[0] : $default[ 'inline_button_share_color' ];
 	$settings['inline_button_share_text'] = ! empty ( sanitize_text_field( $settings['inline_button_share_text'] ) ) ? sanitize_text_field( $settings['inline_button_share_text'] ) : 'Share';
+	
+	foreach( $settings as $key => $value ){
+		$settings[ $key ] = sanitize_text_field( $value );
+	}
+	
 	return $settings;
 }
 
@@ -794,6 +799,11 @@ function superwebshare_validater_and_sanitizer_floating( $settings_floating ) {
 	$settings_floating['floating_share_color'] = preg_match( '/#([a-f0-9]{3}){1,2}\b/', $settings_floating['floating_share_color'], $mt ) ? $mt[0]  : $default[ 'floating_share_color' ];
 	$settings_floating[ 'floating_position_button'] = preg_match( '/^[0-9]$/i', isset($settings_floating['floating_position_button']) ) ? sanitize_text_field( $settings_floating['floating_position_button'] ) : '30';
 	$settings_floating[ 'floating_button_text' ] = ! empty( sanitize_text_field( $settings_floating[ 'floating_button_text' ] ) )  ? sanitize_text_field( $settings_floating[ 'floating_button_text' ] ) : 'Share';
+	
+	foreach( $settings as $key => $value ){
+		$settings[ $key ] = sanitize_text_field( $value );
+	}
+	
 	return $settings_floating;
 }
 
@@ -809,6 +819,11 @@ function superwebshare_validater_and_sanitizer_fallback( $settings_fallback ) {
 	$settings_fallback[ 'fallback_modal_background' ] = preg_match( '/#([a-f0-9]{3}){1,2}\b/i', $settings_fallback['fallback_modal_background'], $mt ) ? $mt[0] : $default['fallback_modal_background'];
 	$settings_fallback[ 'fallback_title' ] = ! empty( sanitize_text_field( $settings_fallback[ 'fallback_title' ] ) )  ? sanitize_text_field( $settings_fallback[ 'fallback_title' ] ) : 'Share';
 	$settings_fallback[ 'fallback_text_color' ] = preg_match( '/#([a-f0-9]{3}){1,2}\b/i', $settings_fallback['fallback_text_color'], $mt ) ? $mt[0] : $default['fallback_text_color'];
+
+	foreach( $settings_fallback as $key => $value ){
+		$settings_fallback[ $key ] = sanitize_text_field( $value );
+	}
+	
 	return $settings_fallback;
 }
 
@@ -821,12 +836,13 @@ function superwebshare_validator_and_sanitizer_appearance( $settings_appearance 
 	// Sanitize hex color input for appearance theme_color
 	$default = superwebshare_settings_default( 'appearance' );
 
-	$settings_appearance[ 'superwebshare_appearance_button_icon' ] = sanitize_text_field( $settings_appearance[ 'superwebshare_appearance_button_icon' ] );
+	// $settings_appearance[ 'superwebshare_appearance_button_icon' ] = sanitize_text_field( $settings_appearance[ 'superwebshare_appearance_button_icon' ] );
 	$settings_appearance[ 'superwebshare_appearance_button_text_color' ] = preg_match( '/#([a-f0-9]{3}){1,2}\b/i', $settings_appearance['superwebshare_appearance_button_text_color'], $mt ) ? $mt[0] : $default['superwebshare_appearance_button_text_color'];
 	
-	
-	
-	
+
+	foreach( $settings_fallback as $key => $value ){
+		$settings_fallback[ $key ] = sanitize_text_field( $value );
+	}	
 	
 	return $settings_appearance;
 }
