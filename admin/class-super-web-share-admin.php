@@ -840,7 +840,7 @@ function superwebshare_validator_and_sanitizer_appearance( $settings_appearance 
 	$settings_appearance[ 'superwebshare_appearance_button_text_color' ] = preg_match( '/#([a-f0-9]{3}){1,2}\b/i', $settings_appearance['superwebshare_appearance_button_text_color'], $mt ) ? $mt[0] : $default['superwebshare_appearance_button_text_color'];
 	
 
-	foreach( $settings_fallback as $key => $value ){
+	foreach( $settings_appearance as $key => $value ){
 		$settings_fallback[ $key ] = sanitize_text_field( $value );
 	}	
 	
