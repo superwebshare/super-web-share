@@ -307,7 +307,6 @@ function superwebshare_fallback_modal( $args, $echo = true ){
 		'text_color'	=> '#fff',
 		"title"		=> 'Share'
 	 ) );
-	var_dump( $args );
 
 	 $args[ 'twitter_via' ] = empty( $args[ 'twitter_via' ] ) ? "" : "&via=" . $args[ 'twitter_via' ];
 
