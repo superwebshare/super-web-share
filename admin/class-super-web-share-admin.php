@@ -782,6 +782,12 @@ function superwebshare_validater_and_sanitizer( $settings ) {
 	$settings['inline_button_share_text'] = ! empty ( sanitize_text_field( $settings['inline_button_share_text'] ) ) ? sanitize_text_field( $settings['inline_button_share_text'] ) : 'Share';
 	
 	foreach( $settings as $key => $value ){
+		
+		if( is_array( $value ) ){
+			$settings[ $key ] = array_map( 'sanitize_text_field', $value );
+			continue;
+		}
+		
 		$settings[ $key ] = sanitize_text_field( $value );
 	}
 	
@@ -801,6 +807,12 @@ function superwebshare_validater_and_sanitizer_floating( $settings_floating ) {
 	$settings_floating[ 'floating_button_text' ] = ! empty( sanitize_text_field( $settings_floating[ 'floating_button_text' ] ) )  ? sanitize_text_field( $settings_floating[ 'floating_button_text' ] ) : 'Share';
 	
 	foreach( $settings_floating as $key => $value ){
+		
+		if( is_array( $value ) ){
+			$settings_floating[ $key ] = array_map( 'sanitize_text_field', $value );
+			continue;
+		}
+		
 		$settings_floating[ $key ] = sanitize_text_field( $value );
 	}
 	
@@ -821,6 +833,12 @@ function superwebshare_validater_and_sanitizer_fallback( $settings_fallback ) {
 	$settings_fallback[ 'fallback_text_color' ] = preg_match( '/#([a-f0-9]{3}){1,2}\b/i', $settings_fallback['fallback_text_color'], $mt ) ? $mt[0] : $default['fallback_text_color'];
 
 	foreach( $settings_fallback as $key => $value ){
+		
+		if( is_array( $value ) ){
+			$settings_fallback[ $key ] = array_map( 'sanitize_text_field', $value );
+			continue;
+		}
+		
 		$settings_fallback[ $key ] = sanitize_text_field( $value );
 	}
 	
@@ -841,7 +859,13 @@ function superwebshare_validator_and_sanitizer_appearance( $settings_appearance 
 	
 
 	foreach( $settings_appearance as $key => $value ){
-		$settings_fallback[ $key ] = sanitize_text_field( $value );
+		
+		if( is_array( $value ) ){
+			$settings_appearance[ $key ] = array_map( 'sanitize_text_field', $value );
+			continue;
+		}
+		
+		$settings_appearance[ $key ] = sanitize_text_field( $value );
 	}	
 	
 	return $settings_appearance;
