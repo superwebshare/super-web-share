@@ -95,19 +95,27 @@ Yes, from v2.3 we do support shortcodes to add floating and inline button like a
 == Changelog ==
 
 = 2.4 =
-Release Date: November 14th, 2022
-Need For Speed!
+Release Date: December 30th, 2022
+Sharing with more power of faster! This release is for people who keep optimising their pages to load more faster.
 
 New Features:
-
-* Added defer to the JS file to improve the loading of the pages
-* Changed icons to SVG for faster loading
-* Minified the CSS and JS files
-* Added accessibility to the buttons. Props to Samot80
 * Compatible with WordPress 6.1
+* Fixes the accessibility issues.  Props to Samot80
+* Minified the CSS and JS files for performance
+* Added 'defer' for page performance improvements
+* Option to change the Fallback popup's title
+* Option to disable native share on desktop
+* Option to change the color of text and icon for the fallback
+* Option to change the color of text and icon for the share buttons
+* WhatsApp now adds the page title when sharing
+
+Enhancement:
+* Changed the position of the settings for "Floating position from the button"
+* Improved the auto-selection rules of the title from the description when sharing
+* Minor CSS optimizations
 
 Bug Fix:
-* Fixed the fallback layout 3 not outputing the LinkedIn and WhatsApp icons coreectly
+* Fixed the fallback layout 3 not outputing the LinkedIn and WhatsApp icons correctly
 
 = 2.3.1 =
 Fixed : Accessibility issues

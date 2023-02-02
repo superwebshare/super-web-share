@@ -244,7 +244,7 @@ function superwebshare_fallback_title_cb() {
 	$settings_fallback = superwebshare_get_settings_fallback();
 	$value = isset( $settings_fallback[ 'fallback_title' ] ) ? esc_html( $settings_fallback[ 'fallback_title' ] ) : "Share";
 	?>
-	<input type="text" name="superwebshare_fallback_settings[fallback_title]" id="superwebshare_floating_settings[fallback_title]" placeholder="Title Of fallback dialog box" value="<?php echo $value ?>" >
+	<input type="text" name="superwebshare_fallback_settings[fallback_title]" id="superwebshare_floating_settings[fallback_title]" placeholder="Enter the title for fallback dialog box" value="<?php echo $value ?>" >
     <?php
 }
 
@@ -296,13 +296,11 @@ function superwebshare_fallback_modal_layout_cb(){
  */ 
 function superwebshare_fallback_text_color_cb(){
 	$settings_fallback = superwebshare_get_settings_fallback();
-	$key = 'superwebshare_fallback_settings';
-	$value = isset( $settings_fallback[ 'fallback_text_color' ] ) ? esc_html( $settings_fallback[ 'fallback_text_color' ] ) : "#fff";
 ?>
-	<input type="text" name="<?= $key ?>[fallback_text_color]" class="superwebshare-colorpicker" id="<?= $key ?>[fallback_text_color]"  value="<?php echo $value ?>" data-default-color="#ffffff">
+	<input type="text" name="superwebshare_fallback_settings[fallback_text_color]" class="button-text-color" id="superwebshare_fallback_settings[fallback_text_color]"  value="<?php echo isset( $settings_fallback[ 'fallback_text_color' ] ) ? esc_html( $settings_fallback[ 'fallback_text_color' ]) : '#ffffff'; ?>" data-default-color="#ffffff">
 	<p class="description">
 			<?php _e('Select the color for text and icon for fallback', 'super-web-share'); ?>
-		</p>
+	</p>
     <?php
 }
 
@@ -412,7 +410,7 @@ function superwebshare_appearance_button_style_cb() {
 	$settings_floating = superwebshare_get_settings_floating();
 	$settings_inline = superwebshare_get_settings_inline();
 	
-	$color = isset($settings_appearance[ 'superwebshare_appearance_button_text_color' ]) ? $settings_appearance[ 'superwebshare_appearance_button_text_color' ] : "#fff";
+	$color = isset($settings_appearance[ 'superwebshare_appearance_button_text_color' ]) ? esc_html( $settings_appearance[ 'superwebshare_appearance_button_text_color' ]) : "#ffffff";
 	$class_icon = new Super_Web_Share_Icons();
 	$icon = $class_icon->get_icon();
 	
@@ -450,10 +448,8 @@ function superwebshare_appearance_button_style_cb() {
  */ 
 function superwebshare_appearance_button_text_color_cb() {
 	$settings_appearance = superwebshare_get_settings_appearance();
-	$key = 'superwebshare_appearance_settings';
-	$value = isset( $settings_appearance[ 'superwebshare_appearance_button_text_color' ] ) ? esc_html( $settings_appearance[ 'superwebshare_appearance_button_text_color' ] ) : "#fff";
 ?>
-	<input type="text" name="<?= $key ?>[superwebshare_appearance_button_text_color]" class="button-text-color" id="<?= $key ?>[superwebshare_appearance_button_text_color]"  value="<?php echo $value ?>" data-default-color="#ffffff">
+	<input type="text" name="superwebshare_appearance_settings[superwebshare_appearance_button_text_color]" class="button-text-color" id="superwebshare_appearance_settings[superwebshare_appearance_button_text_color]"  value="<?php echo isset( $settings_appearance[ 'superwebshare_appearance_button_text_color' ] ) ? esc_html( $settings_appearance[ 'superwebshare_appearance_button_text_color' ] ) : '#ffffff'; ?>" data-default-color="#ffffff">
 	<p class="description">
 		<?php _e('Select the color for icon and text for the Share button', 'super-web-share'); ?>
 	</p>
