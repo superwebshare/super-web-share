@@ -106,10 +106,10 @@ Sharing with the super power of lightweight and speed! This release is for peopl
 
 New Features:
 * Compatible with WordPress 6.1
-* Fixes the accessibility issues.  Props to Samot80
+* Fixes the accessibility issues.  (props to Samot80 and sudarshankotian for reporting this)
 * Minified the CSS and JS files for performance
 * Added 'defer' for page performance improvements
-* Option to change the Fallback popup's title
+* Option to change the Fallback popup's title (props to @aqhvcd11 for suggesting this feature)
 * Option to disable native share on desktop
 * Option to change the color of text and icon for the fallback
 * Option to change the color of text and icon for the share buttons
@@ -121,7 +121,9 @@ Enhancement:
 * Minor CSS optimizations
 
 Bug Fix:
-* Fixed the fallback layout 3 not outputing the LinkedIn and WhatsApp icons correctly
+* Fixed the fallback layout 3 not outputing the LinkedIn and WhatsApp icons correctly (props to @dan-nita)
+* Appearance preview button color change fixed (props to arunbasilal)
+
 
 = 2.3.1 =
 Fixed : Accessibility issues
