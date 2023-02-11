@@ -566,7 +566,6 @@ function superwebshare_admin_interface_render() {
 			<h2>Need any help or facing any issues?</h2>
 				<ul style="list-style-type: disc;margin-left:16px">
 					<li><p>We're happy to help you! Just <a href="https://wordpress.org/support/plugin/super-web-share/#new-topic-0" target="_blank">open a new topic on WordPress.org support</a>, we will try our best to reply asap to sort out the issues or doubts. </li>
-					<li><p>You can also drop email to our support mailbox for more help from us: <b>support@superwebshare.com</b></p></li>
 					<br>
 				</ul>
 
