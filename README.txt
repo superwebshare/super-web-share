@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== Super Web Share ===
 Contributors: superwebshare
 Donate link: https://superwebshare.com/donate
 Tags: share button, web share, native share, Share API, share, social share
