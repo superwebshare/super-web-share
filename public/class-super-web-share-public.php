@@ -238,11 +238,12 @@ function superwebshare_inline_button( $text = '', $color = '' , $echo = true ){
 	$icon_name = empty( $settings_appearance[ 'superwebshare_appearance_button_icon' ] ) ? "share-icon-1" : $settings_appearance[ 'superwebshare_appearance_button_icon' ];
 	$button_size = empty( $settings_appearance[ 'superwebshare_appearance_button_size' ] ) ? "large" : $settings_appearance[ 'superwebshare_appearance_button_size' ];
 	$button_style = empty( $settings_appearance[ 'superwebshare_appearance_button_style' ] ) ? "style-1" : $settings_appearance[ 'superwebshare_appearance_button_style' ];
+	$text_color = empty( $settings_appearance[ 'superwebshare_appearance_button_text_color' ] ) ? "#ffffff" : $settings_appearance[ 'superwebshare_appearance_button_text_color' ];
 
 	$icon_class = new Super_Web_Share_Icons();
 	$icon = $icon_class->get_icon( $icon_name );
 
-	$button = '<div class="sws_supernormalaction"><button on="tap:superwebshare-lightbox" class="superwebshare_normal_button1 superwebshare-button-' . esc_html( $button_size ) . ' superwebshare-button-' . esc_html( $button_style ) . ' superwebshare_prompt superwebshare_button_svg" style="background-color: '. esc_html( $color ) .';" >'. $icon .'<span>'. esc_html( $text ) .'</span></button></div>';
+	$button = '<div class="sws_supernormalaction"><button on="tap:superwebshare-lightbox" class="superwebshare_normal_button1 superwebshare-button-' . esc_html( $button_size ) . ' superwebshare-button-' . esc_html( $button_style ) . ' superwebshare_prompt superwebshare_button_svg" style="color:'. esc_html( $text_color ) . ';background-color: '. esc_html( $color ) .';" >'. $icon .'<span>'. esc_html( $text ) .'</span></button></div>';
 
 	if( $echo ){
 		echo apply_filters( 'superwebshare_inline_button', $button );
@@ -380,12 +381,14 @@ function superwebshare_inline_amp_button_code($content) {
 	if ( superwebshare_is_amp() ) {
 		$settings = superwebshare_get_settings_inline();
 		$settings_fallback = superwebshare_get_settings_fallback();
+		$settings_appearance = superwebshare_get_settings_appearance();
 		$fallback_on_amp = empty( $settings_fallback[ 'superwebshare_fallback_enable' ] ) ? 'enable' : $settings_fallback[ 'superwebshare_fallback_enable' ];
 		if ( can_display_button( 'inline', $settings ) ) {
 
 			$pos = $settings['inline_position'];
 			$button_text = empty( $settings[ 'inline_button_share_text' ] ) ? 'Share' : $settings[ 'inline_button_share_text' ];
 			$bg_color = empty( $settings[ 'inline_button_share_color' ] ) ? "#BD3854" : $settings[ 'inline_button_share_color' ];
+			$text_color = empty( $settings_appearance[ 'superwebshare_appearance_button_text_color' ] ) ? "#ffffff" : $settings_appearance[ 'superwebshare_appearance_button_text_color' ];
 			if ($settings['inline_amp_enable'] == 'enable'){
 				ob_start();
 				?>
@@ -396,7 +399,7 @@ function superwebshare_inline_amp_button_code($content) {
 						superwebshare_inline_button( $button_text, $bg_color );
 						?>
 					<?php }else{  ?>
-						<amp-social-share type="system" width="48" height="48" class="superwebshare_amp_native_button superwebshare_amp_native_button_inline" style="background-color: <?= $bg_color ?>"></amp-social-share>
+						<amp-social-share type="system" width="48" height="48" class="superwebshare_amp_native_button superwebshare_amp_native_button_inline" style="background-color: <?= esc_html( $bg_color ) ?>; color: <?= esc_html( $text_color ) ?>"></amp-social-share>
 					<?php } ?>
 				</div> 
 				<?php
@@ -454,6 +457,7 @@ function superwebshare_amp_floating_button_code() {
 			$icon_name = empty( $settings_appearance[ 'superwebshare_appearance_button_icon' ] ) ? "share-icon-1" : $settings_appearance[ 'superwebshare_appearance_button_icon' ];
 			$button_size = empty( $settings_appearance[ 'superwebshare_appearance_button_size' ] ) ? "large" : $settings_appearance[ 'superwebshare_appearance_button_size' ];
 			$button_style = empty( $settings_appearance[ 'superwebshare_appearance_button_style' ] ) ? "style-1" : $settings_appearance[ 'superwebshare_appearance_button_style' ];
+			$text_color = empty( $settings_appearance[ 'superwebshare_appearance_button_text_color' ] ) ? "#ffffff" : $settings_appearance[ 'superwebshare_appearance_button_text_color' ];
 
 			$icon_class = new Super_Web_Share_Icons();
 			$icon = $icon_class->get_icon( $icon_name );
@@ -480,7 +484,7 @@ function superwebshare_amp_floating_button_code() {
 					<?php
 				}else{
 					?>
-						<amp-social-share type="system" width="48" height="48" style="background-color:<?= esc_html( $settings_floating[ 'floating_share_color' ] ) ?>" class="superwebshare_amp_native_button superwebshare_amp_native_button_floating"></amp-social-share>
+						<amp-social-share type="system" width="48" height="48" style="background-color:<?= esc_html( $settings_floating[ 'floating_share_color' ] ) ?>; color: <?= esc_html( $text_color ) ?>" class="superwebshare_amp_native_button superwebshare_amp_native_button_floating"></amp-social-share>
 					<?php
 				}
 				?>
