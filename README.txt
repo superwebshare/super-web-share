@@ -106,7 +106,7 @@ Sharing with the super power of lightweight and speed! This release is for peopl
 
 New Features:
 * Compatible with WordPress 6.1
-* Fixes the accessibility issues.  (props to Samot80 and sudarshankotian for reporting this)
+* Fixes the accessibility issues.  (props to @Samot80 and @sudarshankotian for reporting this)
 * Minified the CSS and JS files for performance
 * Added 'defer' for page performance improvements
 * Option to change the Fallback popup's title (props to @aqhvcd11 for suggesting this feature)
@@ -122,7 +122,7 @@ Enhancement:
 
 Bug Fix:
 * Fixed the fallback layout 3 not outputing the LinkedIn and WhatsApp icons correctly (props to @dan-nita)
-* Appearance preview button color change fixed (props to arunbasilal)
+* Appearance preview button color change fixed (props to @arunbasillal)
 
 
 = 2.3.1 =
