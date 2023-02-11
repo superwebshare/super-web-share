@@ -22,7 +22,7 @@ It takes less than a minute to set up Super Web Share, and we provide a clean un
 Currently, the Super Web Share plugin provides a share button before and after the post/page content and a floating share button where you can set the color, the text of the share buttons, the position of the floating button, and can also set the pages or posts which you would like to show the share buttons via our Settings page, to easily add the share feature to your websites. As an addon, we are fully compatible with the AMP plugin, which means you can add the native share to your AMP pages provided by the AMP plugin.
 
 ### Advantages of using Super Web Share
-* Fast and lightweight social sharing plugin for your WordPress that won’t slow down your site
+* Fast and lightweight social sharing plugin for your WordPress that won't slow down your site
 * Increase the rate of sharing of pages and posts by users
 * Developers / Bloggers can easily skip the number of social icons to be used on the page or post
 * Fully AMP supported native share plugin
@@ -101,8 +101,8 @@ Yes, from v2.3 we do support shortcodes to add floating and inline button like a
 == Changelog ==
 
 = 2.4 =
-Release Date: December 30th, 2022
-Sharing with more power of faster! This release is for people who keep optimising their pages to load more faster.
+Release Date: February 12th, 2023
+Sharing with the super power of lightweight and speed! This release is for people who keep optimizing their pages to load more faster. [Read our release post](https://superwebshare.com/v2-4-performance-improvements/)
 
 New Features:
 * Compatible with WordPress 6.1
