@@ -3,7 +3,7 @@ Contributors: superwebshare
 Donate link: https://superwebshare.com/donate
 Tags: share button, web share, native share, Share API, share, social share
 Requires at least: 3.0.1
-Tested up to: 6.1
+Tested up to: 6.2
 Stable tag: 2.4
 Requires PHP: 7.0
 License: GPLv2 or later
@@ -12,8 +12,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Super Web Share helps to easily add native share prompt to your website for easy page/post sharing in less than a minute.
 
 == Description ==
+**Super Web Share is a WordPress-based native share plugin that helps users easily share the page/post with others by prompting the native share action.**
 
-Super Web Share is a WordPress-based native share plugin that helps users easily share the page/post with others by prompting the native share action. We developed from the ground up with simplicity and performance in mind to increase your shares. As SuperWebShare only shows the apps installed within the device upon the share prompt, the rate of sharing of post/page will be higher than showing all the social icons in a page. Due to this key reason, website developers can skip the usage of other social media icons upon their website and can make the share more prominent.
+We developed from the ground up with simplicity and performance in mind to increase your shares. As SuperWebShare only shows the apps installed within the device upon the share prompt, the rate of sharing of post/page will be higher than showing all the social icons in a page. Due to this key reason, website developers can skip the usage of other social media icons upon their website and can make the share more prominent.
 
 The Super Web Share plugin for WordPress helps increase your traffic and engagement by a single quick click to share the website with your friends and social media. Super Web Share works on all supported browsers like Chrome for Android, Edge for Android, Brave for Android, and Opera for Android. It will show the native apps installed upon the device once you share the article with others; due to that, users can easily share the page/post with others super easily in just a click. Upon the native share, which prompts up like a native iOS or Android sharesheet, you users can easily copy the website page link if the users wants that option.
 
@@ -40,6 +41,12 @@ Currently, the Super Web Share plugin provides a share button before and after t
 #### Requirments for working SuperWebShare?
 * The Website should be served fully via a secured origin, i.e., the green padlock should be there on the address for working Super Web Share. 
 * Else by default, our fallback popup will show on those browsers where users can share via the major social sharing platforms like WhatsApp, Facebook, LinkedIn and Twitter and also comes with the Copy link option (on https sites).
+
+#### How to contribute? 
+**You can easily contribute to the plugin by translating to your language**. Click on the link below, choose your language and start translating the strings in Development (trunk).
+
+* **[Translate plugin to your language](https://translate.wordpress.org/projects/wp-plugins/super-web-share/)**
+* Do you know coding? Then you can also contribute to this plugin via our [GitHub repository](https://github.com/superwebshare/super-web-share/) to make this the best one.
 
 == Installation ==
 
@@ -71,11 +78,11 @@ The Web Share plugin works on browsers like Chrome for Android, iOS Safari (from
 
 = How do I report bugs and new feature suggestions? =
 
-You can report the bugs and request new features you need to see at our [GitHub repository Discussion page](https://github.com/superwebshare/featurerequests/discussions/1) 
+You can report the bugs and request new features you need to see at our [GitHub repository Discussion page](https://github.com/superwebshare/super-web-share/discussions/2) 
 
 = How can I contribute to this awesome plugin? =
 
-You can contribute to this Web Share plugin via our [GitHub repository](https://github.com/superwebshare/featurerequests/issues) 
+You can contribute to this Web Share plugin via our [GitHub repository](https://github.com/superwebshare/super-web-share/) 
 
 = Did I need to register or signup anywhere to use Super Web Share plugin? =
 
@@ -152,7 +159,7 @@ Release Date: May 1st, 2022
 
 New Features:
 
-* Added fallback and native share support for official AMP plugin and AMP for WordPress plugin. (Make sure to enable to Fallback within our settings page to see the fallback social buttons
+* Added fallback and native share support for official AMP plugin and AMP for WordPress plugin. Make sure to enable the Fallback within our settings page to see the fallback social buttons
 
 Enhancements:
 
