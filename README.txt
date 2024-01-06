@@ -110,7 +110,7 @@ New Features:
 * Added new option to enter the Twitter username within the Fallback, so that the fallback Twitter URL will pass the Twitter hander as via.
 * Compatible with WordPress 6.0
 
-Enhancement: 
+Enhancement:
 Removed the share button showing the search results page
 
 Bug Fix:
