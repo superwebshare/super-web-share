@@ -8,6 +8,9 @@
  * @package    Super_Web_Share
  * @subpackage Super_Web_Share/admin
  */
+
+use WpOrg\Requests\Response\Headers;
+
 /**
  * The admin-specific functionality of the plugin.
  *
@@ -689,7 +692,7 @@ function superwebshare_register_settings_fallback(){
 
 	add_settings_field(
 		'fallback_twitter_via',						// ID
-		__('Twitter username', 'super-web-share'),			// Title
+		__('X.com (Twitter) username', 'super-web-share'),			// Title
 		'fallback_twitter_via_cb',					// CB
 		'superwebshare_fallback_settings_section',			// Page slug
 		'superwebshare_fallback_settings_section'			// Settings Section ID
@@ -970,3 +973,18 @@ function superwebshare_get_settings_appearance() {
 
 	return $settings;
 }
+
+
+
+function api_get_icons() {
+
+	header("Content-Type: application/json");
+	
+	$icons = new Super_Web_Share_Icons();
+
+	echo json_encode( $icons->get_icons("share") );
+	
+	wp_die();
+}
+
+add_action('wp_ajax_sws_get_icons',  'api_get_icons' );

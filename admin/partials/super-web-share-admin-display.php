@@ -328,9 +328,9 @@ function fallback_twitter_via_cb(){
 	$settings_fallback = superwebshare_get_settings_fallback();
 	$value = isset( $settings_fallback[ 'fallback_twitter_via' ] ) ? esc_html( $settings_fallback[ 'fallback_twitter_via' ] ) : "";
 	?>
-	<input type="text" name="superwebshare_fallback_settings[fallback_twitter_via]" id="superwebshare_floating_settings[fallback_twitter_via]" placeholder="Twitter Username" pattern='[0-9a-zA-Z_]+' value="<?php echo $value ?>" >
+	<input type="text" name="superwebshare_fallback_settings[fallback_twitter_via]" id="superwebshare_floating_settings[fallback_twitter_via]" placeholder="Twitter	 Username" pattern='[0-9a-zA-Z_]+' value="<?php echo $value ?>" >
 		<p class="description">
-			<?php _e('Enter your Twitter username. This will be outputted when the users click the Twitter share on the fallback modal. Eg: IamJoseVarghese', 'super-web-share'); ?>
+			<?php _e('Enter your X.com (Twitter) username. This will be outputted when the users click the Twitter share on the fallback modal. Eg: IamJoseVarghese', 'super-web-share'); ?>
 		</p>
     <?php
 }
@@ -573,7 +573,7 @@ function superwebshare_admin_interface_render() {
 			<p>Connect with us on our social media. You can also share your suggestions and feedback with us to improve our small plugin:</p>
 				<ul style="list-style-type: disc;margin-left:16px">
 					<li><a href="https://www.facebook.com/SuperWebShare/" target="_blank">Facebook</a></li>
-					<li><a href="https://twitter.com/superwebshare" target="_blank">Twitter</a></li>
+					<li><a href="https://twitter.com/superwebshare" target="_blank">X.com (Twitter)</a></li>
 					<li><a href="https://www.instagram.com/superwebshare/" target="_blank">Instagram</a></li>
 					<li>Our email: <b>support@superwebshare.com</b></li>
 				</ul>

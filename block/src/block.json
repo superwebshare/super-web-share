@@ -1,0 +1,63 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "create-block/super-web-share-block",
+	"version": "0.1.0",
+	"title": "Super Web Share Block",
+	"category": "widgets",
+	"icon": "share",
+	"description": "Super Web share block editor",
+	"example": {},
+	"supports": {
+		"html": true
+	},
+	"keywords" : ["share", "native share", "facebook", "twitter", "whatsapp", "mobile"],
+	"textdomain": "super-web-share",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php",
+	"viewScript": "file:./view.js",
+	"attributes": {
+		"type": {
+			"type": "string",
+			"default": "inline"
+		},
+		"color": {
+			"type": "string",
+			"default": "#BD3854"
+		},
+		"text": {
+			"type": "string",
+			"default": "Share"
+		},
+		"icon": {
+			"type": "string",
+			"default": "share-icon-1"
+		},
+		"style": {
+			"enum": ["default", "curved", "square", "circle"],
+			"default": "default"
+		},
+		"size": {
+			"enum": ["large", "medium", "small"],
+			"default": "large"
+		},
+		"align": {
+			"enum": ["start", "center", "end"],
+			"default": "start"
+		},
+		"fallback": {
+			"type": "boolean",
+			"default": true
+		},
+		"className":{
+			"type": "string",
+			"default":  ""
+		},
+		"metadata":{
+			"type": "object"
+
+		}
+	}
+}

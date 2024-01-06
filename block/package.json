@@ -1,0 +1,28 @@
+{
+	"name": "super-web-share-block",
+	"version": "0.1.0",
+	"description": "Super Web share block editor",
+	"author": "The WordPress Contributors",
+	"license": "GPL-2.0-or-later",
+	"main": "build/index.js",
+	"scripts": {
+		"build": "wp-scripts build --webpack-copy-php",
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js",
+		"packages-update": "wp-scripts packages-update",
+		"plugin-zip": "wp-scripts plugin-zip",
+		"start": "wp-scripts start --webpack-copy-php"
+	},
+	"devDependencies": {
+		"@wordpress/eslint-plugin": "^17.3.0",
+		"@wordpress/scripts": "^26.17.0",
+		"eslint": "^8.54.0",
+		"eslint-plugin-jsdoc": "^46.9.0",
+		"eslint-plugin-react": "^7.33.2",
+		"lodash": "^4.17.21"
+	},
+	"dependencies": {
+		"@wordpress/components": "^25.13.0"
+	}
+}

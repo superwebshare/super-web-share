@@ -327,7 +327,7 @@ function superwebshare_fallback_modal( $args, $echo = true ){
 						<div class="sws-modal-content">
 							<div class="sws-links" >
 								<a  target="_blank" href="#" style="color:<?= $text_color ?>" class="sws-open-in-tab sws-social-facebook" data-type='facebook' rel="nofollow noreferrer"> <?= $icon_class->get_icon( 'icon-facebook', [ 'fill' => $args[ 'layout' ] == 3 ? "#3a579a" : $text_color ] ); ?><p> <?= _e( 'Facebook', 'super-web-share' ) ?></p></a>
-								<a  target="_blank" href="#" style="color:<?= $text_color ?>" class="sws-open-in-tab sws-social-twitter" data-type='twitter' data-params='<?=$args[ 'twitter_via' ]?>' rel="nofollow noreferrer"> <?= $icon_class->get_icon( 'icon-twitter', [ 'fill' => $args[ 'layout' ] == 3 ? "#00abf0" : $text_color ] ); ?><p> <?= _e( 'Twitter', 'super-web-share' ) ?></p></a>
+								<a  target="_blank" href="#" style="color:<?= $text_color ?>" class="sws-open-in-tab sws-social-twitter" data-type='twitter' data-params='<?=$args[ 'twitter_via' ]?>' rel="nofollow noreferrer"> <?= $icon_class->get_icon( 'icon-twitter', [ 'fill' => $args[ 'layout' ] == 3 ? "#00abf0" : $text_color ] ); ?><p> <?= _e( 'Twitter (X)', 'super-web-share' ) ?></p></a>
 								<a  target="_blank" href="#"  style="color:<?= $text_color ?>" class="sws-open-in-tab sws-social-linkedin" data-type='linkedin' rel="nofollow noreferrer"> <?= $icon_class->get_icon( 'icon-linkedin', [ 'fill' => $args[ 'layout' ] == 3 ? "#0073b1" : $text_color ] ); ?> <p> <?= _e( 'LinkedIn', 'super-web-share' ) ?> </p></a>
 								<a  target="_blank" href="#"  style="color:<?= $text_color ?>" class="sws-open-in-tab sws-social-whatsapp" data-type='whatsapp' rel="nofollow noreferrer"> <?= $icon_class->get_icon( 'icon-whatsapp', [ 'fill' => $args[ 'layout' ] == 3 ? "#48c757" : $text_color ] ); ?> <p> <?= _e( 'WhatsApp', 'super-web-share' ) ?></p></a>
 							</div>
@@ -650,7 +650,9 @@ if ( ! function_exists( 'super_web_share_shortcode' ) ) {
 
 		if( is_archive() ) return;
 		
-		$container_class = "sws_supernormalaction"; $floating_class = "";$floating_parent_style="";
+		$container_class = "sws_supernormalaction";
+		$floating_class = "";
+		$parent_style="";
         wp_enqueue_style( 'super-web-share' );
 		
 		if( ! superwebshare_is_amp() ){
@@ -667,6 +669,7 @@ if ( ! function_exists( 'super_web_share_shortcode' ) ) {
 			'style' 				=> 'default', 	// default, curved, square, circle
 			'size'					=> 'large', 	// large, medium, small
 			'icon' 					=> 'share-icon-1',
+			"align"					=> "start",		
 			'fallback'				=> 'yes',		// yes, no
 			'floating-position' 	=> 'right',		// right, left
 			'floating-from-side' 	=> '5px',		// Pix value
@@ -678,11 +681,10 @@ if ( ! function_exists( 'super_web_share_shortcode' ) ) {
 		$pos = in_array( $attr[ 'floating-position' ], [ 'right', 'left' ] ) ?  $attr[ 'floating-position' ] : 'right';
 		
 		if( $attr[ 'type' ] == 'floating' ){
-			$floating_class = 'superwebshare_tada';
 			$container_class = "sws_superaction";
-			
-			$floating_parent_style = 'style="'. $pos .': 24px;"';
+			$parent_style =  $pos .': 24px;';
 		}
+		$parent_style = "text-align:" . $attr[ "align" ] .";";
 
 		$icon_class = new Super_Web_Share_Icons();
 		$icon = $icon_class -> get_icon( $attr[ 'icon' ] );
@@ -690,7 +692,7 @@ if ( ! function_exists( 'super_web_share_shortcode' ) ) {
 
 		ob_start();
 		?>
-		<div class="<?= esc_html( $container_class )  ?>" <?= $floating_parent_style ?> >
+		<div class="<?= esc_html( $container_class )  ?>" style="<?= $parent_style ?>" >
 			<?php
 			if( superwebshare_is_amp() &&  $attr[ 'fallback' ] != "yes" ){
 				?>
@@ -701,7 +703,7 @@ if ( ! function_exists( 'super_web_share_shortcode' ) ) {
 					superwebshare_amp_modal( true );
 				}
 				?>
-				<button on="tap:superwebshare-lightbox" class=" <?= esc_html( $floating_class ) ?> superwebshare_normal_button1 shortcode-button superwebshare-button-<?= esc_html( $attr[ 'size' ] ) ?> superwebshare-button-<?= esc_html( $attr[ 'style' ] ) ?> superwebshare_prompt superwebshare_button_svg"
+				<button on="tap:superwebshare-lightbox" class=" <?= esc_html( $floating_class ) ?> superwebshare_tada superwebshare_normal_button1 shortcode-button superwebshare-button-<?= esc_html( $attr[ 'size' ] ) ?> superwebshare-button-<?= esc_html( $attr[ 'style' ] ) ?> superwebshare_prompt superwebshare_button_svg"
 				style="background-color: <?= esc_html( $attr[ 'color' ] ) .';' . $pos . ':'. esc_html( $attr[ 'floating-from-side' ] ) .';bottom:'. esc_html( $attr[ 'floating-from-bottom' ] )  ?>" >
 				<?= $icon ?> <span> <?= esc_html( $attr[ 'text' ] ) ?></span></button>
 				<?php
