@@ -555,7 +555,9 @@ __webpack_require__.r(__webpack_exports__);
    */
   attributes: _block_json__WEBPACK_IMPORTED_MODULE_3__.attributes,
   example: {
-    attributes: {}
+    attributes: {
+      className: 'on-block-preview'
+    }
   },
   edit: _edit__WEBPACK_IMPORTED_MODULE_2__["default"],
   save: _save__WEBPACK_IMPORTED_MODULE_4__["default"]
@@ -676,7 +678,7 @@ module.exports = window["wp"]["i18n"];
   \************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/super-web-share-block","version":"0.1.0","title":"Super Web Share Block","category":"widgets","icon":"share","description":"Super Web share block editor","example":{},"supports":{"html":true},"keywords":["share","native share","facebook","twitter","whatsapp","mobile"],"textdomain":"super-web-share","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js","attributes":{"type":{"type":"string","default":"inline"},"color":{"type":"string","default":"#BD3854"},"text":{"type":"string","default":"Share"},"icon":{"type":"string","default":"share-icon-1"},"style":{"enum":["default","curved","square","circle"],"default":"default"},"size":{"enum":["large","medium","small"],"default":"large"},"align":{"enum":["start","center","end"],"default":"start"},"fallback":{"type":"boolean","default":true},"className":{"type":"string","default":""},"metadata":{"type":"object"}}}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/super-web-share-block","version":"0.1.0","title":"Super Web Share Block","category":"widgets","icon":"share","description":"Super Web share block editor","example":{},"supports":{"html":true},"keywords":["share","native share","facebook","twitter","whatsapp","mobile"],"textdomain":"super-web-share","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","attributes":{"type":{"type":"string","default":"inline"},"color":{"type":"string","default":"#BD3854"},"text":{"type":"string","default":"Share"},"icon":{"type":"string","default":"share-icon-1"},"style":{"type":"string","enum":["default","curved","square","circle"],"default":"default"},"size":{"type":"string","enum":["large","medium","small"],"default":"large"},"align":{"type":"string","enum":["start","center","end"],"default":"start"},"fallback":{"type":"boolean","default":true},"className":{"type":"string","default":""},"metadata":{"type":"object"}}}');
 
 /***/ })
 

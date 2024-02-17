@@ -24,7 +24,6 @@
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css",
   "render": "file:./render.php",
-  "viewScript": "file:./view.js",
   "attributes": {
     "type": {
       "type": "string",
@@ -43,6 +42,7 @@
       "default": "share-icon-1"
     },
     "style": {
+      "type": "string",
       "enum": [
         "default",
         "curved",
@@ -52,6 +52,7 @@
       "default": "default"
     },
     "size": {
+      "type": "string",
       "enum": [
         "large",
         "medium",
@@ -60,6 +61,7 @@
       "default": "large"
     },
     "align": {
+      "type": "string",
       "enum": [
         "start",
         "center",
