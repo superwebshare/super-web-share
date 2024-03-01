@@ -1,4 +1,11 @@
 <?php
+/**
+ * Block main register file.
+ *
+ * @since 1.0.0
+ * @package Super_Web_Share
+ */
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }

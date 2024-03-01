@@ -17,6 +17,7 @@
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",
 	"render": "file:./render.php",
+	"viewScript": "file:./view.js",
 	"attributes": {
 		"type": {
 			"type": "string",
@@ -35,17 +36,14 @@
 			"default": "share-icon-1"
 		},
 		"style": {
-			"type": "string",
 			"enum": ["default", "curved", "square", "circle"],
 			"default": "default"
 		},
 		"size": {
-			"type": "string",
 			"enum": ["large", "medium", "small"],
 			"default": "large"
 		},
 		"align": {
-			"type": "string",
 			"enum": ["start", "center", "end"],
 			"default": "start"
 		},
