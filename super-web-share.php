@@ -110,6 +110,7 @@ register_activation_hook( __FILE__, 'superwebshare_activate_plugin' );
  * @since    1.0.0
  */
 function run_super_web_share() {
+	require_once plugin_dir_path( __FILE__ ) . 'block/super-web-share-block.php';
 	$plugin = new Super_Web_Share();
 	$plugin->run();
 
