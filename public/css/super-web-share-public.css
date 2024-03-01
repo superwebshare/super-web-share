@@ -120,13 +120,13 @@
   width: 30px;
 }
 @media ( max-width: 1264px ){
-  .superwebshare_tada:not(.on-block-preview){
+  .superwebshare_tada{
     justify-content: center;
     padding: 0;
     height: 56px;
     width: 56px;
   }
-  .superwebshare_tada:not(.on-block-preview) span{
+  .superwebshare_tada span{
     display: none;
   }
 }
@@ -238,6 +238,7 @@
 }
 .sws-layout-1 .sws-links {
   margin-bottom: 24px;
+  gap: 20px;
 }
 .sws-links a {
   font-size: 14px;

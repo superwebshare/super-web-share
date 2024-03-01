@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Fired during plugin activation
  *
@@ -10,6 +9,8 @@
  */
 
 /**
+ * The Activation class.
+ *
  * @since      1.0.0
  * @package    Super_Web_Share
  * @subpackage Super_Web_Share/includes
@@ -18,11 +19,10 @@
 class Super_Web_Share_Activator {
 
 	/**
+	 * The function run when active the plugin
 	 *
 	 * @since    1.0.0
 	 */
 	public static function activate() {
-
 	}
-
 }

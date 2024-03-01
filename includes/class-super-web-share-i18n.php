@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Define the internationalization functionality
  *
@@ -24,7 +23,7 @@
  * @subpackage Super_Web_Share/includes
  * @author     SuperWebShare <info@superwebshare.com>
  */
-class Super_Web_Share_i18n {
+class Super_Web_Share_I18n {
 
 
 	/**
@@ -39,9 +38,5 @@ class Super_Web_Share_i18n {
 			false,
 			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
 		);
-
 	}
-
-
-
 }

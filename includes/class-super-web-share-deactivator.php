@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Fired during plugin deactivation
  *
@@ -20,10 +19,9 @@
 class Super_Web_Share_Deactivator {
 
 	/**
+	 * The action when run deactivate the plugin
+	 *
 	 * @since    1.0.0
 	 */
-	public static function deactivate() {
-
-	}
-
+	public static function deactivate() {}
 }
