@@ -120,13 +120,13 @@
   width: 30px;
 }
 @media ( max-width: 1264px ){
-  .superwebshare_tada{
+  .superwebshare_tada:not(.on-block-preview){
     justify-content: center;
     padding: 0;
     height: 56px;
     width: 56px;
   }
-  .superwebshare_tada span{
+  .superwebshare_tada:not(.on-block-preview) span{
     display: none;
   }
 }

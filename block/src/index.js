@@ -32,7 +32,9 @@ registerBlockType(metadata.name, {
 	 */
 	attributes: metadata.attributes,
 	example: {
-		attributes: {},
+		attributes: {
+			className: 'on-block-preview',
+		},
 	},
 
 	edit: Edit,
