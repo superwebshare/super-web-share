@@ -15,11 +15,11 @@
 		"start": "wp-scripts start --webpack-copy-php"
 	},
 	"devDependencies": {
-		"@wordpress/eslint-plugin": "^17.3.0",
-		"@wordpress/scripts": "^30.4.0",
-		"eslint": "^8.54.0",
+		"@wordpress/eslint-plugin": "^25.7.0",
+		"@wordpress/scripts": "^33.0.0",
+		"eslint": "^10.8.0",
 		"eslint-plugin-jsdoc": "^46.9.0",
-		"eslint-plugin-react": "^7.33.2",
+		"eslint-plugin-react": "^7.37.5",
 		"lodash": "^4.17.23"
 	},
 	"dependencies": {
